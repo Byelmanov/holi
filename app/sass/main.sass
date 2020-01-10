@@ -112,6 +112,75 @@ header
 	img
 		width: 200px
 		height: 75px
+.header__about
+	display: flex
+	flex-flow: row wrap
+	align-items: center
+	justify-content: flex-start
+	margin-bottom: 80px
+.header__heading
+	flex: 0 0 60%
+	font-family: $default-font
+	font-size: 80px
+	line-height: 95px
+	font-weight: normal
+	text-align: left
+	letter-spacing: 0.1em
+	margin-left: 65px
+	color: $defaultColor
+.header__description
+	flex: 0 0 30%
+	position: relative
+	p:nth-of-type(4)
+		margin-top: 36px
+	&-text
+		font-family: $default-font
+		font-weight: normal
+		font-size: 17px
+		line-height: 21px
+		color: $defaultColor
+		margin-bottom: 7px
+		text-align: left
+		&--bold
+			font-family: $default-font
+			font-weight: normal
+			font-size: 20px
+			line-height: 24px
+			color: $defaultColor
+			margin-bottom: 10px
+			text-align: left
+	&:after
+		content: ''
+		position: absolute
+		width: 275px
+		height: 2px
+		transform: rotate(90deg)
+		background: #000
+		color: #000
+		left: -45%
+		top: 46%
+.header__block
+	max-width: 335px
+	min-width: 320px
+	height: 120px
+	background: #fff
+	border: 4px solid #EB6FBD
+	border-radius: 40px
+	text-align: center
+	line-height: 120px
+	font-family: $default-font
+	font-weight: normal
+	font-size: 20px
+	color: $defaultColor
+	margin-bottom: 30px
+	&:hover
+		font-size: 27px
+		box-shadow: 0px 4px 4px rgba(235, 111, 189, 0.25)
+		cursor: pointer
+		
+
+		
+			
 
 
 
