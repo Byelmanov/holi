@@ -96,9 +96,6 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function () {
 		'app/js/scripts.min.js',
 	]).pipe(gulp.dest('build/js'));
 
-	var buildFonts = gulp.src([
-		'app/fonts/**/*',
-	]).pipe(gulp.dest('build/fonts'));
 
 });
 
