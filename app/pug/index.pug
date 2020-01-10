@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+    include includes/head.pug
+    body
+        include includes/header.pug
+
+        section.container-fluid
+            h1.heading lorem
+            p.text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, illo earum cupiditate sed illum minus eos pariatur necessitatibus unde nulla quae, dolor veritatis a nihil voluptatem sunt, molestiae natus. Facere!
+            div.button lorem
+
+        section.container.myClass
+            //custom arrows for slider
+            .slider__prevButton#sliderPrevButton
+            .slider__nextButton#sliderNextButton
+            //custom dots for slider
+            .slider__dots
+                div(class="slider__dot slider__dot--active") 0
+                div(class="slider__dot") 1
+            
+            .slider#slider
+                .slider__item
+                    img(src="img/header_logo.svg", alt="slider__item")
+                .slider__item
+                    img(src="img/header_logo.svg", alt="slider__item")
+
+
+
+        include includes/footer.pug
+        script(src="js/scripts.min.js")
+        
+            
