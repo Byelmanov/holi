@@ -99,7 +99,7 @@ header
 	height: auto
 	text-align: center
 	line-height: 200px
-	background: linear-gradient(to right, #F9E547 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(#F9E547 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(#F9E547 50%, rgba(255, 255, 255, 0) 0%)
+	background: linear-gradient(to right, $yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%)
 	background-position: top, right, bottom, left
 	background-repeat: repeat-x, repeat-y
 	background-size: 35px 5px, 5px 35px
@@ -107,11 +107,22 @@ header
 	display: flex
 	flex-flow: row nowrap
 	align-items: center
-	justify-content: flex-start
+	justify-content: space-between
 	margin-bottom: 60px
 	img
 		width: 240px
 		height: 90px
+.header__contacts
+	display: block
+	line-height: 24px
+	text-decoration: none
+	font-size: 20px
+	font-weight: 600
+	color: $defaultColor
+	background: $yellow
+	padding: 5px
+	font-family: $default-font
+	margin-right: 80px
 .header__about
 	display: flex
 	flex-flow: row wrap
@@ -272,7 +283,23 @@ header
 		display: block
 		margin: auto
 		margin-bottom: 10px
-			
+
+.program
+	height: 100px
+	&__lines
+		width: 100%
+		max-width: 1280px
+		margin: auto
+		height: auto
+		text-align: center
+		line-height: 200px
+		background: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%)
+		background-position: top, right, bottom, left
+		background-repeat: repeat-x, repeat-y
+		background-size: 35px 5px, 5px 35px
+		padding: 80px
+		position: relative
+		z-index: 1	
 		
 
 			
