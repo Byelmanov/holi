@@ -197,6 +197,7 @@ header
 		background-size: 35px 5px, 5px 35px
 		padding: 80px
 		position: relative
+		z-index: 1
 	&__heading
 		color: #fff
 		text-align: left
@@ -217,7 +218,7 @@ header
 		background-color: #fff
 		border-radius: 50%
 		position: relative
-		z-index: 2
+		
 		display: flex
 		flex-flow: column nowrap
 		align-content: center
@@ -234,6 +235,31 @@ header
 				color: $purple
 				margin-bottom: 15px
 				display: inline-block
+		&::after
+			content: ''
+			width: 350px
+			height: 350px
+			background-image: url('../img/unEvenCircle.svg')
+			background-repeat: no-repeat
+			background-position: center
+			position: absolute
+			z-index: -1
+			display: block
+		&:first-child
+			&:after
+				top: 0px
+				left: -40px
+				transform: rotate(35deg)
+		&:nth-child(2)
+			&:after
+				transform: rotate(50deg)
+				top: -40px
+				left: -40px
+		&:nth-child(3)
+			&:after
+				top: -5px
+				left: 0px
+			
 		
 
 			
