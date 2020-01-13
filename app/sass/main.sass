@@ -606,9 +606,77 @@ header
 		&--forth
 			bottom: -65px
 			left: -365px
-			
+.application
+	padding: 40px 170px 30px 170px
+	&__items
+		display: flex
+		flex-flow: column nowrap
+		align-items: flex-start
+		justify-content: flex-start
+	&__item
+		margin-bottom: 40px
+		width: 100%
+		display: flex
+		flex-flow: row wrap
+		align-items: center
+		justify-content: space-between
+		&:nth-child(5)
+			justify-content: flex-start
+		&:last-child
+			justify-content: flex-start
+		&-numberPlusText
+			width: auto
+			display: flex
+			align-items: center
+			flex: 0 0 70%
 
-			
+		&-number
+			width: 50px
+			height: 50px
+			background: $purple
+			border-radius: 50%
+			font-size: 25px
+			line-height: 50px
+			text-align: center
+			font-family: $default-font
+			font-weight: bold
+			color: #fff
+			margin-right: 45px
+		&-link
+			width: 660px
+			height: 80px
+			display: block
+			line-height: 80px
+			border: 1px solid #E5E5E5
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+			border-radius: 20px
+			text-align: center
+			color: $purple
+			text-decoration: underline
+			font-size: 25px
+			font-family: $default-font
+			font-weight: bold	
+		&-text
+			color: $black
+			font-size: 18px
+			line-height: 22px
+			font-family: $default-font
+			&--purple
+				font-size: 15px
+				line-height: 18px
+				color: $purple
+				font-weight: bold
+				text-align: right
+				&-first
+					width: 80px
+					flex: 0 0 20%
+				&-second
+					flex: 0 0 20%
+	&__hr
+		width: 100%
+		height: 1px
+		margin-bottom: 40px	
+		color: #E5E5E5
 			
 
 
