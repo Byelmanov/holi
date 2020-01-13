@@ -95,13 +95,6 @@ img
 
 
 header
-	// width: 100%
-	// margin-top: 50px
-	// background: #fff
-	// height: 100px
-	// border-top: 5px dashed #F9E547
-	// border-left: 5px dashed #F9E547
-	// border-right: 5px dashed #F9E547
 	margin: 80px 80px 0 80px
 	padding: 60px 80px 80px 80px
 	height: auto
@@ -324,6 +317,7 @@ header
 		line-height: 37px
 		font-weight: bold
 		font-family: $default-font
+		color: $black
 		max-width: 255px
 		margin-bottom: 80px
 	&__items
@@ -428,6 +422,7 @@ header
 				line-height: 30px
 				font-weight: bold
 				font-family: $default-font
+				color: $black
 				margin-top: 45px
 		&--third
 			width: 440px
@@ -438,6 +433,7 @@ header
 				font-size: 20px
 				line-height: 24px
 				margin-bottom: 16px
+				color: $black
 				span
 					font-size: 25px
 					line-height: 30px
@@ -454,6 +450,7 @@ header
 				font-size: 20px
 				line-height: 24px
 				font-family: $default-font
+				color: $black
 				margin-bottom: 10px
 				span
 					font-size: 30px
@@ -472,7 +469,7 @@ header
 		margin-top: 50px
 		margin-bottom: 60px
 	&__price
-		width: 380px
+		width: 382px
 		height: 360px
 		background-image: url('../img/circles.svg')	
 		background-repeat: no-repeat
@@ -509,6 +506,7 @@ header
 		font-family: $default-font
 		font-size: 20px
 		line-height: 24px
+		color: $black
 		font-weight: normal
 		text-align: center
 		span
@@ -693,9 +691,10 @@ header
 					flex: 0 0 20%
 	&__hr
 		width: 100%
-		height: 1px
+		height: 2px
 		margin-bottom: 40px	
-		color: #E5E5E5
+		color: #e5e5e5
+		background: #e5e5e5
 
 .tutors
 	padding: 120px 0 80px 0
@@ -802,6 +801,8 @@ header
 		font-family: $default-font
 		text-decoration: none
 		margin-left: 40px
+		&:hover
+			text-decoration: underline
 
 footer
 	background: $black
@@ -885,12 +886,15 @@ footer
 					font-size: 25px
 					line-height: 30px
 					letter-spacing: 0.05em
+					&:hover
+						color: $purple
+						text-decoration: underline
 			&-facebook
 				margin-bottom: 30px
-			&-mail 
-				a
-					color: $purple
-					text-decoration: underline
+			&-mail
+				margin-bottom: 0
+				
+					
 	&__logo
 		width: 100%
 		max-width: 240px
