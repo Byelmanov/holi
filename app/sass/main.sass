@@ -529,6 +529,84 @@ header
 		&--forth
 			top: 16px
 			right: 19px
+.road
+	height: 270px
+	background-color: $black
+	padding: 30px 0
+	position: relative
+	z-index: 1
+	&__line
+		width: 100%
+		height: 3px
+		background: #fff
+		position: absolute
+		left: 0
+		right: 0
+		z-index: 1
+		&--top
+			top: 30px
+		&--bottom
+			bottom: 30px
+	&__dottedLine
+		width: 100%
+		height: 3px
+		background: linear-gradient(to right, #fff 50%, rgba(255, 255, 255, 0) 0%)
+		background-position: top, right, bottom, left
+		background-repeat: repeat-x, repeat-y
+		background-size: 35px 5px, 5px 35px
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		margin: auto
+		z-index: 1
+	&__headingWrap
+		width: 495px
+		height: auto
+		margin: auto
+		background: $black
+		padding: 0 20px
+		display: flex
+		flex-flow: row nowrap
+		align-items: flex-end
+		justify-content: flex-start
+		position: relative
+		z-index: 3
+		margin-top: 57px
+		
+	&__heading
+		color: #fff
+		font-family: $default-font
+		letter-spacing: 0.15em
+		&--bold
+			font-weight: bold
+			font-size: 70px
+			line-height: 68px
+			margin-right: 10px
+		&--normal
+			font-size: 35px
+			line-height: 43px
+	&__car
+		width: 90px
+		height: auto
+		position: absolute
+		z-index: 3
+		&--first
+			top: -30px
+			left: -160px
+			transform: scale(-1, 1)
+		&--second
+			bottom: -50px
+			left: -230px
+		&--third
+			top: -75px
+			transform: scale(-1, 1)
+			right: -300px
+		&--forth
+			bottom: -65px
+			left: -365px
+			
 
 			
 			
