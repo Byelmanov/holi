@@ -84,6 +84,14 @@ img
 	box-shadow: 0 0 5px #e6e6e6
 	&:hover
 		background: yellow
+.container
+	max-width: 1280px
+	padding-right: 80px
+	padding-left: 80px
+.container-fluid 
+	//max-width: 1440px
+	padding-left: 0
+	padding-right: 0
 
 
 header
@@ -669,7 +677,7 @@ header
 				text-align: right
 				&-first
 					width: 80px
-					flex: 0 0 20%
+					flex: 0 0 15%
 				&-second
 					flex: 0 0 20%
 	&__hr
@@ -677,24 +685,117 @@ header
 		height: 1px
 		margin-bottom: 40px	
 		color: #E5E5E5
-			
+
+.tutors
+	padding: 120px 0 80px 0
+	width: 100%
+	height: auto
+	position: relative
+	&__background
+		position: absolute
+		z-index: -1	
+		width: 95%
+		height: auto
+		top: 0	
+		right: 0
+	&__content
+		padding: 0 80px
+	&__heading
+		font-size: 30px
+		line-height: 37px
+		font-family: $default-font
+		font-weight: bold
+		color: $black
+		text-align: left
+		margin-bottom: 40px
+	&__items
+		display: flex
+		flex-flow: row wrap
+		align-items: flex-start
+		justify-content: space-around
+	&__item-text
+		flex: 0 0 55%
+	&__item-img
+		max-width: 300px
+	&__image 
+		width: 100%
+		height: auto
+	&__text
+		font-size: 20px
+		line-height: 24px
+		font-family: $default-font
+		color: $black	
+		margin-bottom: 30px	
+	&__link
+		text-align: center
+		display: block
+		margin: auto
+		position: relative
+		top: -25px
+		color: $purple
+		font-size: 17px
+		line-height: 21px
+		font-family: $default-font
+		font-weight: bold
+		text-decoration: underline
+		cursor: pointer
+		margin-bottom: 150px
+.faq
+	width: 100%
+	height: auto
+	&__heading
+		width: 100%
+		text-align: center
+		line-height: 70px
+		font-size: 30px
+		font-family: $default-font
+		font-weight: bold
+		text-transform: uppercase
+		color: #fff
+		background: $purple
+	&__accordeon
+		padding: 0 40px 0 40px
+		margin-bottom: 80px
+		&--head
+			display: flex
+			flex-flow: row nowrap
+			align-items: center
+			justify-content: space-between
+			border-bottom: 2px solid $purple
+			margin-top: 45px
+			cursor: pointer
+			h3
+				font-size: 20px
+				line-height: 24px
+				color: $purple
+				font-weight: bold
+				font-family: $default-font
+			p 
+				font-family: 'Roboto'
+				font-size: 35px
+				line-height: 41px
+				color: $purple
+	&__connect 
+		font-size: 20px
+		line-height: 24px
+		font-weight: bold
+		font-family: $default-font
+		color: $black
+		margin-left: 40px
+		margin-bottom: 20px
+	&__email
+		font-size: 50px
+		line-height: 61px
+		color: $black
+		font-weight: bold
+		font-family: $default-font
+		text-decoration: none
+		margin-left: 40px
 
 
 
-		
-			
 
 
-
-
-.container
-	max-width: 1280px
-	padding-right: 80px
-	padding-left: 80px
-.container-fluid 
-	//max-width: 1440px
-	padding-left: 0
-	padding-right: 0
 
 
 @import "media" // Всегда в конце
