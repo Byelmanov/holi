@@ -792,6 +792,111 @@ header
 		text-decoration: none
 		margin-left: 40px
 
+footer
+	background: $black
+	height: auto
+	position: relative
+	z-index: 1
+.footer
+	&__content
+		height: auto
+		display: flex
+		flex-flow: row nowrap
+		align-items: flex-start
+		justify-content: space-between
+		padding-top: 60px
+		padding-bottom: 80px
+	&__item
+		&-logo
+			max-width: 240px
+			min-width: 240px
+		&-nav
+			max-width: 370px
+			min-width: 345px
+			list-style: none
+			&-li
+				margin-bottom: 30px
+				display: inline-block
+				position: relative
+				&:last-child
+					margin-bottom: 0
+				a
+					font-family: $default-font
+					font-weight: 500
+					font-size: 25px
+					line-height: 30px
+					letter-spacing: 0.05em
+					color: #fff
+					text-decoration: none
+					display: inline-block
+					text-align: left
+					&:after
+						content: ''
+						width: 110%
+						display: inline
+						width: 0%
+						height: 16px
+						background: rgba(249, 229, 71, 0.75)
+						position: absolute
+						bottom: -2px
+						left: -5%
+						z-index: -1
+					&:hover:after
+						width: 110%
+						transition: width .3s ease-in-out
+		&-networks
+			max-width: 330px
+			min-width: 296px
+			&-heading
+				font-family: $default-font
+				font-weight: 500
+				font-size: 25px
+				line-height: 30px
+				letter-spacing: 0.05em
+				color: #fff
+				margin-bottom: 20px
+			&-instagram, &-facebook, &-mail
+				display: flex
+				flex-flow: row nowrap
+				align-items: flex-start
+				justify-content: flex-start
+				margin-bottom: 20px
+				img
+					width: 30px
+					height: 30px
+					display: inline-block
+					margin-right: 20px
+				a
+					color: #fff
+					text-decoration: none
+					font-weight: 300
+					font-family: $default-font
+					font-size: 25px
+					line-height: 30px
+					letter-spacing: 0.05em
+			&-facebook
+				margin-bottom: 30px
+			&-mail 
+				a
+					color: $purple
+					text-decoration: underline
+	&__logo
+		width: 100%
+		max-width: 240px
+		height: auto
+		display: inline-block
+		margin-bottom: 40px
+	&__developedInfo
+		font-family: $default-font
+		font-weight: 500
+		font-size: 13px
+		line-height: 16px
+		text-align: center
+		letter-spacing: 0.05em
+		color: rgba(255, 255, 255, 0.6)
+		span
+			text-decoration: underline
+
 
 
 
