@@ -55,6 +55,41 @@ document.getElementById('footerMail').addEventListener('mouseout', function () {
     link.style.textDecoration = 'none';
 });
 
+$(window).scroll(function () {
+    let offset = $('#aboutSection').offset().top;
+    if ($(this).scrollTop() >= offset) {
+        $('#burgerMenu').show();
+    } else {
+        $('#burgerMenu').hide();
+    }
+});
+
+document.getElementById('burgerImg').addEventListener('click', function () {
+    $('.burgerMenu__list').slideToggle("slow", function () {
+        $('#burgerImg').hide();
+        $('#crossImg').show();
+        $('#burgerMenu').css({
+            'background': '#262626'
+        });
+        let imgNode = document.getElementById('burgerMenuLogo');
+        let attr = '/img/finalLogo1.2.svg';
+        imgNode.setAttribute('src', attr);
+    });
+});
+
+document.getElementById('crossImg').addEventListener('click', function () {
+    $('.burgerMenu__list').slideToggle("slow", function () {
+        $('#burgerImg').show();
+        $('#crossImg').hide();
+        $('#burgerMenu').css({
+            'background': '#ffffff'
+        });
+        let imgNode = document.getElementById('burgerMenuLogo');
+        let attr = '/img/finalLogo1.svg';
+        imgNode.setAttribute('src', attr);
+    });
+});
+
 
 
 

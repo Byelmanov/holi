@@ -13,7 +13,7 @@
   </head>
   <body>
     <header class="container">
-      <div class="header__logo"><img src="img/finalLogo1.svg" alt="HoLi logo"/><a class="header__contacts" href="">контакты</a></div>
+      <div class="header__logo"><img src="img/finalLogo1.svg" alt="HoLi logo"/><a class="header__contacts" href="#contacts">контакты</a></div>
       <div class="header__about">
         <h1 class="header__heading">Это<br/>Интенсив<br/>Английского</h1>
         <div class="header__description">
@@ -26,17 +26,35 @@
       </div>
       <nav>
         <div class="header__blocks row no-gutters justify-content-around">
-          <div class="header__block col-12 col-md-6 col-xl-4"> <a class="header__nav-links" href="">Что такое интенсив?</a></div>
-          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="">Программа</a></div>
-          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="">Стоимость</a></div>
-          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="">Как записаться?</a></div>
-          <div class="header__block col-12 col-md-6 col-xl-4"> <a class="header__nav-links" href="">Преподаватели</a></div>
-          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="">FAQ</a></div>
+          <div class="header__block col-12 col-md-6 col-xl-4"> <a class="header__nav-links" href="#aboutSection">Что такое интенсив?</a></div>
+          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="#programSection">Программа</a></div>
+          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="#priceSection">Стоимость</a></div>
+          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="#roadSection">Как записаться?</a></div>
+          <div class="header__block col-12 col-md-6 col-xl-4"> <a class="header__nav-links" href="#tutorsSection">Преподаватели</a></div>
+          <div class="header__block col-12 col-md-6 col-xl-4"><a class="header__nav-links" href="#faqSection">FAQ</a></div>
+        </div>
+      </nav>
+      <nav>
+        <div class="burgerMenu container-fluid" id="burgerMenu">
+          <div class="container burgerMenu__content">
+            <div class="burgerMenu__head"><a href="index.html"><img class="burgerMenu__logo" src="img/finalLogo1.svg" alt="logo" id="burgerMenuLogo"/></a>
+              <div class="burgerMenu__burgerImg" id="burgerImg"></div>
+              <div class="burgerMenu__crossImg" id="crossImg"></div>
+            </div>
+            <ul class="burgerMenu__list">
+              <li class="burgerMenu__item"> <a href="#aboutSection">ЧТО ТАКОЕ ИНТЕНСИВ?</a></li>
+              <li class="burgerMenu__item"><a href="#programSection">ПРОГРАММА</a></li>
+              <li class="burgerMenu__item"><a href="#priceSection">СТОИМОСТЬ</a></li>
+              <li class="burgerMenu__item"><a href="#roadSection">КАК ЗАПИСАТЬСЯ?</a></li>
+              <li class="burgerMenu__item"> <a href="#tutorsSection">ПРЕПОДАВАТЕЛИ</a></li>
+              <li class="burgerMenu__item"><a href="#faqSection">FAQ</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
   </body>
-  <section class="about container-fluid">
+  <section class="about container-fluid" id="aboutSection">
     <article>
       <div class="about__lines">
         <h2 class="about__heading heading">Что такое интенсив?</h2>
@@ -58,7 +76,7 @@
       </div>
     </article>
   </section>
-  <section class="program container-fluid">
+  <section class="program container-fluid" id="programSection">
     <main>
       <div class="program__lines">
         <div class="program__heading">программа</div>
@@ -113,7 +131,7 @@
             <div class="program__officer program__officer--right"></div>
           </div>
         </div>
-        <div class="program__priceHeading">Стоимость</div>
+        <div class="program__priceHeading" id="priceSection">Стоимость</div>
         <div class="program__price">
           <h3 class="program__price-textPrice">130 €</h3>
           <p class="program__price-text">единоразовый платеж</p>
@@ -121,7 +139,7 @@
       </div>
     </main>
   </section>
-  <section class="road container-fluid">
+  <section class="road container-fluid" id="roadSection">
     <div class="road__line road__line--top"></div>
     <div class="road__line road__line--bottom"></div>
     <div class="road__dottedLine"></div>
@@ -159,7 +177,7 @@
       </div>
     </div>
   </section>
-  <section class="tutors container"><img class="tutors__background" src="/img/circle_teachers.svg" alt=""/>
+  <section class="tutors container" id="tutorsSection"><img class="tutors__background" src="/img/circle_teachers.svg" alt=""/>
     <div class="tutors__content">
       <h2 class="tutors__heading">Преподаватели</h2>
       <div class="tutors__items">
@@ -172,7 +190,7 @@
         <div class="tutors__item-img"><img class="tutors__image" src="/img/tutors.svg" alt="tutors photo"/></div>
       </div><a class="tutors__link" href="">Стать преподавателем.</a>
     </div>
-    <section class="faq">
+    <section class="faq" id="faqSection">
       <h2 class="faq__heading">faq</h2>
       <div class="faq__accordeon">
         <div class="faq__accordeon--head"> 
@@ -199,7 +217,7 @@
       <p class="faq__connect">Свяжитесь с нами</p><a class="faq__email" href="mailto:yelmanovbohdan@gmail.com?subject=hello">contact@holi.com</a>
     </section>
   </section>
-  <footer class="container-fluid">
+  <footer class="container-fluid" id="contacts">
     <div class="container footer__content">
       <div class="footer__item-logo"><a href="#"><img class="footer__logo" src="/img/finalLogo1.2.svg" alt="logo"/></a>
         <p class="footer__developedInfo">developed by</br><span>yelmanovbohdan@gmail.com</span></br>&amp;</br>designed by</br><span>lishchynskayaanna@gmail.com</span></p>
@@ -220,6 +238,7 @@
         <div class="footer__item-networks-mail" id="footerMail"><a href="mailto:yelmanovbohdan@gmail.com?subject=hello"><img src="/img/mail.svg" alt="mail logo" id="footerMailImg"/></a><a href="mailto:yelmanovbohdan@gmail.com?subject=hello" id="footerMailLink">contact@holi.com</a></div>
       </div>
     </div>
+    <!--script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")-->
     <script src="js/scripts.min.js"></script>
   </footer>
 </html>

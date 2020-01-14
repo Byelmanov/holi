@@ -6,7 +6,7 @@ html(lang="en")
         header.container
             div.header__logo
                 img(src="img/finalLogo1.svg", alt="HoLi logo")
-                a(href="" class="header__contacts") контакты
+                a(href="#contacts" class="header__contacts") контакты
             div.header__about
                 h1.header__heading Это<br/>Интенсив<br/>Английского
                 div.header__description
@@ -18,19 +18,20 @@ html(lang="en")
             nav
                 div.header__blocks.row.no-gutters.justify-content-around
                     div.header__block.col-12.col-md-6.col-xl-4 
-                        a(href="" class="header__nav-links") Что такое интенсив?
+                        a(href="#aboutSection" class="header__nav-links") Что такое интенсив?
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="" class="header__nav-links") Программа
+                        a(href="#programSection" class="header__nav-links") Программа
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="" class="header__nav-links") Стоимость
+                        a(href="#priceSection" class="header__nav-links") Стоимость
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="" class="header__nav-links") Как записаться?
+                        a(href="#roadSection" class="header__nav-links") Как записаться?
                     div.header__block.col-12.col-md-6.col-xl-4 
-                        a(href="" class="header__nav-links") Преподаватели
+                        a(href="#tutorsSection" class="header__nav-links") Преподаватели
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="" class="header__nav-links") FAQ
+                        a(href="#faqSection" class="header__nav-links") FAQ
+            include includes/burgerMenu.pug
 
-    section.about.container-fluid
+    section.about.container-fluid#aboutSection
         article
             div.about__lines
                 h2.about__heading.heading Что такое интенсив?
@@ -49,7 +50,7 @@ html(lang="en")
                     img(src="img/arrow.svg", alt="arrow down" class="about__scroll-arrow" id="aboutScrollArrow1")
                     img(src="img/arrow.svg", alt="arrow down" class="about__scroll-arrow" id="aboutScrollArrow2")
                     img(src="img/arrow.svg", alt="arrow down" class="about__scroll-arrow" id="aboutScrollArrow3")           
-    section.program.container-fluid
+    section.program.container-fluid#programSection
         main
             div.program__lines
                 div.program__heading программа
@@ -91,12 +92,12 @@ html(lang="en")
                             p.program__textBlock-text <span>1</span> грамматическая тема на выбор
                             p.program__questionMark.program__questionMark--forth ?
                         div.program__officer.program__officer--right
-                div.program__priceHeading Стоимость
+                div.program__priceHeading#priceSection Стоимость
                 div.program__price
                     h3.program__price-textPrice 130 €
                     p.program__price-text единоразовый платеж
                 img(src="/img/bigben.svg", alt="BIG BEN" class="program__bigben")
-    section.road.container-fluid
+    section.road.container-fluid#roadSection
         div.road__line.road__line--top
         div.road__line.road__line--bottom
         div.road__dottedLine
@@ -129,7 +130,7 @@ html(lang="en")
             div.application__item
                 p.application__item-number 4
                 p.application__item-text Приступите к курсу
-    section.tutors.container
+    section.tutors.container#tutorsSection
         img(src="/img/circle_teachers.svg", alt="", class="tutors__background")
         div.tutors__content
             h2.tutors__heading Преподаватели
@@ -143,7 +144,7 @@ html(lang="en")
                     img(src="/img/tutors.svg", alt="tutors photo", class="tutors__image")
             a(href="").tutors__link Стать преподавателем.
 
-        section.faq
+        section.faq#faqSection
             h2.faq__heading faq
             div.faq__accordeon
                 div.faq__accordeon--head 
@@ -169,7 +170,7 @@ html(lang="en")
             p.faq__connect Свяжитесь с нами
             a(href="mailto:yelmanovbohdan@gmail.com?subject=hello").faq__email contact@holi.com
 
-    footer.container-fluid
+    footer.container-fluid#contacts
         div.container.footer__content
             div.footer__item-logo
                 a(href="#")
@@ -218,7 +219,7 @@ html(lang="en")
 
             
                 
-
+        //script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
         script(src="js/scripts.min.js")
         
             
