@@ -55,15 +55,18 @@ document.getElementById('footerMail').addEventListener('mouseout', function () {
     link.style.textDecoration = 'none';
 });
 
+// get scroll position to show or hide burger menu
 $(window).scroll(function () {
     let offset = $('#aboutSection').offset().top;
     if ($(this).scrollTop() >= offset) {
         $('#burgerMenu').show();
     } else {
         $('#burgerMenu').hide();
+        $('#darkScreen').hide()
     }
 });
 
+// scripts for burger menu
 document.getElementById('burgerImg').addEventListener('click', function () {
     $('.burgerMenu__list').slideToggle("slow", function () {
         $('#burgerImg').hide();
@@ -71,6 +74,7 @@ document.getElementById('burgerImg').addEventListener('click', function () {
         $('#burgerMenu').css({
             'background': '#262626'
         });
+        $('#darkScreen').show()
         let imgNode = document.getElementById('burgerMenuLogo');
         let attr = '/img/finalLogo1.2.svg';
         imgNode.setAttribute('src', attr);
@@ -84,11 +88,28 @@ document.getElementById('crossImg').addEventListener('click', function () {
         $('#burgerMenu').css({
             'background': '#ffffff'
         });
+        $('#darkScreen').hide()
         let imgNode = document.getElementById('burgerMenuLogo');
         let attr = '/img/finalLogo1.svg';
         imgNode.setAttribute('src', attr);
     });
 });
+
+document.getElementById('darkScreen').addEventListener('click', function () {
+    $('.burgerMenu__list').slideToggle("slow", function () {
+        $('#burgerImg').show();
+        $('#crossImg').hide();
+        $('#burgerMenu').css({
+            'background': '#ffffff'
+        });
+        $('#darkScreen').hide()
+        let imgNode = document.getElementById('burgerMenuLogo');
+        let attr = '/img/finalLogo1.svg';
+        imgNode.setAttribute('src', attr);
+    });
+});
+
+
 
 
 
