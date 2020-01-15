@@ -68,12 +68,7 @@ $(window).scroll(function () {
 
 // scripts for burger menu
 document.getElementById('burgerImg').addEventListener('click', function () {
-
     setOfficerInBurgerMenu();
-
-
-
-
     $('.burgerMenu__list').slideToggle("slow", function () {
         $('#burgerImg').hide();
         $('#crossImg').show();
@@ -164,9 +159,57 @@ function setOfficerInBurgerMenu() {
     if (scrollPos >= faqSectionStartPos && scrollPos < faqSectionEndPos) {
         officer.style.top = '243px';
     }
-
 }
+// program section show description on click on FIRST quesion mark
+document.getElementById('programFirstQuestionMark').addEventListener('click', function () {
+    let descriptionBlock = $('#programDescriptionFirst');
+    descriptionBlock.fadeIn('3000', function () {
+        $('#programFirstQuestionMark').hide();
+        $('#programFirstCross').show();
+    });
+});
+// program section hide description on click on FIRST cross
+document.getElementById('programFirstCross').addEventListener('click', function () {
+    let descriptionBlock = $('#programDescriptionFirst');
+    descriptionBlock.fadeOut('3000', function () {
+        $('#programFirstQuestionMark').show();
+        $('#programFirstCross').hide();
+    });
+});
 
+// program section show description on click on Forth quesion mark
+document.getElementById('programForthQuestionMark').addEventListener('click', function () {
+    let descriptionBlock = $('#programDescriptionForth');
+    descriptionBlock.fadeIn('3000', function () {
+        $('#programForthQuestionMark').hide();
+        $('#programForthCross').show();
+    });
+});
+// program section hide description on click on FORTH cross
+document.getElementById('programForthCross').addEventListener('click', function () {
+    let descriptionBlock = $('#programDescriptionForth');
+    descriptionBlock.fadeOut('3000', function () {
+        $('#programForthQuestionMark').show();
+        $('#programForthCross').hide();
+    });
+});
+
+// application section show description on click on question mark
+document.getElementById('applicationQuestionMark').addEventListener('click', function () {
+    let descriptionBlock = $('#applicationDescription');
+    descriptionBlock.fadeIn('3000', function () {
+        $('#applicationQuestionMark').hide();
+        $('#applecationCross').show();
+    });
+});
+// application section hide description on click on question mark
+document.getElementById('applecationCross').addEventListener('click', function () {
+    let descriptionBlock = $('#applicationDescription');
+    descriptionBlock.fadeOut('3000', function () {
+        $('#applicationQuestionMark').show();
+        $('#applecationCross').hide();
+    });
+});
 
 
 

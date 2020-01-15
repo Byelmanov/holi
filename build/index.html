@@ -48,9 +48,13 @@
               <li class="burgerMenu__item"><a href="#roadSection">КАК ЗАПИСАТЬСЯ?</a></li>
               <li class="burgerMenu__item"> <a href="#tutorsSection">ПРЕПОДАВАТЕЛИ</a></li>
               <li class="burgerMenu__item"><a href="#faqSection">FAQ</a></li>
+              <li class="burgerMenu__officer" id="burgerMenuOfficer">
+                <p class="burgerMenu__officer-text">вы здесь</p><img class="burgerMenu__officer-img" src="/img/officer 1.svg" alt="officer"/>
+              </li>
             </ul>
           </div>
         </div>
+        <div class="darkScreen" id="darkScreen"></div>
       </nav>
     </header>
   </body>
@@ -86,7 +90,12 @@
             <div class="program__textBlock program__textBlock--first">
               <p class="program__text"><span>Small talk</span></p>
               <p class="program__text">15 минут перед началом курса</p>
-              <p class="program__questionMark program__questionMark--first">?</p>
+              <p class="program__questionMark program__questionMark--first" id="programFirstQuestionMark">?</p>
+              <p class="program__cross program__cross--first" id="programFirstCross">x</p>
+              <div class="program__questionMark--first-description" id="programDescriptionFirst">
+                <h4>Small talk</h4>
+                <p>Это время, когда вы знакомитесь с преподавателем, обсуждаете детали, обмениваетесь контактами. </p><span>назначается после<br>оплаты курса </span>
+              </div>
             </div>
           </div>
           <div class="program__item program__item--second">
@@ -126,15 +135,22 @@
               <p class="program__textBlock-text"><span>4</span> базовые грамматические темы</p>
               <p class="program__textBlock-text"><span>+</span></p>
               <p class="program__textBlock-text"><span>1</span> грамматическая тема на выбор</p>
-              <p class="program__questionMark program__questionMark--forth">?</p>
+              <p class="program__questionMark program__questionMark--forth" id="programForthQuestionMark">?</p>
+              <p class="program__cross program__cross--forth" id="programForthCross">x</p>
+              <div class="program__questionMark--forth-description" id="programDescriptionForth">
+                <h4><span>5</span> недель курса<br>=<br><span>5</span> тем.</h4>
+                <p>Мы выбрали 4 базовые темы. И предлагаем Вам выбрать 1 тему (которая будет на последней неделе) </p>
+              </div>
             </div>
             <div class="program__officer program__officer--right"></div>
           </div>
         </div>
-        <div class="program__priceHeading" id="priceSection">Стоимость</div>
-        <div class="program__price">
-          <h3 class="program__price-textPrice">130 €</h3>
-          <p class="program__price-text">единоразовый платеж</p>
+        <div class="program__priceSection" id="priceSection">
+          <div class="program__priceHeading">Стоимость</div>
+          <div class="program__price">
+            <h3 class="program__price-textPrice">130 €</h3>
+            <p class="program__price-text">единоразовый платеж</p>
+          </div>
         </div><img class="program__bigben" src="/img/bigben.svg" alt="BIG BEN"/>
       </div>
     </main>
@@ -148,7 +164,7 @@
       <h2 class="road__heading road__heading--normal">записаться?</h2><img class="road__car road__car--first" src="../img/car.svg" alt="car"/><img class="road__car road__car--second" src="../img/car.svg" alt="car"/><img class="road__car road__car--third" src="../img/bus.svg" alt="car"/><img class="road__car road__car--forth" src="../img/bus.svg" alt="car"/>
     </div>
   </section>
-  <section class="application container">
+  <section class="application container" id="applicationSection">
     <div class="application__items">
       <div class="application__item">
         <div class="application__item-numberPlusText">
@@ -168,7 +184,12 @@
       <div class="application__item">
         <p class="application__item-number">3</p>
         <p class="application__item-text">Договоритесь о Small talk</p>
-        <p class="application__item-questionMark">?</p>
+        <p class="application__item-questionMark" id="applicationQuestionMark">?</p>
+        <p class="application__item-cross" id="applecationCross">x</p>
+        <div class="application__item-questionMark-description" id="applicationDescription">
+          <h4>Small talk</h4>
+          <p>Это время, когда вы знакомитесь с преподавателем, обсуждаете детали, обмениваетесь контактами. </p><span>назначается после<br>оплаты курса</span>
+        </div>
       </div>
       <hr class="application__hr" noshade="noshade" size="2px" color="#e5e5e5"/>
       <div class="application__item">
