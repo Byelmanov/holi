@@ -6,7 +6,7 @@ html(lang="en")
         header.container
             div.header__logo
                 img(src="img/finalLogo1.svg", alt="HoLi logo")
-                a(href="#contacts" class="header__contacts") контакты
+                a(href="#contacts" class="header__contacts anchorScrollFooter") контакты
             div.header__about
                 h1.header__heading Это<br/>Интенсив<br/>Английского
                 div.header__description
@@ -18,17 +18,17 @@ html(lang="en")
             nav
                 div.header__blocks.row.no-gutters.justify-content-around
                     div.header__block.col-12.col-md-6.col-xl-4 
-                        a(href="#aboutSection" class="header__nav-links") Что такое интенсив?
+                        a(href="#aboutSection" class="header__nav-links anchorScrollHeader") Что такое интенсив?
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="#programSection" class="header__nav-links") Программа
+                        a(href="#programSection" class="header__nav-links anchorScrollHeader") Программа
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="#priceSection" class="header__nav-links") Стоимость
+                        a(href="#priceSection" class="header__nav-links anchorScrollHeader") Стоимость
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="#roadSection" class="header__nav-links") Как записаться?
+                        a(href="#roadSection" class="header__nav-links anchorScrollHeader") Как записаться?
                     div.header__block.col-12.col-md-6.col-xl-4 
-                        a(href="#tutorsSection" class="header__nav-links") Преподаватели
+                        a(href="#tutorsSection" class="header__nav-links anchorScrollHeader") Преподаватели
                     div.header__block.col-12.col-md-6.col-xl-4
-                        a(href="#faqSection" class="header__nav-links") FAQ
+                        a(href="#faqSection" class="header__nav-links anchorScrollHeader") FAQ
             include includes/burgerMenu.pug
 
     section.about.container-fluid#aboutSection
@@ -193,22 +193,22 @@ html(lang="en")
                 p.footer__developedInfo developed by</br><span>yelmanovbohdan@gmail.com</span></br>&amp;</br>designed by</br><span>lishchynskayaanna@gmail.com</span>
             ul.footer__item-nav
                 li.footer__item-nav-li 
-                    a(href="") ЧТО ТАКОЕ ИНТЕНСИВ?
+                    a(href="#aboutSection", class="anchorScrollFooter") ЧТО ТАКОЕ ИНТЕНСИВ?
                 br
                 li.footer__item-nav-li 
-                    a(href="") ПРОГРАММА
+                    a(href="#programSection", class="anchorScrollFooter") ПРОГРАММА
                 br
                 li.footer__item-nav-li 
-                    a(href="") СТОИМОСТЬ
+                    a(href="#priceSection", class="anchorScrollFooter") СТОИМОСТЬ
                 br
                 li.footer__item-nav-li 
-                    a(href="") КАК ЗАПИСАТЬСЯ?
+                    a(href="#roadSection", class="anchorScrollFooter") КАК ЗАПИСАТЬСЯ?
                 br
                 li.footer__item-nav-li 
-                    a(href="") ПРЕПОДАВАТЕЛИ
+                    a(href="#tutorsSection", class="anchorScrollFooter") ПРЕПОДАВАТЕЛИ
                 br
                 li.footer__item-nav-li
-                    a(href="") FAQ
+                    a(href="#faqSection", class="anchorScrollFooter") FAQ
             div.footer__item-networks
                 h3.footer__item-networks-heading Социальные сети
                 div.footer__item-networks-instagram#footerInstagram
