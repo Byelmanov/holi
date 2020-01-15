@@ -232,6 +232,48 @@ function anchorScrollTo(element) {
     }, 500);
 }
 
+// scripts for accordeon in FAQ section
+
+$('.faq__accordeon--head').click(function () {
+    let elem = $(this).next('.faq__accordeon--body');
+    if (elem.is(':hidden')) {
+        hideAllAccordeonBodies();
+        showAccordeonBody(elem);
+    } else {
+        hideAllAccordeonBodies();
+    }
+});
+
+function hideAllAccordeonBodies() {
+    $('.faq__accordeon--body').each(function () {
+        if ($(this).is(':visible')) {
+            $(this).slideUp('3000');
+            let accordeonHead = $(this).prev('.faq__accordeon--head');
+            let plusSymbol = accordeonHead.children('p');
+
+            accordeonHead.css({
+                'border-bottom': '2px solid #EB6FBD'
+            });
+            plusSymbol.text('+');
+            plusSymbol.css({
+                'font-size': '35px'
+            });
+        }
+    });
+}
+function showAccordeonBody(elem) {
+    elem.slideDown('3000');
+    let accordeonHead = elem.prev('.faq__accordeon--head');
+    let plusSymbol = accordeonHead.children('p');
+
+    accordeonHead.css({
+        'border': 'none'
+    });
+    plusSymbol.text('-');
+    plusSymbol.css({
+        'font-size': '50px'
+    });
+}
 
 
 
