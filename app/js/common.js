@@ -68,6 +68,12 @@ $(window).scroll(function () {
 
 // scripts for burger menu
 document.getElementById('burgerImg').addEventListener('click', function () {
+
+    setOfficerInBurgerMenu();
+
+
+
+
     $('.burgerMenu__list').slideToggle("slow", function () {
         $('#burgerImg').hide();
         $('#crossImg').show();
@@ -92,6 +98,7 @@ document.getElementById('crossImg').addEventListener('click', function () {
         let imgNode = document.getElementById('burgerMenuLogo');
         let attr = '/img/finalLogo1.svg';
         imgNode.setAttribute('src', attr);
+        document.getElementById('burgerMenuOfficer').style.top = '-50px';
     });
 });
 
@@ -106,8 +113,61 @@ document.getElementById('darkScreen').addEventListener('click', function () {
         let imgNode = document.getElementById('burgerMenuLogo');
         let attr = '/img/finalLogo1.svg';
         imgNode.setAttribute('src', attr);
+        document.getElementById('burgerMenuOfficer').style.top = '-50px';
     });
 });
+
+function setOfficerInBurgerMenu() {
+    let deviceHeight = window.screen.availHeight;
+    let halfDeviceHeight = deviceHeight / 2;
+
+    let officer = document.getElementById('burgerMenuOfficer');
+
+    let aboutSection = document.getElementById('aboutSection');
+    let programSection = document.getElementById('programSection');
+    let priceSection = document.getElementById('priceSection');
+    let roadSection = document.getElementById('roadSection');
+    let applicationSection = document.getElementById('applicationSection');
+    let tutorsSection = document.getElementById('tutorsSection');
+    let faqSection = document.getElementById('faqSection');
+
+    let aboutSectionStartPos = aboutSection.offsetTop;
+    let aboutSectionEndPos = aboutSectionStartPos + aboutSection.offsetHeight;
+    let programSectionStartPos = programSection.offsetTop;
+    let programSectionEndPos = programSectionStartPos + priceSection.offsetTop;
+    let priceSectionStartPos = programSectionEndPos;
+    let priceSectionEndPos = programSectionStartPos + programSection.offsetHeight;
+    let roadSectionStartPos = roadSection.offsetTop;
+    let roadSectionEndPos = applicationSection.offsetTop + applicationSection.offsetHeight;
+    let tutorsSectionStartPos = tutorsSection.offsetTop;
+    let tutorsSectionEndPos = tutorsSectionStartPos + faqSection.offsetTop;
+    let faqSectionStartPos = tutorsSectionEndPos;
+    let faqSectionEndPos = tutorsSectionStartPos + tutorsSection.offsetHeight;
+
+    let scrollPos = $(window).scrollTop() + halfDeviceHeight;
+
+    if (scrollPos >= aboutSectionStartPos && scrollPos < aboutSectionEndPos) {
+        officer.style.top = '-37px';
+    }
+    if (scrollPos >= programSectionStartPos && scrollPos < programSectionEndPos) {
+        officer.style.top = '20px';
+    }
+    if (scrollPos >= priceSectionStartPos && scrollPos < priceSectionEndPos) {
+        officer.style.top = '73px';
+    }
+    if (scrollPos >= roadSectionStartPos && scrollPos < roadSectionEndPos) {
+        officer.style.top = '130px';
+    }
+    if (scrollPos >= tutorsSectionStartPos && scrollPos < tutorsSectionEndPos) {
+        officer.style.top = '187px';
+    }
+    if (scrollPos >= faqSectionStartPos && scrollPos < faqSectionEndPos) {
+        officer.style.top = '243px';
+    }
+
+}
+
+
 
 
 
