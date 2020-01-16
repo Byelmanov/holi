@@ -56,8 +56,8 @@ img
 	text-align: center
 
 ::selection
-	background-color: $accent
-	color: #fff
+	background-color: $pink
+	color: $black
 
 .heading
 	text-align: center
@@ -122,7 +122,6 @@ header
 	z-index: 6
 	background: transparent
 	display: none
-	overflow: scroll
 	&__content
 		height: auto
 		line-height: 1
@@ -154,6 +153,7 @@ header
 		padding-bottom: 25px
 		display: none
 		position: relative
+		overflow-y: scroll
 	&__item
 		margin-bottom: 30px
 		a
@@ -423,6 +423,7 @@ header
 		align-items: center
 		justify-content: flex-start
 		margin-bottom: 40px
+		max-width: 640px
 		&--first
 			left: 190px
 		&--second
