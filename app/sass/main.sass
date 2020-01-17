@@ -570,6 +570,8 @@ header
 					color: $purple
 					font-weight: bold
 					margin-right: 3px
+	&__priceSection
+		position: relative
 	&__priceHeading
 		font-size: 30px
 		line-height: 37px
@@ -580,6 +582,67 @@ header
 		color: $black
 		margin-top: 50px
 		margin-bottom: 60px
+	&__priceQuestionMark
+		width: 20px
+		height: 20px
+		background: $purple
+		line-height: 20px
+		font-size: 17px
+		font-family: 'Roboto'
+		color: #fff
+		text-align: center
+		border-radius: 50%
+		position: absolute
+		top: 10px
+		left: 480px
+		cursor: pointer
+	&__priceCross
+		width: 20px
+		height: 20px
+		background: $purple
+		line-height: 18px
+		font-size: 17px
+		color: #fff
+		text-align: center
+		border-radius: 50%
+		font-family: $default-font
+		font-weight: 500
+		position: absolute
+		top: 10px
+		left: 480px
+		cursor: pointer
+		display: none
+	&__priceDescription
+		width: 200px
+		height: 200px
+		background: #fff
+		border-radius: 50%
+		border: 10px solid $purple
+		position: absolute
+		top: -80px
+		left: 525px
+		padding: 53px 20px
+		box-shadow: 0px 4px 4px rgba(235, 111, 189, 0.25)
+		display: none
+		p
+			font-family: $default-font
+			font-weight: 300
+			font-size: 12px
+			line-height: 13px
+			text-align: center
+			color: $black
+			margin: auto
+		&:after
+			content: ''
+			width: 60px
+			height: 10px
+			background: $purple
+			position: absolute
+			border-radius: 0 4px 4px 0
+			transform: rotate(23.76deg)
+			top: 133px
+			right: -55px
+			box-shadow: 0px 4px 4px rgba(235, 111, 189, 0.25)
 	&__price
 		width: 382px
 		height: 360px
@@ -1156,7 +1219,26 @@ header
 		font-family: $default-font
 		color: $black
 		margin-left: 40px
-		margin-bottom: 20px
+		margin-bottom: 30px
+		&-mail
+			display: flex
+			flex-flow: row nowrap
+			align-items: center
+			justify-content: flex-start
+			margin-bottom: 35px
+			margin-left: 40px
+			img
+				width: 60px
+				height: auto
+		&-telegram
+			display: flex
+			flex-flow: row nowrap
+			align-items: center
+			justify-content: flex-start
+			margin-left: 40px
+			img
+				width: 60px
+				height: auto
 	&__email
 		font-size: 50px
 		line-height: 61px
@@ -1164,7 +1246,7 @@ header
 		font-weight: bold
 		font-family: $default-font
 		text-decoration: none
-		margin-left: 40px
+		margin-left: 20px
 		&:hover
 			text-decoration: underline
 
@@ -1222,7 +1304,7 @@ footer
 						transition: width .3s ease-in-out
 		&-networks
 			max-width: 330px
-			min-width: 296px
+			min-width: 330px
 			&-heading
 				font-family: $default-font
 				font-weight: 500
@@ -1231,7 +1313,7 @@ footer
 				letter-spacing: 0.05em
 				color: #fff
 				margin-bottom: 20px
-			&-instagram, &-facebook, &-mail
+			&-instagram, &-facebook, &-mail, &-telegram
 				display: flex
 				flex-flow: row nowrap
 				align-items: flex-start
@@ -1247,16 +1329,14 @@ footer
 					text-decoration: none
 					font-weight: 300
 					font-family: $default-font
-					font-size: 25px
-					line-height: 30px
+					font-size: 22px
+					line-height: 27px
 					letter-spacing: 0.05em
 					// &:hover
 					// 	color: $purple
 					// 	text-decoration: underline
 			&-facebook
 				margin-bottom: 30px
-			&-mail
-				margin-bottom: 0
 				
 					
 	&__logo

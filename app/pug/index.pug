@@ -107,6 +107,10 @@ html(lang="en")
                         div.program__officer.program__officer--right
                 div.program__priceSection#priceSection
                     div.program__priceHeading Стоимость
+                    div.program__priceQuestionMark#priceQuestionMark ?
+                    div.program__priceCross#priceCross x
+                    div.program__priceDescription#priceDescription
+                        p Цена курса стоит в евро, однако при снятии со счета будет произведена конвертация в валюту Вашего банка
                     div.program__price
                         h3.program__price-textPrice 130 €
                         p.program__price-text единоразовый платеж
@@ -127,7 +131,7 @@ html(lang="en")
             div.application__item
                 div.application__item-numberPlusText
                     p.application__item-number 1
-                    a(href="").application__item-link Оставьте заявку!
+                    a(href="").application__item-link Получить курс
                 p.application__item-text--purple.application__item-text--purple-first 2 минуты
             hr(noshade, size="2px", color="#e5e5e5").application__hr
             div.application__item
@@ -207,12 +211,23 @@ html(lang="en")
                     p.faq__accordeon--body-text Оплата производится единоразовым платежом, полная стоимость курса. 
                     h4 <b>Возврат</b>
                     p.faq__accordeon--body-text При необходимости, в течение первой недели со дня начала занятий возможен возврат средств за неиспользованный период занятий.
+                div.faq__accordeon--head 
+                    h3 ПОЧЕМУ ЦЕНА В ЕВРО? КАК ОПЛАТИТЬ В ДРУГОЙ ВАЛЮТЕ?
+                    p +
+                div.faq__accordeon--body
+                    p.faq__accordeon--body-text Цена в евро, потому что наш офис находится в Литве. 
+                    p.faq__accordeon--body-text Снятие средств с Вашей карты осуществится в валюте Вашей карты.
 
+            div#contacts
+                p.faq__connect Свяжитесь с нами
+                div.faq__connect-mail
+                    img(src="img/email.svg", alt="email")
+                    a(href="mailto:yelmanovbohdan@gmail.com?subject=hello").faq__email contact@holieng.online
+                div.faq__connect-telegram
+                    img(src="img/telegram.svg", alt="telegram")
+                    a(href="").faq__email holi.eng
 
-            p.faq__connect Свяжитесь с нами
-            a(href="mailto:yelmanovbohdan@gmail.com?subject=hello").faq__email contact@holi.com
-
-    footer.container-fluid#contacts
+    footer.container-fluid
         div.container.footer__content
             div.footer__item-logo
                 a(href="#")
@@ -250,8 +265,11 @@ html(lang="en")
                 div.footer__item-networks-mail#footerMail
                     a(href="mailto:yelmanovbohdan@gmail.com?subject=hello")
                         img(src="/img/mail.svg", alt="mail logo", id="footerMailImg")
-                    a(href="mailto:yelmanovbohdan@gmail.com?subject=hello", id="footerMailLink") contact@holi.com
-
+                    a(href="mailto:yelmanovbohdan@gmail.com?subject=hello", id="footerMailLink") contact@holieng.online
+                div.footer__item-networks-telegram#footerTelegram
+                    a(href="")
+                        img(src="img/telegramWhite.svg", alt="telegram logo", id="footerTelegramImg")
+                    a(href="", id="footerTelegramLink") holi.eng
 
 
 

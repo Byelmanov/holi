@@ -54,6 +54,24 @@ document.getElementById('footerMail').addEventListener('mouseout', function () {
     link.style.color = '#fff';
     link.style.textDecoration = 'none';
 });
+// hover for telegram in footer
+document.getElementById('footerTelegram').addEventListener('mouseover', function () {
+    let imgNode = document.getElementById('footerTelegramImg');
+    let attr = '/img/telegramPink.svg';
+    imgNode.setAttribute('src', attr);
+    let link = document.getElementById('footerTelegramLink');
+    link.style.color = '#EB6FBD';
+    link.style.textDecoration = 'underline';
+
+});
+document.getElementById('footerTelegram').addEventListener('mouseout', function () {
+    let imgNode = document.getElementById('footerTelegramImg');
+    let attr = '/img/telegramWhite.svg';
+    imgNode.setAttribute('src', attr);
+    let link = document.getElementById('footerTelegramLink');
+    link.style.color = '#fff';
+    link.style.textDecoration = 'none';
+});
 
 // for doing animation once
 let triggerForArrows = true;
@@ -164,15 +182,15 @@ function animateArrowsInAboutSection() {
     let secondArrow = document.getElementById('aboutScrollArrow2');
     let thirdArrow = document.getElementById('aboutScrollArrow3');
 
-    setTimeout(showOneArrowInAboutSection, 500, firstArrow);
-    setTimeout(showOneArrowInAboutSection, 1000, secondArrow);
-    setTimeout(showOneArrowInAboutSection, 1500, thirdArrow);
-    setTimeout(hideOneArrowInAboutSection, 2000, firstArrow);
-    setTimeout(hideOneArrowInAboutSection, 2000, secondArrow);
-    setTimeout(hideOneArrowInAboutSection, 2000, thirdArrow);
-    setTimeout(showOneArrowInAboutSection, 2500, firstArrow);
-    setTimeout(showOneArrowInAboutSection, 3000, secondArrow);
-    setTimeout(showOneArrowInAboutSection, 3500, thirdArrow);
+    setTimeout(showOneArrowInAboutSection, 0, firstArrow);
+    setTimeout(showOneArrowInAboutSection, 500, secondArrow);
+    setTimeout(showOneArrowInAboutSection, 1000, thirdArrow);
+    setTimeout(hideOneArrowInAboutSection, 1500, firstArrow);
+    setTimeout(hideOneArrowInAboutSection, 1500, secondArrow);
+    setTimeout(hideOneArrowInAboutSection, 1500, thirdArrow);
+    setTimeout(showOneArrowInAboutSection, 2000, firstArrow);
+    setTimeout(showOneArrowInAboutSection, 2500, secondArrow);
+    setTimeout(showOneArrowInAboutSection, 3000, thirdArrow);
 
     triggerForArrows = false;
 }
@@ -295,6 +313,22 @@ document.getElementById('applecationCross').addEventListener('click', function (
     descriptionBlock.fadeOut('3000', function () {
         $('#applicationQuestionMark').show();
         $('#applecationCross').hide();
+    });
+});
+// price section show description on click on question mark
+document.getElementById('priceQuestionMark').addEventListener('click', function () {
+    let descriptionBlock = $('#priceDescription');
+    descriptionBlock.fadeIn('3000', function () {
+        $('#priceQuestionMark').hide();
+        $('#priceCross').show();
+    });
+});
+// price section hide description on click on question mark
+document.getElementById('priceCross').addEventListener('click', function () {
+    let descriptionBlock = $('#priceDescription');
+    descriptionBlock.fadeOut('3000', function () {
+        $('#priceQuestionMark').show();
+        $('#priceCross').hide();
     });
 });
 

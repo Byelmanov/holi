@@ -149,6 +149,11 @@
         </div>
         <div class="program__priceSection" id="priceSection">
           <div class="program__priceHeading">Стоимость</div>
+          <div class="program__priceQuestionMark" id="priceQuestionMark">?</div>
+          <div class="program__priceCross" id="priceCross">x</div>
+          <div class="program__priceDescription" id="priceDescription">
+            <p>Цена курса стоит в евро, однако при снятии со счета будет произведена конвертация в валюту Вашего банка</p>
+          </div>
           <div class="program__price">
             <h3 class="program__price-textPrice">130 €</h3>
             <p class="program__price-text">единоразовый платеж</p>
@@ -170,7 +175,7 @@
     <div class="application__items">
       <div class="application__item">
         <div class="application__item-numberPlusText">
-          <p class="application__item-number">1</p><a class="application__item-link" href="">Оставьте заявку!</a>
+          <p class="application__item-number">1</p><a class="application__item-link" href="">Получить курс</a>
         </div>
         <p class="application__item-text--purple application__item-text--purple-first">2 минуты</p>
       </div>
@@ -267,11 +272,23 @@
           <h4><b>Возврат</b></h4>
           <p class="faq__accordeon--body-text">При необходимости, в течение первой недели со дня начала занятий возможен возврат средств за неиспользованный период занятий.</p>
         </div>
+        <div class="faq__accordeon--head"> 
+          <h3>ПОЧЕМУ ЦЕНА В ЕВРО? КАК ОПЛАТИТЬ В ДРУГОЙ ВАЛЮТЕ?</h3>
+          <p>+</p>
+        </div>
+        <div class="faq__accordeon--body">
+          <p class="faq__accordeon--body-text">Цена в евро, потому что наш офис находится в Литве. </p>
+          <p class="faq__accordeon--body-text">Снятие средств с Вашей карты осуществится в валюте Вашей карты.</p>
+        </div>
       </div>
-      <p class="faq__connect">Свяжитесь с нами</p><a class="faq__email" href="mailto:yelmanovbohdan@gmail.com?subject=hello">contact@holi.com</a>
+      <div id="contacts">
+        <p class="faq__connect">Свяжитесь с нами</p>
+        <div class="faq__connect-mail"><img src="img/email.svg" alt="email"/><a class="faq__email" href="mailto:yelmanovbohdan@gmail.com?subject=hello">contact@holieng.online</a></div>
+        <div class="faq__connect-telegram"><img src="img/telegram.svg" alt="telegram"/><a class="faq__email" href="">holi.eng</a></div>
+      </div>
     </section>
   </section>
-  <footer class="container-fluid" id="contacts">
+  <footer class="container-fluid">
     <div class="container footer__content">
       <div class="footer__item-logo"><a href="#"><img class="footer__logo" src="/img/finalLogo1.2.svg" alt="logo"/></a>
         <p class="footer__developedInfo">developed by</br><span>yelmanovbohdan@gmail.com</span></br>&amp;</br>designed by</br><span>lishchynskayaanna@gmail.com</span></p>
@@ -289,7 +306,8 @@
         <div class="footer__item-networks-instagram" id="footerInstagram"><a href=""><img src="/img/instagram.svg" alt="instagram logo" id="footerInstagramImg"/></a><a href="" id="footerInstagramLink">@holi.eng</a></div>
         <div class="footer__item-networks-facebook" id="footerFacebook"><a href=""><img src="/img/facebook.svg" alt="facebook logo" id="footerFacebookImg"/></a><a href="" id="footerFacebookLink">Holi.eng</a></div>
         <h3 class="footer__item-networks-heading">Свяжитесь с нами</h3>
-        <div class="footer__item-networks-mail" id="footerMail"><a href="mailto:yelmanovbohdan@gmail.com?subject=hello"><img src="/img/mail.svg" alt="mail logo" id="footerMailImg"/></a><a href="mailto:yelmanovbohdan@gmail.com?subject=hello" id="footerMailLink">contact@holi.com</a></div>
+        <div class="footer__item-networks-mail" id="footerMail"><a href="mailto:yelmanovbohdan@gmail.com?subject=hello"><img src="/img/mail.svg" alt="mail logo" id="footerMailImg"/></a><a href="mailto:yelmanovbohdan@gmail.com?subject=hello" id="footerMailLink">contact@holieng.online</a></div>
+        <div class="footer__item-networks-telegram" id="footerTelegram"><a href=""><img src="img/telegramWhite.svg" alt="telegram logo" id="footerTelegramImg"/></a><a href="" id="footerTelegramLink">holi.eng</a></div>
       </div>
     </div>
     <!--script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")-->
