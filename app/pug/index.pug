@@ -6,7 +6,11 @@ html(lang="en")
         header.container
             div.header__logo
                 img(src="img/finalLogo1.svg", alt="HoLi logo")
-                a(href="#contacts" class="header__contacts anchorScrollFooter") контакты
+                div.header__contactsWrap
+                    a(href="#contacts" class="header__contacts anchorScrollFooter") контакты
+                    a(href="" class="header__enter") вход
+                    a(href="" class="header__enterImg")
+                        img(src="img/user.svg", alt="enter")
             div.header__about
                 h1.header__heading Это<br/>Интенсив<br/>Английского
                 div.header__description
