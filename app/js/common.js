@@ -81,7 +81,7 @@ $(window).on("scroll", function () {
     let scroll = $(this).scrollTop();
     let deviceHeight = window.screen.availHeight;
     let scrollPosDown = scroll + deviceHeight;
-    let footerStartPos = document.getElementById('contacts').offsetTop;
+    let footerStartPos = document.getElementById('footer').offsetTop;
     if (scroll >= offset && scrollPosDown - 100 < footerStartPos) {
         $('#burgerMenu').show();
     } else {
@@ -347,6 +347,15 @@ $('.header__block').click(function () {
 $('.anchorScrollFooter').click(function () {
     anchorScrollTo($(this));
 });
+$('.anchorScrollContacts').click(function () {
+    anchorScrollTo($(this));
+});
+
+function fadeInForContacts() {
+    let contactsSection = $('#contacts');
+    contactsSection.fadeIn('400');
+}
+
 
 function anchorScrollTo(element) {
     let anchor = element.attr('href');
