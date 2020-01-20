@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+html(lang="en")
+    include includes/head.pug
+    body
+        section.container-fluid.registration
+            div.enter
+                h2.enter__heading Войти
+                div.enter__cross#enterCross
+                form(action="", method="post", name="enterForm")
+                    label
+                        p.enter__label-text Email
+                        input(type="email", name="enterEmail", required, placeholder="Email", id="enterEmail")
+                    label
+                        p.enter__label-text Password
+                        input(type="password", name="enterPassword", required, placeholder="Password", id="enterPassword")
+                    a(href="", class="enter__forgerPassword") Забыли пароль?
+                    button(type="submit", class="enter__submit") ВОЙТИ
+                p.enter__register Нет аккаунта? 
+                    a(href="") Зарегистрироваться
+            div.register
+                h2.register__heading Создать аккаунт
+                a(href="", class="register__enter") вход
+                div.register__cross#registerCross
+                form(action="", method="post", name="registerForm")
+                    label
+                        p.register__text#registerTextEmail Email
+                        input(type="email", name="registerEmail", placeholder="Email")

@@ -1360,6 +1360,192 @@ footer
 		span
 			text-decoration: underline
 
+.registration
+	width: 100%
+	min-height: 100vh
+	position: relative
+.enter
+	width: 500px
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	height: 510px
+	margin: auto
+	background: #fff
+	border-radius: 10px
+	font-family: $default-font
+	display: none
+	&__heading
+		line-height: 96px
+		text-align: center
+		font-family: $default-font
+		font-weight: bold
+		font-size: 25px
+		color: $black
+		background: linear-gradient(80.53deg, #EB6FBD 0%, #FDF7CB 99.61%)
+		border-radius: 10px 10px 0px 0px
+	&__cross
+		width: 15px
+		height: 15px
+		background-image: url('../img/registrationCross.svg')
+		background-size: contain
+		background-repeat: no-repeat
+		position: absolute
+		top: 20px
+		right: 20px
+		cursor: pointer
+
+	form
+		padding: 35px 50px 40px 50px
+	&__label-text
+		font-size: 15px
+		line-height: 18px
+		font-weight: bold
+		color: $black
+		margin-bottom: 10px
+		position: relative
+		&:after
+			content: '*'
+			font-size: 15px
+			line-height: 18px
+			font-weight: 600
+			color: $purple
+			position: relative
+			top: -6px
+			right: -2px
+	input
+		width: 100%
+		height: 50px
+		outline: none
+		background: #FFFFFF
+		border: 1px solid #D1D0D0
+		border-radius: 10px
+		line-height: 50px
+		padding: 0 20px
+		font-size: 15px
+		font-weight: 500
+		margin-bottom: 20px
+		&::placeholder
+			color: #D1D0D0
+		&::active
+			color: $black
+	input[name="enterPassword"]
+		margin-bottom: 10px
+	&__forgerPassword
+		text-decoration: underline
+		font-weight: 500
+		font-size: 15px
+		line-height: 18px
+		letter-spacing: 0.05em
+		color: #C2BDBD
+		text-align: right
+		display: block
+		margin-bottom: 40px
+	&__submit
+		width: 100%
+		height: 55px
+		line-height: 55px
+		background: $yellow
+		outline: none
+		font-weight: 600
+		font-size: 15px
+		letter-spacing: 0.05em
+		color: $black
+		border-radius: 5px
+		border: none
+		margin-bottom: 20px
+	&__register
+		font-weight: 600
+		font-size: 17px
+		line-height: 21px
+		letter-spacing: 0.05em
+		color: $black
+		text-align: center
+		a
+			text-decoration: underline
+			color: $black
+.register
+	width: 950px
+	height: 500px
+	font-family: $default-font
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	&__heading
+		font-size: 25px
+		line-height: 95px
+		background: linear-gradient(86.75deg, #EB6FBD 3.91%, #FDF7CB 92.88%)
+		border-radius: 10px 10px 0px 0px
+		text-align: center
+		color: $black
+	&__enter
+		font-size: 17px
+		line-height: 21px
+		color: $black
+		text-decoration: underline
+		position: absolute
+		top: 38px
+		left: 38px
+		&:after
+			content: ''
+			background-image: url('../img/user.svg')
+			background-size: contain
+			width: 20px
+			height: 20px
+			display: block
+			position: absolute
+			right: -25px
+			top: 0px
+	&__cross
+		width: 15px
+		height: 15px
+		background-image: url('../img/registrationCross.svg')
+		background-size: contain
+		background-repeat: no-repeat
+		position: absolute
+		top: 20px
+		right: 20px
+		cursor: pointer
+	form
+		display: flex
+		width: 100%
+		height: 100%
+		flex-flow: column nowrap
+		justify-content: center
+		align-items: flex-start
+		padding: 70px 170px 160px 170px
+	&__text
+		font-size: 15px
+		line-height: 18px
+		color: #C2BDBD
+		margin-bottom: 5px
+		text-align: left
+		visibility: hidden
+	input
+		width: 610px
+		height: 50px
+		border: none
+		border-bottom: 1px solid #E5E5E5
+		display: block
+		font-size: 25px
+		line-height: 50px
+		color: $black
+		outline: none
+		position: relative
+		&::placeholder
+			color: #C2BDBD
+	
+
+
+
+
+
+	
 
 
 
