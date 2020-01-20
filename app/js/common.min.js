@@ -75,6 +75,11 @@ document.getElementById('footerTelegram').addEventListener('mouseout', function 
 
 // for doing animation once
 let triggerForArrows = true;
+let trrigerForFirstOfficer = true;
+let trrigerForSecondOfficer = true;
+let trrigerForThirdOfficer = true;
+let trrigerForForthOfficer = true;
+
 // get scroll position
 $(window).on("scroll", function () {
     let offset = $('#aboutSection').offset().top;
@@ -118,7 +123,84 @@ $(window).on("scroll", function () {
     } else {
         triggerForArrows = true;
     }
+
+    // scripts for officers
+    let programSection = document.getElementById('programSection');
+    let programSectionStartPos = programSection.offsetTop;
+
+    let priceSection = document.getElementById('priceSection');
+    let priceSectionStartPos = priceSection.offsetTop + programSectionStartPos;
+
+    let firstOfficer = document.querySelector('.program__item--first');
+    let secondOfficer = document.querySelector('.program__item--second');
+    let thirdOfficer = document.querySelector('.program__item--third');
+    let forthOfficer = document.querySelector('.program__item--forth');
+
+    let firstOfficerStartPos = firstOfficer.offsetTop + programSectionStartPos;
+    let firstOfficerEndPos = firstOfficerStartPos + firstOfficer.offsetHeight;
+    let secondOfficerStartPos = secondOfficer.offsetTop + programSectionStartPos;
+    let secondOfficerEndPos = secondOfficerStartPos + secondOfficer.offsetHeight;
+    let thirdOfficerStartPos = thirdOfficer.offsetTop + programSectionStartPos;
+    let thirdOfficerEndPos = thirdOfficerStartPos + thirdOfficer.offsetHeight;
+    let forthOfficerStartPos = forthOfficer.offsetTop + programSectionStartPos;
+    let forthOfficerEndPos = forthOfficerStartPos + forthOfficer.offsetHeight;
+
+
+
+    let animationNameLeft = 'fadeInLeft';
+    let animationNameRight = 'fadeInRight';
+
+    // if (scrollPosDown >= firstOfficerEndPos && scrollPosDown <= secondOfficerStartPos && trrigerForFirstOfficer) {
+    //     animateCSS(firstOfficer, animationNameLeft);
+    //     trrigerForFirstOfficer = false;
+    // }
+    // if (scrollPosDown >= secondOfficerEndPos && scrollPosDown <= thirdOfficerStartPos && trrigerForSecondOfficer) {
+    //     animateCSS(secondOfficer, animationNameRight);
+    //     trrigerForSecondOfficer = false;
+    // }
+    // if (scrollPosDown >= thirdOfficerEndPos && scrollPosDown <= forthOfficerStartPos && trrigerForThirdOfficer) {
+    //     animateCSS(thirdOfficer, animationNameLeft);
+    //     trrigerForThirdOfficer = false;
+    // }
+    // if (scrollPosDown >= forthOfficerEndPos && scrollPosDown <= priceSectionStartPos && trrigerForForthOfficer) {
+    //     animateCSS(forthOfficer, animationNameRight);
+    //     trrigerForForthOfficer = false;
+    // }
+    if (scrollPosDown >= firstOfficerEndPos && trrigerForFirstOfficer) {
+        firstOfficer.style.visibility = 'visible';
+        animateCSS(firstOfficer, animationNameLeft);
+        trrigerForFirstOfficer = false;
+    }
+    if (scrollPosDown >= secondOfficerEndPos && trrigerForSecondOfficer) {
+        secondOfficer.style.visibility = 'visible';
+        animateCSS(secondOfficer, animationNameRight);
+        trrigerForSecondOfficer = false;
+    }
+    if (scrollPosDown >= thirdOfficerEndPos && trrigerForThirdOfficer) {
+        thirdOfficer.style.visibility = 'visible';
+        animateCSS(thirdOfficer, animationNameLeft);
+        trrigerForThirdOfficer = false;
+    }
+    if (scrollPosDown >= forthOfficerEndPos && trrigerForForthOfficer) {
+        forthOfficer.style.visibility = 'visible';
+        animateCSS(forthOfficer, animationNameRight);
+        trrigerForForthOfficer = false;
+    }
+
 });
+
+function animateCSS(node, animationName) {
+    node.classList.add('animated', animationName);
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName);
+        node.removeEventListener('animationend', handleAnimationEnd);
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd);
+
+
+}
 
 
 
@@ -351,10 +433,6 @@ $('.anchorScrollContacts').click(function () {
     anchorScrollTo($(this));
 });
 
-function fadeInForContacts() {
-    let contactsSection = $('#contacts');
-    contactsSection.fadeIn('400');
-}
 
 
 function anchorScrollTo(element) {
