@@ -408,6 +408,8 @@ function showAccordeonBody(elem) {
     });
 }
 
+// script for print heading
+
 const headerHeading1 = "Это";
 const headerHeading2 = "Интенсив";
 const headerHeading3 = "Английского";
@@ -443,12 +445,40 @@ function offBorder(id) {
     block.style.border = 'none';
 }
 
-printWithInterval(headerHeading1, 'headerHeadingPart1');
-setTimeout(offBorder, 600, 'headerHeadingPart1');
-setTimeout(printWithInterval, 450, headerHeading2, 'headerHeadingPart2');
-setTimeout(offBorder, 1650, 'headerHeadingPart2');
-setTimeout(printWithInterval, 1500, headerHeading3, 'headerHeadingPart3');
-setTimeout(offBorder, 3800, 'headerHeadingPart3');
+$(function () {
+    printWithInterval(headerHeading1, 'headerHeadingPart1');
+    setTimeout(offBorder, 600, 'headerHeadingPart1');
+    setTimeout(printWithInterval, 450, headerHeading2, 'headerHeadingPart2');
+    setTimeout(offBorder, 1650, 'headerHeadingPart2');
+    setTimeout(printWithInterval, 1500, headerHeading3, 'headerHeadingPart3');
+    setTimeout(offBorder, 3800, 'headerHeadingPart3');
+
+});
+
+
+// script for moving cars in road section
+
+let trrigerForCar = true;
+
+$('.road__car').on('mouseover', function () {
+    let car = $(this);
+    let leftPos = car.css('left');
+    if (trrigerForCar) {
+        trrigerForCar = false;
+        car.animate({
+            left: '+=50'
+        }, 1500, function () {
+            car.animate({
+                left: leftPos
+            }, 1500, function () {
+                trrigerForCar = true;
+            });
+        });
+    }
+});
+
+
+
 
 
 
