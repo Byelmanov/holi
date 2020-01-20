@@ -458,20 +458,71 @@ $(function () {
 
 // script for moving cars in road section
 
-let trrigerForCar = true;
+let trrigerForFirstCar = true;
+let trrigerForSecondCar = true;
+let trrigerForThirdCar = true;
+let trrigerForForthCar = true;
 
-$('.road__car').on('mouseover', function () {
+$('.road__car--first').on('mouseover', function () {
     let car = $(this);
     let leftPos = car.css('left');
-    if (trrigerForCar) {
-        trrigerForCar = false;
+    if (trrigerForFirstCar) {
+        trrigerForFirstCar = false;
         car.animate({
             left: '+=50'
         }, 1500, function () {
             car.animate({
                 left: leftPos
             }, 1500, function () {
-                trrigerForCar = true;
+                trrigerForFirstCar = true;
+            });
+        });
+    }
+});
+$('.road__car--second').on('mouseover', function () {
+    let car = $(this);
+    let leftPos = car.css('left');
+    if (trrigerForSecondCar) {
+        trrigerForSecondCar = false;
+        car.animate({
+            left: '+=50'
+        }, 1500, function () {
+            car.animate({
+                left: leftPos
+            }, 1500, function () {
+                trrigerForSecondCar = true;
+            });
+        });
+    }
+});
+$('.road__car--third').on('mouseover', function () {
+    let car = $(this);
+    let leftPos = car.css('left');
+    if (trrigerForThirdCar) {
+        trrigerForThirdCar = false;
+        car.animate({
+            left: '+=50'
+        }, 1500, function () {
+            car.animate({
+                left: leftPos
+            }, 1500, function () {
+                trrigerForThirdCar = true;
+            });
+        });
+    }
+});
+$('.road__car--forth').on('mouseover', function () {
+    let car = $(this);
+    let leftPos = car.css('left');
+    if (trrigerForForthCar) {
+        trrigerForForthCar = false;
+        car.animate({
+            left: '+=50'
+        }, 1500, function () {
+            car.animate({
+                left: leftPos
+            }, 1500, function () {
+                trrigerForForthCar = true;
             });
         });
     }
