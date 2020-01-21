@@ -102,19 +102,18 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function () {
 gulp.task('deploy', function () {
 
 	var conn = ftp.create({
-		host: 'hostname.com',
-		user: 'username',
-		password: 'userpassword',
+		host: 'www.zzz.com.ua',
+		user: 'anleshch',
+		password: 'Boryspilska26z',
 		parallel: 10,
 		log: gutil.log
 	});
 
 	var globs = [
 		'build/**',
-		'build/.htaccess',
 	];
 	return gulp.src(globs, { buffer: false })
-		.pipe(conn.dest('/path/to/folder/on/server'));
+		.pipe(conn.dest('/holi.zzz.com.ua'));
 
 });
 
