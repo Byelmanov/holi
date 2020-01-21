@@ -175,7 +175,7 @@
     <div class="application__items">
       <div class="application__item">
         <div class="application__item-numberPlusText">
-          <p class="application__item-number">1</p><a class="application__item-link" href="">Зарегистрируйтесь</a>
+          <p class="application__item-number">1</p><a class="application__item-link" id="applicationEnterLink">Зарегистрируйтесь</a>
         </div>
         <p class="application__item-text--purple application__item-text--purple-first">1 минута</p>
       </div>
@@ -317,7 +317,50 @@
         <div class="footer__item-networks-telegram" id="footerTelegram"><a href=""><img src="img/telegramWhite.svg" alt="telegram logo" id="footerTelegramImg"/></a><a href="" id="footerTelegramLink">holi.eng</a></div>
       </div>
     </div>
-    <!--script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")-->
-    <script src="js/scripts.min.js"></script>
   </footer>
+  <section class="container-fluid registration" id="registrationDarkScreen">
+    <div class="enter" id="enterWindow">
+      <h2 class="enter__heading">Войти</h2>
+      <div class="enter__cross" id="enterCross"></div>
+      <form action="" method="post" name="enterForm">
+        <label>
+          <p class="enter__label-text">Email</p>
+          <input type="email" name="enterEmail" required="required" placeholder="Email" id="enterEmail"/>
+        </label>
+        <label>
+          <p class="enter__label-text">Password</p>
+          <input type="password" name="enterPassword" required="required" placeholder="Password" id="enterPassword"/>
+        </label><a class="enter__forgerPassword" href="">Забыли пароль?</a>
+        <button class="enter__submit" type="submit">ВОЙТИ</button>
+      </form>
+      <p class="enter__register">Нет аккаунта?<a id="enterLinkToRegister">Зарегистрироваться</a></p>
+    </div>
+    <div class="register" id="registerWindow">
+      <h2 class="register__heading">Создать аккаунт</h2><a class="register__enter" id="registerLinkToEnter">вход</a>
+      <div class="register__cross" id="registerCross"></div>
+      <form class="register__form" action="" method="post" name="registerForm" id="registartionForm">
+        <label class="register__emailLabel" id="registerEmailLabel">
+          <p class="register__text" id="registerTextEmail">Email</p>
+          <input type="email" name="registerEmail" placeholder="Email" id="registerEmail"/>
+          <div class="register__tick--email"></div>
+          <div class="register__wrapUnderInput register__wrapUnderInput--email">
+            <p class="register__capture" id="registerCapture">Мы не будем отправлять Вам спам или передавать базу данных</p>
+            <p class="register__warning register__warning--email" id="registerWarningEmail">Заполните это поле, пожалуйста</p>
+            <div class="register__nextButton" id="registerNextButton">Далее</div>
+          </div>
+        </label>
+        <label class="register__passwordLabel" id="registerPasswordLabel">
+          <p class="register__text" id="registerTextPassword">Password</p>
+          <input type="password" name="registerPassword" placeholder="Password" id="registerPassword"/>
+          <div class="register__tick--password"></div>
+          <div class="register__wrapUnderInput register__wrapUnderInput--password">
+            <p class="register__warning register__warning--password" id="registerWarningPassword">Заполните это поле, пожалуйста</p>
+            <button class="register__submitButton" type="submit" id="registerSubmit">Создать</button>
+          </div>
+        </label>
+      </form>
+    </div>
+  </section>
+  <!--script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")-->
+  <script src="js/scripts.min.js"></script>
 </html>

@@ -136,7 +136,7 @@ html(lang="en")
             div.application__item
                 div.application__item-numberPlusText
                     p.application__item-number 1
-                    a(href="").application__item-link Зарегистрируйтесь
+                    a.application__item-link#applicationEnterLink Зарегистрируйтесь
                 p.application__item-text--purple.application__item-text--purple-first 1 минута
             hr(noshade, size="2px", color="#e5e5e5").application__hr
             div.application__item
@@ -281,15 +281,16 @@ html(lang="en")
                         img(src="img/telegramWhite.svg", alt="telegram logo", id="footerTelegramImg")
                     a(href="", id="footerTelegramLink") holi.eng
 
+    
 
-
+    include includes/registration.pug
 
 
 
 
             
                 
-        //script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
-        script(src="js/scripts.min.js")
+    //script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="js/scripts.min.js")
         
             
