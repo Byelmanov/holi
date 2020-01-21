@@ -21,7 +21,19 @@ html(lang="en")
                 h2.register__heading Создать аккаунт
                 a(href="", class="register__enter") вход
                 div.register__cross#registerCross
-                form(action="", method="post", name="registerForm")
-                    label
+                form(action="", method="post", name="registerForm", class="register__form")
+                    label.register__emailLabel.register__emailLabel
                         p.register__text#registerTextEmail Email
                         input(type="email", name="registerEmail", placeholder="Email")
+                        div.register__tick--email
+                        div.register__wrapUnderInput.register__wrapUnderInput--email
+                            p.register__capture Мы не будем отправлять Вам спам или передавать базу данных
+                            p.register__warning.register__warning--email Заполните это поле, пожалуйста
+                            div.register__nextButton Далее
+                    label.register__passwordLabel.register__passwordLabel--small
+                        p.register__text#registerTextPassword Password
+                        input(type="password", name="registerPassword", placeholder="Password")
+                        div.register__tick--password
+                        div.register__wrapUnderInput.register__wrapUnderInput--password
+                            p.register__warning.register__warning--password Заполните это поле, пожалуйста
+                            button(type="submit").register__submitButton Создать

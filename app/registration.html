@@ -32,10 +32,25 @@
       <div class="register">
         <h2 class="register__heading">Создать аккаунт</h2><a class="register__enter" href="">вход</a>
         <div class="register__cross" id="registerCross"></div>
-        <form action="" method="post" name="registerForm">
-          <label>
+        <form class="register__form" action="" method="post" name="registerForm">
+          <label class="register__emailLabel register__emailLabel">
             <p class="register__text" id="registerTextEmail">Email</p>
             <input type="email" name="registerEmail" placeholder="Email"/>
+            <div class="register__tick--email"></div>
+            <div class="register__wrapUnderInput register__wrapUnderInput--email">
+              <p class="register__capture">Мы не будем отправлять Вам спам или передавать базу данных</p>
+              <p class="register__warning register__warning--email">Заполните это поле, пожалуйста</p>
+              <div class="register__nextButton">Далее</div>
+            </div>
+          </label>
+          <label class="register__passwordLabel register__passwordLabel--small">
+            <p class="register__text" id="registerTextPassword">Password</p>
+            <input type="password" name="registerPassword" placeholder="Password"/>
+            <div class="register__tick--password"></div>
+            <div class="register__wrapUnderInput register__wrapUnderInput--password">
+              <p class="register__warning register__warning--password">Заполните это поле, пожалуйста</p>
+              <button class="register__submitButton" type="submit">Создать</button>
+            </div>
           </label>
         </form>
       </div>
