@@ -8,12 +8,5 @@ document.getElementById('profileBurgerMenuUser').addEventListener('click', funct
 });
 
 document.getElementById('profileUploadPhoto').addEventListener('change', function (e) {
-    let fileName = this.value.split('\\').pop();
-    let label = document.getElementById('profileUploadLabel');
-    let labelText = label.innerText;
-    if (fileName) {
-        label.innerText = fileName;
-    } else {
-        label.innerText = labelText;
-    }
+
 });
