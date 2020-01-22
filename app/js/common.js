@@ -763,3 +763,6 @@ document.getElementById('enterLinkToRegister').addEventListener('click', showReg
 document.getElementById('registerLinkToEnter').addEventListener('click', showEnterWindow);
 
 
+
+
+

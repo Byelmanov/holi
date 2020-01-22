@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/profileBurgerMenu.pug
+        section.profile.container-fluid
+            div.container
+                div.row.no-gutters.justify-content-between
+                    div.col-12.col-xl-6.profile__item.profile__item--user
+                        div.profile__item-content
+                            div.profile__item--user-photoWrap
+                                div.profile__item--user-img
+                                form(action="", method="post", name="profileUploadPhotoForm")
+                                    label(for="profileUploadPhoto", class="profile__item--user-label", id="profileUploadLabel") upload photo
+                                    input(type="file", name="profileUploadPhoto", id="profileUploadPhoto", class="profile__item--user-input")
+                            div.progile__item--user-data
+                    div.col-12.col-xl-6.profile__item.profile__item--user
+                        div.profile__item-content
+                            div.profile__item--user-photoWrap
+                                div.profile__item--user-img
+
+        script(src="js/allCourses.js")
+                                
+                            
+
+

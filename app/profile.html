@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+      <meta name="description" content=""/>
+      <meta name="theme-color" content="#000"/>
+      <meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
+      <title>HoLi</title>
+      <link rel="shortcut icon" href="img/finalLogo2.ico" type="image/png"/>
+      <link rel="stylesheet" href="css/main.min.css"/>
+    </head>
+  </head>
+  <body>
+    <nav>
+      <div class="profile__burgerMenu">
+        <div class="profile__burgerMenu--head"> <a class="profile__burgerMenu-logo" href=""><img src="img/finalLogo1.2.svg" alt="Logo"/></a>
+          <div class="profile__burgerMenu-items"><a class="profile__burgerMenu-item" href="">ALL COURSES</a><a class="profile__burgerMenu-item" href="">MY COURSES</a><a class="profile__burgerMenu-item profile__burgerMenu-item--active" href="">PROFILE</a>
+            <div class="profile__burgerMenu-userImg" id="profileBurgerMenuUser"></div>
+            <div class="profile__burgerMenu-signOut" id="profileBurgerMenuSignOut"><a class="profile__burgerMenu-signOut-img" href=""><img src="img/signOut.svg" alt="Sign Out"/></a><a class="profile__burgerMenu-signOut-link" href="">SIGN OUT</a></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="profile container-fluid">
+      <div class="container">
+        <div class="row no-gutters justify-content-between">
+          <div class="col-12 col-xl-6 profile__item profile__item--user">
+            <div class="profile__item-content">
+              <div class="profile__item--user-photoWrap">
+                <div class="profile__item--user-img"></div>
+                <form action="" method="post" name="profileUploadPhotoForm">
+                  <label class="profile__item--user-label" for="profileUploadPhoto" id="profileUploadLabel">upload photo</label>
+                  <input class="profile__item--user-input" type="file" name="profileUploadPhoto" id="profileUploadPhoto"/>
+                </form>
+              </div>
+              <div class="progile__item--user-data"></div>
+            </div>
+          </div>
+          <div class="col-12 col-xl-6 profile__item profile__item--user">
+            <div class="profile__item-content">
+              <div class="profile__item--user-photoWrap">
+                <div class="profile__item--user-img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/allCourses.js"></script>
+  </body>
+</html>
