@@ -614,7 +614,7 @@ enterForm.addEventListener('submit', function (event) {
     let email = document.getElementById('enterEmail').value;
     let password = document.getElementById('enterPassword').value;
     if (checkIsEmpty(email) && checkIsEmpty(password) && checkEmail(email)) {
-        this.submit;
+        enterForm.submit();
     }
 });
 

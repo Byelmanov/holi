@@ -14,48 +14,48 @@ html(lang="en")
 
         section.profile.container-fluid
             div.container
-                div.row.no-gutters.justify-content-between
-                    div.col-12.col-xl-6.profile__item
-                        div.profile__item-content.profile__item-content--user
-                            div.profile__item--user-photoWrap
-                                div.profile__item--user-img
-                                form(action="", method="post", name="profileUploadPhotoForm")
+                form(action="", method="post", name="profileUserContacts")
+                    div.row.no-gutters.justify-content-between
+                        div.col-12.col-xl-6.profile__item
+                            div.profile__item-content.profile__item-content--user
+                                div.profile__item--user-photoWrap
+                                    div.profile__item--user-img
                                     label(for="profileUploadPhoto", class="profile__item--user-label", id="profileUploadLabel") upload photo
                                     input(type="file", name="profileUploadPhoto", id="profileUploadPhoto", class="profile__item--user-input")
-                            div.progile__item--user-data
-                                form(action="", method="post", name="profileName")
+                                div.progile__item--user-data
                                     label
                                         p.profile__item--user-name First name:
-                                        input(type="text", name="profileFirstName", placeholder="FIRST NAME", class="profile__item--user-name-input")   
+                                        input(type="text", name="profileFirstName", placeholder="FIRST NAME", class="profile__item--user-name-input" id="profileFirstName")   
                                     label
                                         p.profile__item--user-name Last name:
-                                        input(type="text", name="profileLastName", placeholder="LAST NAME", class="profile__item--user-name-input")
-                    div.col-12.col-xl-6.profile__item
-                        div.profile__item-content.profile__item-content--contact
-                            h3.profile__item-heading Contact Information
-                            form(action="", method="post", name="profileContactInformation")
+                                        input(type="text", name="profileLastName", placeholder="LAST NAME", class="profile__item--user-name-input" id="profileLastName")
+                        div.col-12.col-xl-6.profile__item
+                            div.profile__item-content.profile__item-content--contact
+                                h3.profile__item-heading Contact Information
                                 label.profile__item--contact-phoneWrap
                                     p Mobile
-                                    input(type="tel", name="profileTel", placeholder="MY PHONE NUMBER")
+                                    input(type="tel", name="profileTel", placeholder="MY PHONE NUMBER" id="profilePhone")
                                 label.profile__item--contact-skypeWrap
-                                    p Mobile
-                                    input(type="tel", name="profileSkype", placeholder="MY SKYPE NAME")
+                                    p Skype
+                                    input(type="tel", name="profileSkype", placeholder="MY SKYPE NAME" id="profileSkype")
                                 p.profile__item--contact-capture your course will be conducted via Skype
-                    div.col-12.col-xl-6.profile__item
-                        div.profile__item-content.profile__item-content--account
-                            h3.profile__item-heading Account
-                            div.profile__item--account-emailWrap
-                                p.name Email
-                                p.value lishchynskayaanna@gmail.com
-                                p.edit edit
-                            div.profile__item--account-passwordWrap
-                                p.name Password
-                                p.value ***********
-                                p.edit edit
-                    div.col-12.col-xl-6.profile__item
-                        div.profile__item-content.profile__item-content--payment
-                            h3.profile__item-heading Payment information
-
+                        div.col-12.col-xl-6.profile__item
+                            div.profile__item-content.profile__item-content--account
+                                h3.profile__item-heading Account
+                                div.profile__item--account-emailWrap
+                                    p.name Email
+                                    p.value lishchynskayaanna@gmail.com
+                                    p.edit edit
+                                div.profile__item--account-passwordWrap
+                                    p.name Password
+                                    p.value ***********
+                                    p.edit edit
+                        div.col-12.col-xl-6.profile__item
+                            div.profile__item-content.profile__item-content--payment
+                                h3.profile__item-heading Payment information
+                    div.profile__submitSection
+                        button(type="submit").profile__submitWithoutBuying Save profile without buying
+                        button(type="submit").profile__submitButton save
                                 
                                     
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")

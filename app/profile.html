@@ -36,67 +36,67 @@
     </section>
     <section class="profile container-fluid">
       <div class="container">
-        <div class="row no-gutters justify-content-between">
-          <div class="col-12 col-xl-6 profile__item">
-            <div class="profile__item-content profile__item-content--user">
-              <div class="profile__item--user-photoWrap">
-                <div class="profile__item--user-img"></div>
-                <form action="" method="post" name="profileUploadPhotoForm">
+        <form action="" method="post" name="profileUserContacts">
+          <div class="row no-gutters justify-content-between">
+            <div class="col-12 col-xl-6 profile__item">
+              <div class="profile__item-content profile__item-content--user">
+                <div class="profile__item--user-photoWrap">
+                  <div class="profile__item--user-img"></div>
                   <label class="profile__item--user-label" for="profileUploadPhoto" id="profileUploadLabel">upload photo</label>
                   <input class="profile__item--user-input" type="file" name="profileUploadPhoto" id="profileUploadPhoto"/>
-                </form>
-              </div>
-              <div class="progile__item--user-data">
-                <form action="" method="post" name="profileName">
+                </div>
+                <div class="progile__item--user-data">
                   <label>
                     <p class="profile__item--user-name">First name:</p>
-                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="FIRST NAME"/>
+                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="FIRST NAME" id="profileFirstName"/>
                   </label>
                   <label>
                     <p class="profile__item--user-name">Last name:</p>
-                    <input class="profile__item--user-name-input" type="text" name="profileLastName" placeholder="LAST NAME"/>
+                    <input class="profile__item--user-name-input" type="text" name="profileLastName" placeholder="LAST NAME" id="profileLastName"/>
                   </label>
-                </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-xl-6 profile__item">
-            <div class="profile__item-content profile__item-content--contact">
-              <h3 class="profile__item-heading">Contact Information</h3>
-              <form action="" method="post" name="profileContactInformation">
+            <div class="col-12 col-xl-6 profile__item">
+              <div class="profile__item-content profile__item-content--contact">
+                <h3 class="profile__item-heading">Contact Information</h3>
                 <label class="profile__item--contact-phoneWrap">
                   <p>Mobile</p>
-                  <input type="tel" name="profileTel" placeholder="MY PHONE NUMBER"/>
+                  <input type="tel" name="profileTel" placeholder="MY PHONE NUMBER" id="profilePhone"/>
                 </label>
                 <label class="profile__item--contact-skypeWrap">
-                  <p>Mobile</p>
-                  <input type="tel" name="profileSkype" placeholder="MY SKYPE NAME"/>
+                  <p>Skype</p>
+                  <input type="tel" name="profileSkype" placeholder="MY SKYPE NAME" id="profileSkype"/>
                 </label>
                 <p class="profile__item--contact-capture">your course will be conducted via Skype</p>
-              </form>
-            </div>
-          </div>
-          <div class="col-12 col-xl-6 profile__item">
-            <div class="profile__item-content profile__item-content--account">
-              <h3 class="profile__item-heading">Account</h3>
-              <div class="profile__item--account-emailWrap">
-                <p class="name">Email</p>
-                <p class="value">lishchynskayaanna@gmail.com</p>
-                <p class="edit">edit</p>
-              </div>
-              <div class="profile__item--account-passwordWrap">
-                <p class="name">Password</p>
-                <p class="value">***********</p>
-                <p class="edit">edit</p>
               </div>
             </div>
-          </div>
-          <div class="col-12 col-xl-6 profile__item">
-            <div class="profile__item-content profile__item-content--payment">
-              <h3 class="profile__item-heading">Payment information</h3>
+            <div class="col-12 col-xl-6 profile__item">
+              <div class="profile__item-content profile__item-content--account">
+                <h3 class="profile__item-heading">Account</h3>
+                <div class="profile__item--account-emailWrap">
+                  <p class="name">Email</p>
+                  <p class="value">lishchynskayaanna@gmail.com</p>
+                  <p class="edit">edit</p>
+                </div>
+                <div class="profile__item--account-passwordWrap">
+                  <p class="name">Password</p>
+                  <p class="value">***********</p>
+                  <p class="edit">edit</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-xl-6 profile__item">
+              <div class="profile__item-content profile__item-content--payment">
+                <h3 class="profile__item-heading">Payment information</h3>
+              </div>
             </div>
           </div>
-        </div>
+          <div class="profile__submitSection">
+            <button class="profile__submitWithoutBuying" type="submit">Save profile without buying</button>
+            <button class="profile__submitButton" type="submit">save</button>
+          </div>
+        </form>
       </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
