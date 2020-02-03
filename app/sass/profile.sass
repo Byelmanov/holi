@@ -415,7 +415,55 @@
                     line-height: 21px   
                     flex: 0 0 6%
                     cursor: pointer       
-
+.cartMenu
+    background: $black
+    height: 70px
+    border-top: 1px solid #000
+    display: none
+    &__wrap
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 100%
+    &__item
+        font-family: $default-font
+        color: #fff
+        font-size: 15px
+        line-height: 70px
+        position: relative
+        height: 100%
+        &--text
+            font-weight: bold
+            margin-right: 90px
+            &:after
+                content: ''
+                background-image: url('../img/cart.svg')
+                width: 49px
+                height: 49px
+                position: absolute
+                left: -65px
+                top: 8px
+                background-size: contain
+                background-repeat: no-repeat
+        &--price
+            line-height: 70px
+            display: flex
+            align-items: center
+            justify-content: center
+            margin-right: 15px
+            h3
+                font-weight: 600
+                font-size: 35px
+                line-height: 70px
+                margin-right: 6px
+        &--trash
+            width: 15px
+            height: 15px
+            background-image: url('../img/trash.svg')
+            background-repeat: no-repeat
+            background-size: contain
+            cursor: pointer
+        
                 
             
 

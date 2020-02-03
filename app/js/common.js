@@ -640,9 +640,9 @@ let registerEmailInput = document.getElementById('registerEmail');
 let registerPasswordInput = document.getElementById('registerPassword');
 
 registerEmailInput.addEventListener('focus', function () {
-    if (!($('#registerEmailLabel').hasClass('register__emailLabel--small'))) {
+    if (($('#registerEmailLabel').hasClass('register__emailLabel--small')) == false) {
         let textToShowAboveInput = document.getElementById('registerTextEmail');
-        textToShowAboveInput.style.visibility = 'hidden';
+        textToShowAboveInput.style.visibility = 'visible';
     }
 
     this.setAttribute('placeholder', '');
@@ -652,7 +652,7 @@ registerEmailInput.addEventListener('focus', function () {
 
 registerEmailInput.addEventListener('blur', function () {
 
-    if (!($('#registerEmailLabel').hasClass('register__emailLabel--small'))) {
+    if (($('#registerEmailLabel').hasClass('register__emailLabel--small')) == false) {
         let textToShowAboveInput = document.getElementById('registerTextEmail');
         textToShowAboveInput.style.visibility = 'hidden';
     }
@@ -757,6 +757,7 @@ function showRegisterWindow() {
 }
 
 document.getElementById('applicationEnterLink').addEventListener('click', showEnterWindow);
+document.getElementById('headerEnterLink').addEventListener('click', showEnterWindow);
 document.getElementById('enterCross').addEventListener('click', hideEnterAndRegisterWindows);
 document.getElementById('registerCross').addEventListener('click', hideEnterAndRegisterWindows);
 document.getElementById('enterLinkToRegister').addEventListener('click', showRegisterWindow);

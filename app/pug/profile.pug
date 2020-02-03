@@ -4,6 +4,14 @@ html(lang="en")
         include includes/head.pug
     body
         include includes/profileBurgerMenu.pug
+        section.cartMenu.container-fluid#cartMenu
+            div.container.cartMenu__wrap
+                p.cartMenu__item.cartMenu__item--text Your cart
+                div.cartMenu__item.cartMenu__item--price
+                    h3 130€
+                    p English Intensive
+                div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
+
         section.profile.container-fluid
             div.container
                 div.row.no-gutters.justify-content-between
@@ -50,7 +58,7 @@ html(lang="en")
 
                                 
                                     
-
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
         script(src="js/allCourses.js")
                                 
                             
