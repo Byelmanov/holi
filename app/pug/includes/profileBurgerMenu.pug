@@ -9,6 +9,7 @@ nav
                 a(href="").profile__burgerMenu-item.profile__burgerMenu-item--active PROFILE
                 div.profile__burgerMenu-userImg#profileBurgerMenuUser
                 div.profile__burgerMenu-signOut#profileBurgerMenuSignOut
-                    a(href="").profile__burgerMenu-signOut-img
-                        img(src="img/signOut.svg", alt="Sign Out")
-                    a(href="").profile__burgerMenu-signOut-link SIGN OUT
+                    form(action="", method="post", name="profileExit")
+                        a(href="").profile__burgerMenu-signOut-img
+                            img(src="img/signOut.svg", alt="Sign Out")
+                        a(href="").profile__burgerMenu-signOut-link SIGN OUT

@@ -19,7 +19,9 @@
         <div class="profile__burgerMenu--head"> <a class="profile__burgerMenu-logo" href=""><img src="img/finalLogo1.2.svg" alt="Logo"/></a>
           <div class="profile__burgerMenu-items"><a class="profile__burgerMenu-item" href="">ALL COURSES</a><a class="profile__burgerMenu-item" href="">MY COURSES</a><a class="profile__burgerMenu-item profile__burgerMenu-item--active" href="">PROFILE</a>
             <div class="profile__burgerMenu-userImg" id="profileBurgerMenuUser"></div>
-            <div class="profile__burgerMenu-signOut" id="profileBurgerMenuSignOut"><a class="profile__burgerMenu-signOut-img" href=""><img src="img/signOut.svg" alt="Sign Out"/></a><a class="profile__burgerMenu-signOut-link" href="">SIGN OUT</a></div>
+            <div class="profile__burgerMenu-signOut" id="profileBurgerMenuSignOut">
+              <form action="" method="post" name="profileExit"><a class="profile__burgerMenu-signOut-img" href=""><img src="img/signOut.svg" alt="Sign Out"/></a><a class="profile__burgerMenu-signOut-link" href="">SIGN OUT</a></form>
+            </div>
           </div>
         </div>
       </div>
@@ -35,8 +37,12 @@
       </div>
     </section>
     <section class="profile container-fluid">
+      <div class="cardCanseled container" id="cardCanseled">
+        <p class="cardCanseled__text">You have canceled the buying process! Find the course in the <a (href="/allCourses.html")>ALL COURSES</a> tab.</p>
+        <p class="cardCanseled__ok">ok</p>
+      </div>
       <div class="container">
-        <form action="" method="post" name="profileUserContacts">
+        <form class="profileForm" action="" method="post" name="profileUserContacts">
           <div class="row no-gutters justify-content-between">
             <div class="col-12 col-xl-6 profile__item">
               <div class="profile__item-content profile__item-content--user">
@@ -49,10 +55,12 @@
                   <label>
                     <p class="profile__item--user-name">First name:</p>
                     <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="FIRST NAME" id="profileFirstName"/>
+                    <div class="profile__item--user-firstName-star">*   </div>
                   </label>
                   <label>
                     <p class="profile__item--user-name">Last name:</p>
                     <input class="profile__item--user-name-input" type="text" name="profileLastName" placeholder="LAST NAME" id="profileLastName"/>
+                    <div class="profile__item--user-lastName-star">*</div>
                   </label>
                 </div>
               </div>
@@ -63,10 +71,12 @@
                 <label class="profile__item--contact-phoneWrap">
                   <p>Mobile</p>
                   <input type="tel" name="profileTel" placeholder="MY PHONE NUMBER" id="profilePhone"/>
+                  <div class="profile__item--contact-phoneWrap-star">*</div>
                 </label>
                 <label class="profile__item--contact-skypeWrap">
                   <p>Skype</p>
                   <input type="tel" name="profileSkype" placeholder="MY SKYPE NAME" id="profileSkype"/>
+                  <div class="profile__item--contact-skypeWrap-star">*</div>
                 </label>
                 <p class="profile__item--contact-capture">your course will be conducted via Skype</p>
               </div>
@@ -93,8 +103,9 @@
             </div>
           </div>
           <div class="profile__submitSection">
-            <button class="profile__submitWithoutBuying" type="submit">Save profile without buying</button>
-            <button class="profile__submitButton" type="submit">save</button>
+            <button class="profile__submitWithoutBuying" type="submit" name="profileSaveWithoutBuying">Save profile without buying</button>
+            <button class="profile__submitButton" type="submit" name="profileSave">save</button>
+            <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy">save and buy</button>
           </div>
         </form>
       </div>
