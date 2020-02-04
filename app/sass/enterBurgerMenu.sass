@@ -1,0 +1,72 @@
+@import "vars"
+
+.enterBurgerMenuWrap
+    background: transparent
+    width: 100%
+    margin-bottom: 50px
+.enterBurgerMenu
+    width: 100%
+    height: auto
+    min-height: 60px
+    &__head
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding-top: 5px
+    &__logo
+        width: 150px
+        height: auto
+    &__burgerImg
+        width: 30px
+        height: 30px
+        background-image: url('../img/burgerOpen.svg')
+        background-repeat: no-repeat
+        background-size: contain
+        cursor: pointer
+    &__crossImg
+        width: 30px
+        height: 30px
+        background-image: url('../img/burgerCloseWhite.svg')
+        background-repeat: no-repeat
+        background-size: contain
+        cursor: pointer
+        display: none
+    &__list
+        list-style: none
+        margin-top: 40px
+        padding-bottom: 25px
+        position: relative
+        z-index: 1
+        display: none
+    &__item
+        margin-bottom: 30px
+        text-align: center
+        a
+            font-family: $default-font
+            text-decoration: none
+            font-size: 27px
+            font-weight: 500
+            letter-spacing: 0.05em
+            color: #ffffff
+            position: relative
+            &:after
+                content: ''
+                width: 100%
+                display: inline
+                width: 0%
+                height: 16px
+                background: rgba(249, 229, 71, 0.75)
+                position: absolute
+                bottom: -2px
+                left: -5%
+                z-index: -1
+            &:hover:after
+                width: 110%
+                transition: width .3s ease-in-out
+
+
+
+
+
+
+
