@@ -107,11 +107,12 @@ header
     padding: 60px 80px 80px 80px
     height: auto
     text-align: center
-    line-height: 200px
     background: linear-gradient(to right, $yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%)
     background-position: top, right, bottom, left
     background-repeat: repeat-x, repeat-y
     background-size: 35px 5px, 5px 35px
+
+
 .header__logo
     display: flex
     flex-flow: row nowrap
@@ -306,7 +307,6 @@ header
         top: 50%
 .header__block
     max-width: 335px
-    min-width: 320px
     height: 120px
     background: #fff
     border: 4px solid #EB6FBD
@@ -363,7 +363,6 @@ header
         background-color: #fff
         border-radius: 50%
         position: relative
-        
         display: flex
         flex-flow: column nowrap
         align-content: center
@@ -380,6 +379,7 @@ header
                 color: $purple
                 margin-bottom: 15px
                 display: inline-block
+                margin-bottom: 10px
         &::after
             content: ''
             width: 330px
@@ -423,7 +423,6 @@ header
 
 .program
     width: 100%
-    //max-width: 1500px
     height: auto
     background-image: url('../img/backgrNew.png')
     background-repeat: no-repeat
@@ -1817,4 +1816,4 @@ footer
 
 
 
-@import "media" // Всегда в конце
+@import "media"

@@ -1,0 +1,236 @@
+@import "vars"
+
+
+
+
+@media only screen and (max-width: 450px)
+    .container
+        padding-right: 20px
+        padding-left: 20px
+    header
+        background: #fff
+        margin: 0
+        padding: 15px 0
+    .header
+        &__heading
+            font-size: 30px
+            line-height: 37px
+            color: $black
+            font-weight: 600
+            letter-spacing: 0.1em
+            margin: 0
+            margin-bottom: 15px
+            min-height: 70px
+        &__logo
+            margin-bottom: 30px
+            img
+                width: 150px
+                height: auto
+        &__enter
+            font-size: 13px
+            line-height: 16px
+            &:after
+                bottom: 0
+            &Img
+                width: 15px
+                height: 15px
+                position: relative
+                top: -2px
+        &__contacts
+            font-size: 13px
+            line-height: 16px
+        &__about
+            flex-direction: column
+            flex: 1
+            align-items: center
+            justify-content: flex-start
+            background: linear-gradient(to right, $yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, $yellow 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($yellow 50%, rgba(255, 255, 255, 0) 0%)
+            background-position: top, right, bottom, left
+            background-repeat: repeat-x, repeat-y
+            background-size: 35px 5px, 5px 35px
+            padding: 20px
+            margin-bottom: 30px
+        &__description
+            margin-top: 15px
+            &:after
+                width: 80%
+                transform: rotate(0deg)
+                left: 10%
+                right: 10%
+                top: -15px
+            &-text
+                font-size: 14px
+                line-height: 17px
+                letter-spacing: 0.1em
+                &--bold
+                    font-size: 13px
+                    line-height: 16px
+                    text-align: right
+                    margin: 0
+                    display: inline-block
+            p:nth-of-type(4)
+                margin-top: 20px
+        &__block
+            font-size: 14px
+            max-width: 175px
+            height: 55px
+            line-height: 50px
+            border-radius: 15px
+            border: 2px solid #EB6FBD
+            margin-bottom: 15px
+            &:hover
+                font-size: 14px
+    .about
+        &__lines
+            padding: 30px 20px
+            background: transparent
+        &__heading
+            font-size: 22px
+            line-height: 27px
+            text-align: center
+            margin-bottom: 15px
+        &__text
+            font-size: 14px
+            line-height: 20px
+            margin-bottom: 20px
+        &__circle
+            width: 155px
+            height: 155px
+            margin-bottom: 20px
+            &:after
+                width: 175px
+                height: 175px
+            &:first-child
+                &:after
+                    left: -25px  
+            &:nth-child(2)
+                &:after
+                    top: -20px
+                    left: -10px
+            &-text
+                font-weight: 300
+                font-size: 14px
+                line-height: 20px
+                span
+                    font-weight: 500
+                    line-height: 20px
+                    font-size: 14px
+        &__scroll
+            min-height: 100px
+            &-mouse
+                width: 25px
+                height: auto
+                margin-top: 20px
+            &-arrow
+                width: 15px
+                height: auto
+    .program
+        &__lines
+            background: transparent
+            padding: 30px 20px
+        &__heading
+            font-size: 22px
+            max-width: 155px
+            padding: 0
+            text-align: center
+            line-height: 45px
+            margin-bottom: 25px
+        &__item
+            visibility: visible
+            width: 100%
+            max-width: 450px
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            margin-left: auto
+            margin-right: auto
+        &__officer
+            display: none
+        &__textBlock
+            &--first
+                width: 100%
+            &--second
+                width: 100%
+                .program__day
+                    width: 30px
+                    height: 30px
+                    line-height: 30px
+                    font-size: 13px
+                .program__grammar
+                    width: 25%
+                    height: 10px
+                    border-left: 2px solid $yellow
+                    border-right: 2px solid $yellow
+                    border-bottom: 2px solid $yellow
+                    margin-left: 2%
+                    &-text
+                        font-size: 15px
+                        line-height: 18px
+                .program__speaking
+                    width: 40%
+                    height: 10px
+                    border-left: 2px solid $purple
+                    border-right: 2px solid $purple
+                    border-bottom: 2px solid $purple
+                    margin-left: 3%
+            &--third
+                width: 100%
+                .program__textBlock-text
+                    margin-bottom: 10px
+                    font-size: 17px
+                    line-height: 20px
+                    span
+                        font-size: 17px
+                        line-height: 20px
+            &--forth
+                width: 100%
+                padding-top: 50px
+                .program__textBlock-text
+                    font-size: 17px
+                    line-height: 20px
+                    font-weight: 300
+                    text-align: center
+                    span
+                        font-weight: 600
+                        font-size: 18px
+                        line-height: 20px
+        &__text
+            font-weight: 300
+            font-size: 17px
+            line-height: 20px
+            span
+                font-size: 25px
+                line-height: 30px
+                font-weight: bold
+        &__priceSection
+            margin-top: 70px
+        &__priceHeading
+            font-size: 22px
+            line-height: 27px
+            text-align: center
+            margin: 0
+        &__price
+            width: 250px
+            height: 236px
+            position: relative
+            left: 25px
+            margin-top: 25px
+            &-textPrice
+                font-size: 50px
+                line-height: 61px
+            &-text
+                font-size: 15px
+                line-height: 18px
+        &__bigben
+            width: 75px
+            height: auto
+            left: 3px
+
+@media only screen and (max-width: 413px)
+    .header__block:first-child
+        line-height: 24px
+
+@media only screen and (max-width: 413px)
+    .header__block
+        max-width: 150px

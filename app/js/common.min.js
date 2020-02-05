@@ -80,6 +80,8 @@ let trrigerForSecondOfficer = true;
 let trrigerForThirdOfficer = true;
 let trrigerForForthOfficer = true;
 
+let windowWidth = window.outerWidth;
+
 // get scroll position
 $(window).on("scroll", function () {
     let offset = $('#aboutSection').offset().top;
@@ -125,67 +127,54 @@ $(window).on("scroll", function () {
     }
 
     // scripts for officers
-    let programSection = document.getElementById('programSection');
-    let programSectionStartPos = programSection.offsetTop;
+    if (windowWidth > 450) {
+        let programSection = document.getElementById('programSection');
+        let programSectionStartPos = programSection.offsetTop;
 
-    let priceSection = document.getElementById('priceSection');
-    let priceSectionStartPos = priceSection.offsetTop + programSectionStartPos;
+        let priceSection = document.getElementById('priceSection');
+        let priceSectionStartPos = priceSection.offsetTop + programSectionStartPos;
 
-    let firstOfficer = document.querySelector('.program__item--first');
-    let secondOfficer = document.querySelector('.program__item--second');
-    let thirdOfficer = document.querySelector('.program__item--third');
-    let forthOfficer = document.querySelector('.program__item--forth');
+        let firstOfficer = document.querySelector('.program__item--first');
+        let secondOfficer = document.querySelector('.program__item--second');
+        let thirdOfficer = document.querySelector('.program__item--third');
+        let forthOfficer = document.querySelector('.program__item--forth');
 
-    let firstOfficerStartPos = firstOfficer.offsetTop + programSectionStartPos;
-    let firstOfficerEndPos = firstOfficerStartPos + firstOfficer.offsetHeight;
-    let secondOfficerStartPos = secondOfficer.offsetTop + programSectionStartPos;
-    let secondOfficerEndPos = secondOfficerStartPos + secondOfficer.offsetHeight;
-    let thirdOfficerStartPos = thirdOfficer.offsetTop + programSectionStartPos;
-    let thirdOfficerEndPos = thirdOfficerStartPos + thirdOfficer.offsetHeight;
-    let forthOfficerStartPos = forthOfficer.offsetTop + programSectionStartPos;
-    let forthOfficerEndPos = forthOfficerStartPos + forthOfficer.offsetHeight;
+        let firstOfficerStartPos = firstOfficer.offsetTop + programSectionStartPos;
+        let firstOfficerEndPos = firstOfficerStartPos + firstOfficer.offsetHeight;
+        let secondOfficerStartPos = secondOfficer.offsetTop + programSectionStartPos;
+        let secondOfficerEndPos = secondOfficerStartPos + secondOfficer.offsetHeight;
+        let thirdOfficerStartPos = thirdOfficer.offsetTop + programSectionStartPos;
+        let thirdOfficerEndPos = thirdOfficerStartPos + thirdOfficer.offsetHeight;
+        let forthOfficerStartPos = forthOfficer.offsetTop + programSectionStartPos;
+        let forthOfficerEndPos = forthOfficerStartPos + forthOfficer.offsetHeight;
 
 
 
-    let animationNameLeft = 'fadeInLeft';
-    let animationNameRight = 'fadeInRight';
+        let animationNameLeft = 'fadeInLeft';
+        let animationNameRight = 'fadeInRight';
 
-    // if (scrollPosDown >= firstOfficerEndPos && scrollPosDown <= secondOfficerStartPos && trrigerForFirstOfficer) {
-    //     animateCSS(firstOfficer, animationNameLeft);
-    //     trrigerForFirstOfficer = false;
-    // }
-    // if (scrollPosDown >= secondOfficerEndPos && scrollPosDown <= thirdOfficerStartPos && trrigerForSecondOfficer) {
-    //     animateCSS(secondOfficer, animationNameRight);
-    //     trrigerForSecondOfficer = false;
-    // }
-    // if (scrollPosDown >= thirdOfficerEndPos && scrollPosDown <= forthOfficerStartPos && trrigerForThirdOfficer) {
-    //     animateCSS(thirdOfficer, animationNameLeft);
-    //     trrigerForThirdOfficer = false;
-    // }
-    // if (scrollPosDown >= forthOfficerEndPos && scrollPosDown <= priceSectionStartPos && trrigerForForthOfficer) {
-    //     animateCSS(forthOfficer, animationNameRight);
-    //     trrigerForForthOfficer = false;
-    // }
-    if (scrollPosDown >= firstOfficerEndPos && trrigerForFirstOfficer) {
-        firstOfficer.style.visibility = 'visible';
-        animateCSS(firstOfficer, animationNameLeft);
-        trrigerForFirstOfficer = false;
+        if (scrollPosDown >= firstOfficerEndPos && trrigerForFirstOfficer) {
+            firstOfficer.style.visibility = 'visible';
+            animateCSS(firstOfficer, animationNameLeft);
+            trrigerForFirstOfficer = false;
+        }
+        if (scrollPosDown >= secondOfficerEndPos && trrigerForSecondOfficer) {
+            secondOfficer.style.visibility = 'visible';
+            animateCSS(secondOfficer, animationNameRight);
+            trrigerForSecondOfficer = false;
+        }
+        if (scrollPosDown >= thirdOfficerEndPos && trrigerForThirdOfficer) {
+            thirdOfficer.style.visibility = 'visible';
+            animateCSS(thirdOfficer, animationNameLeft);
+            trrigerForThirdOfficer = false;
+        }
+        if (scrollPosDown >= forthOfficerEndPos && trrigerForForthOfficer) {
+            forthOfficer.style.visibility = 'visible';
+            animateCSS(forthOfficer, animationNameRight);
+            trrigerForForthOfficer = false;
+        }
     }
-    if (scrollPosDown >= secondOfficerEndPos && trrigerForSecondOfficer) {
-        secondOfficer.style.visibility = 'visible';
-        animateCSS(secondOfficer, animationNameRight);
-        trrigerForSecondOfficer = false;
-    }
-    if (scrollPosDown >= thirdOfficerEndPos && trrigerForThirdOfficer) {
-        thirdOfficer.style.visibility = 'visible';
-        animateCSS(thirdOfficer, animationNameLeft);
-        trrigerForThirdOfficer = false;
-    }
-    if (scrollPosDown >= forthOfficerEndPos && trrigerForForthOfficer) {
-        forthOfficer.style.visibility = 'visible';
-        animateCSS(forthOfficer, animationNameRight);
-        trrigerForForthOfficer = false;
-    }
+
 
 });
 
@@ -488,50 +477,61 @@ function showAccordeonBody(elem) {
 
 // script for print heading
 
-const headerHeading1 = "Это";
-const headerHeading2 = "Интенсив";
-const headerHeading3 = "Английского";
 
-let triggerForCursorInHeader = true;
+if (windowWidth > 450) {
+    const headerHeading1 = "Это";
+    const headerHeading2 = "Интенсив";
+    const headerHeading3 = "Английского";
 
-function addOneLetter(letter, id) {
-    let blockToIncertText = document.getElementById(id);
-    blockToIncertText.innerText += letter;
-    if (triggerForCursorInHeader == true) {
-        blockToIncertText.style.border = 'none';
-        triggerForCursorInHeader = false;
-    } else {
-        blockToIncertText.style.borderRight = '2px solid #000';
-        triggerForCursorInHeader = true;
-    }
-}
+    let triggerForCursorInHeader = true;
 
-function printWithInterval(message, id) {
-    let start = 0;
-    let end = message.length;
-    setTimeout(function print() {
-        addOneLetter(message[start], id);
-        if (start < end - 1) {
-            setTimeout(print, 150);
+    function addOneLetter(letter, id) {
+        let blockToIncertText = document.getElementById(id);
+        blockToIncertText.innerText += letter;
+        if (triggerForCursorInHeader == true) {
+            blockToIncertText.style.border = 'none';
+            triggerForCursorInHeader = false;
+        } else {
+            blockToIncertText.style.borderRight = '2px solid #000';
+            triggerForCursorInHeader = true;
         }
-        start++
-    }, 100);
+    }
+
+    function printWithInterval(message, id) {
+        let start = 0;
+        let end = message.length;
+        setTimeout(function print() {
+            addOneLetter(message[start], id);
+            if (start < end - 1) {
+                setTimeout(print, 150);
+            }
+            start++
+        }, 100);
+    }
+
+    function offBorder(id) {
+        let block = document.getElementById(id);
+        block.style.border = 'none';
+    }
+
+    $(function () {
+        printWithInterval(headerHeading1, 'headerHeadingPart1');
+        setTimeout(offBorder, 600, 'headerHeadingPart1');
+        setTimeout(printWithInterval, 450, headerHeading2, 'headerHeadingPart2');
+        setTimeout(offBorder, 1650, 'headerHeadingPart2');
+        setTimeout(printWithInterval, 1500, headerHeading3, 'headerHeadingPart3');
+        setTimeout(offBorder, 3800, 'headerHeadingPart3');
+
+    });
+
+} else {
+    const headerHeading1 = "Это Интенсив";
+    const headerHeading2 = "Английского";
+    document.getElementById('headerHeadingPart1').innerText = headerHeading1;
+    document.getElementById('headerHeadingPart2').innerText = headerHeading2;
 }
 
-function offBorder(id) {
-    let block = document.getElementById(id);
-    block.style.border = 'none';
-}
 
-$(function () {
-    printWithInterval(headerHeading1, 'headerHeadingPart1');
-    setTimeout(offBorder, 600, 'headerHeadingPart1');
-    setTimeout(printWithInterval, 450, headerHeading2, 'headerHeadingPart2');
-    setTimeout(offBorder, 1650, 'headerHeadingPart2');
-    setTimeout(printWithInterval, 1500, headerHeading3, 'headerHeadingPart3');
-    setTimeout(offBorder, 3800, 'headerHeadingPart3');
-
-});
 
 
 // script for moving cars in road section
