@@ -16,8 +16,8 @@
   <body>
     <nav>
       <div class="profile__burgerMenu">
-        <div class="profile__burgerMenu--head"> <a class="profile__burgerMenu-logo" href=""><img src="img/finalLogo1.2.svg" alt="Logo"/></a>
-          <div class="profile__burgerMenu-items"><a class="profile__burgerMenu-item" href="">ALL COURSES</a><a class="profile__burgerMenu-item" href="">MY COURSES</a><a class="profile__burgerMenu-item profile__burgerMenu-item--active" href="">PROFILE</a>
+        <div class="profile__burgerMenu--head"> <a class="profile__burgerMenu-logo" href="/index.html"><img src="img/finalLogo1.2.svg" alt="Logo"/></a>
+          <div class="profile__burgerMenu-items"><a class="profile__burgerMenu-item" href="/allCourses.html">ALL COURSES</a><a class="profile__burgerMenu-item" href="/myCourses.html">MY COURSES</a><a class="profile__burgerMenu-item profile__burgerMenu-item--active" href="/profile.html">PROFILE</a>
             <div class="profile__burgerMenu-userImg" id="profileBurgerMenuUser"></div>
             <div class="profile__burgerMenu-signOut" id="profileBurgerMenuSignOut">
               <form action="" method="post" name="profileExit"><a class="profile__burgerMenu-signOut-img" href=""><img src="img/signOut.svg" alt="Sign Out"/></a><a class="profile__burgerMenu-signOut-link" href="">SIGN OUT</a></form>
@@ -38,8 +38,8 @@
     </section>
     <section class="profile container-fluid">
       <div class="cardCanseled container" id="cardCanseled">
-        <p class="cardCanseled__text">You have canceled the buying process! Find the course in the <a (href="/allCourses.html")>ALL COURSES</a> tab.</p>
-        <p class="cardCanseled__ok">ok</p>
+        <p class="cardCanseled__text">You have canceled the buying process! Find the course in the <a href="/allCourses.html">ALL COURSES</a> tab.</p>
+        <p class="cardCanseled__ok" id="cartCanseledOK">ok</p>
       </div>
       <div class="container profile__editProfile"><a class="profile__editProfile-link" href="">edit profile</a></div>
       <div class="container">
@@ -104,14 +104,15 @@
             </div>
           </div>
           <div class="profile__submitSection">
-            <button class="profile__submitWithoutBuying" type="submit" name="profileSaveWithoutBuying">Save profile without buying</button>
-            <button class="profile__submitButton" type="submit" name="profileSave">save</button>
-            <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy">save and buy</button>
+            <button class="profile__submitWithoutBuying" type="submit" name="profileSaveWithoutBuying" id="profileSaveWithoutBuying">Save profile without buying</button>
+            <button class="profile__submitButton" type="submit" name="profileSave" id="profileSave">save</button>
+            <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy" id="profileSaveAndBuy">save and buy</button>
           </div>
         </form>
       </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/allCourses.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/profileUserBurger.js"></script>
   </body>
 </html>

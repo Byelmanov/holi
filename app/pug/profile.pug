@@ -13,8 +13,8 @@ html(lang="en")
                 div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
         section.profile.container-fluid
             div.cardCanseled.container#cardCanseled
-                p.cardCanseled__text You have canceled the buying process! Find the course in the <a (href="/allCourses.html")>ALL COURSES</a> tab.
-                p.cardCanseled__ok ok
+                p.cardCanseled__text You have canceled the buying process! Find the course in the <a href="/allCourses.html">ALL COURSES</a> tab.
+                p.cardCanseled__ok#cartCanseledOK ok
             div.container.profile__editProfile
                 a(href="").profile__editProfile-link edit profile
             div.container
@@ -62,13 +62,14 @@ html(lang="en")
                             div.profile__item-content.profile__item-content--payment
                                 h3.profile__item-heading Payment information
                     div.profile__submitSection
-                        button(type="submit", name="profileSaveWithoutBuying").profile__submitWithoutBuying Save profile without buying
-                        button(type="submit", name="profileSave").profile__submitButton save
-                        button(type="submit", name="profileSaveAndBuy").profile__submitAndBuy save and buy
+                        button(type="submit", name="profileSaveWithoutBuying", id="profileSaveWithoutBuying").profile__submitWithoutBuying Save profile without buying
+                        button(type="submit", name="profileSave", id="profileSave").profile__submitButton save
+                        button(type="submit", name="profileSaveAndBuy", id="profileSaveAndBuy").profile__submitAndBuy save and buy
                                 
                                     
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
-        script(src="js/allCourses.js")
+        script(src="js/profile.js")
+        script(src="js/profileUserBurger.js")
                                 
                             
 

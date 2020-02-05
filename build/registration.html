@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+      <meta name="description" content=""/>
+      <meta name="theme-color" content="#000"/>
+      <meta name="apple-mobile-web-app-status-bar-style" content="#000"/>
+      <title>HoLi</title>
+      <link rel="shortcut icon" href="img/finalLogo2.ico" type="image/png"/>
+      <link rel="stylesheet" href="css/main.min.css"/>
+    </head>
+  </head>
+  <body>
+    <nav>
+      <div class="container-fluid enterBurgerMenuWrap">
+        <div class="enterBurgerMenu container">
+          <div class="enterBurgerMenu__head"><a href="index.html"><img class="enterBurgerMenu__logo" src="img/finalLogo1.svg" alt="logo" id="enterBurgerMenuLogo"/></a>
+            <div class="enterBurgerMenu__burgerImg" id="enterBurgerImg"></div>
+            <div class="enterBurgerMenu__crossImg" id="enterCloseImg"></div>
+          </div>
+          <ul class="enterBurgerMenu__list" id="enterBurgerBody">
+            <li class="enterBurgerMenu__item"> <a href="/#aboutSection">ЧТО ТАКОЕ ИНТЕНСИВ?</a></li>
+            <li class="enterBurgerMenu__item"><a href="/#programSection">ПРОГРАММА</a></li>
+            <li class="enterBurgerMenu__item"><a href="/#priceSection">СТОИМОСТЬ</a></li>
+            <li class="enterBurgerMenu__item"><a href="/#roadSection">КАК ЗАПИСАТЬСЯ?</a></li>
+            <li class="enterBurgerMenu__item"> <a href="/#tutorsSection">ПРЕПОДАВАТЕЛИ</a></li>
+            <li class="enterBurgerMenu__item"><a href="/#faqSection">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="container breadCrumbs">
+      <ul class="breadCrumbs__content">
+        <li class="breadCrumbs__item breadCrumbs__item-link"> <a href="/">ГЛАВНАЯ</a></li>
+        <li class="breadCrumbs__item breadCrumbs__item-img"></li>
+        <li class="breadCrumbs__item breadCrumbs__item-link"> <a href="registration.html">СОЗДАТЬ АККАУНТ</a></li>
+      </ul>
+    </section>
+    <section class="registration container">
+      <div class="register" id="registerWindow">
+        <h2 class="register__heading">Создать аккаунт</h2><a class="register__enter" href="/enter.html" id="registerLinkToEnter">вход</a>
+        <form class="register__form" action="" method="post" name="registerForm" id="registartionForm">
+          <label class="register__emailLabel" id="registerEmailLabel">
+            <p class="register__text" id="registerTextEmail">Email</p>
+            <input type="email" name="registerEmail" placeholder="Email" id="registerEmail"/>
+            <div class="register__tick--email"></div>
+            <div class="register__wrapUnderInput register__wrapUnderInput--email">
+              <p class="register__capture" id="registerCapture">Мы не будем отправлять Вам спам или передавать базу данных</p>
+              <p class="register__warning register__warning--email" id="registerWarningEmail">Заполните это поле, пожалуйста</p>
+              <div class="register__nextButton" id="registerNextButton">Далее</div>
+            </div>
+          </label>
+          <label class="register__passwordLabel" id="registerPasswordLabel">
+            <p class="register__text" id="registerTextPassword">Password</p>
+            <input type="password" name="registerPassword" placeholder="Password" id="registerPassword"/>
+            <div class="register__tick--password"></div>
+            <div class="register__wrapUnderInput register__wrapUnderInput--password">
+              <p class="register__warning register__warning--password" id="registerWarningPassword">Заполните это поле, пожалуйста</p>
+              <button class="register__submitButton" type="submit" id="registerSubmit">Создать</button>
+            </div>
+          </label>
+        </form>
+      </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/registration.js"></script>
+  </body>
+</html>
