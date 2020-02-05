@@ -7,14 +7,14 @@ html(lang="en")
         section.container.breadCrumbs
             ul.breadCrumbs__content
                 li.breadCrumbs__item.breadCrumbs__item-link 
-                    a(href="") ГЛАВНАЯ
+                    a(href="/") ГЛАВНАЯ
                 li.breadCrumbs__item.breadCrumbs__item-img
                 li.breadCrumbs__item.breadCrumbs__item-link 
-                    a(href="") СОЗДАТЬ АККАУНТ
+                    a(href="registration.html") СОЗДАТЬ АККАУНТ
         section.registration.container
             div.register#registerWindow
                 h2.register__heading Создать аккаунт
-                a(class="register__enter")#registerLinkToEnter вход
+                a(href="/enter.html", class="register__enter")#registerLinkToEnter вход
                 form(action="" method="post" name="registerForm", class="register__form", id="registartionForm")
                     label.register__emailLabel#registerEmailLabel
                         p.register__text#registerTextEmail Email
