@@ -483,7 +483,7 @@ if (windowWidth > 450) {
     const headerHeading2 = "Интенсив";
     const headerHeading3 = "Английского";
 
-    let triggerForCursorInHeader = true;
+    var triggerForCursorInHeader = true;
 
     function addOneLetter(letter, id) {
         let blockToIncertText = document.getElementById(id);

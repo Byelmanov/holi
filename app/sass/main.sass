@@ -1363,9 +1363,7 @@ footer
                     // 	color: $purple
                     // 	text-decoration: underline
             &-facebook
-                margin-bottom: 30px
-                
-                    
+                margin-bottom: 30px          
     &__logo
         width: 100%
         max-width: 240px
@@ -1382,6 +1380,36 @@ footer
         color: rgba(255, 255, 255, 0.6)
         span
             text-decoration: underline
+    &__information
+        border-top: 2px solid #000
+        padding-top: 20px
+        padding-bottom: 80px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &-text
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            font-family: $default-font
+            font-size: 13px
+            line-height: 16px
+            letter-spacing: 0.05em
+            color: #C2BDBD
+            a
+                color: #C2BDBD
+                text-decoration: none
+                position: relative
+                margin-right: 40px
+                &:after
+                    content: ''
+                    height: 1px
+                    background-color: #C2BDBD
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    right: 0
+
 
 .registration
     width: 100%
@@ -1702,16 +1730,15 @@ footer
         margin-right: 10px
         &:last-child
             margin-right: 0
-        &:first-child
-            a
-                text-decoration: underline
+        a
+            text-decoration: underline
         &-link
             font-size: 15px
             text-transform: uppercase
             cursor: pointer
             a
                 color: $black
-                text-decoration: none
+                
         &-img
             width: 15px
             height: 15px
@@ -1808,7 +1835,7 @@ footer
 
 @import "profile"
 @import "enterBurgerMenu"
-
+@import "agreement"
     
 
 

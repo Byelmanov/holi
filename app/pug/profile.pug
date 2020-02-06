@@ -6,14 +6,14 @@ html(lang="en")
         include includes/profileBurgerMenu.pug
         section.cartMenu.container-fluid#cartMenu
             div.container.cartMenu__wrap
-                p.cartMenu__item.cartMenu__item--text Your cart
+                p.cartMenu__item.cartMenu__item--text Ваша корзина
                 div.cartMenu__item.cartMenu__item--price
                     h3 130€
-                    p English Intensive
+                    p Интенсив Английского
                 div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
         section.profile.container-fluid
             div.cardCanseled.container#cardCanseled
-                p.cardCanseled__text You have canceled the buying process! Find the course in the <a href="/allCourses.html">ALL COURSES</a> tab.
+                p.cardCanseled__text Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ</a>.
                 p.cardCanseled__ok#cartCanseledOK ok
             div.container.profile__editProfile
                 a(href="").profile__editProfile-link edit profile
@@ -24,47 +24,47 @@ html(lang="en")
                             div.profile__item-content.profile__item-content--user
                                 div.profile__item--user-photoWrap
                                     div.profile__item--user-img
-                                    label(for="profileUploadPhoto", class="profile__item--user-label", id="profileUploadLabel") upload photo
+                                    label(for="profileUploadPhoto", class="profile__item--user-label", id="profileUploadLabel") загрузить фото
                                     input(type="file", name="profileUploadPhoto", id="profileUploadPhoto", class="profile__item--user-input")
                                 div.progile__item--user-data
                                     label
-                                        p.profile__item--user-name First name:
-                                        input(type="text", name="profileFirstName", placeholder="FIRST NAME", class="profile__item--user-name-input" id="profileFirstName")
+                                        p.profile__item--user-name Имя
+                                        input(type="text", name="profileFirstName", placeholder="Имя", class="profile__item--user-name-input" id="profileFirstName")
                                         div.profile__item--user-firstName-star *   
                                     label
-                                        p.profile__item--user-name Last name:
-                                        input(type="text", name="profileLastName", placeholder="LAST NAME", class="profile__item--user-name-input" id="profileLastName")
+                                        p.profile__item--user-name Фамилия
+                                        input(type="text", name="profileLastName", placeholder="Фамилия ", class="profile__item--user-name-input" id="profileLastName")
                                         div.profile__item--user-lastName-star *
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--contact
-                                h3.profile__item-heading Contact Information
+                                h3.profile__item-heading Контактная информация
                                 label.profile__item--contact-phoneWrap
-                                    p Mobile
-                                    input(type="tel", name="profileTel", placeholder="MY PHONE NUMBER" id="profilePhone")
+                                    p Телефон
+                                    input(type="tel", name="profileTel", placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone")
                                     div.profile__item--contact-phoneWrap-star *
                                 label.profile__item--contact-skypeWrap
                                     p Skype
-                                    input(type="tel", name="profileSkype", placeholder="MY SKYPE NAME" id="profileSkype")
+                                    input(type="tel", name="profileSkype", placeholder="МОЙ SKYPE" id="profileSkype")
                                     div.profile__item--contact-skypeWrap-star *
-                                p.profile__item--contact-capture your course will be conducted via Skype
+                                p.profile__item--contact-capture Ваш курс будет проходить в Skype
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--account
-                                h3.profile__item-heading Account
+                                h3.profile__item-heading Аккаунт
                                 div.profile__item--account-emailWrap
                                     p.name Email
                                     p.value lishchynskayaanna@gmail.com
-                                    p.edit edit
+                                    p.edit 
                                 div.profile__item--account-passwordWrap
-                                    p.name Password
+                                    p.name Пароль
                                     p.value ***********
-                                    p.edit edit
+                                    p.edit 
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--payment
-                                h3.profile__item-heading Payment information
+                                h3.profile__item-heading Информация об оплате
                     div.profile__submitSection
-                        button(type="submit", name="profileSaveWithoutBuying", id="profileSaveWithoutBuying").profile__submitWithoutBuying Save profile without buying
-                        button(type="submit", name="profileSave", id="profileSave").profile__submitButton save
-                        button(type="submit", name="profileSaveAndBuy", id="profileSaveAndBuy").profile__submitAndBuy save and buy
+                        button(type="submit", name="profileSaveWithoutBuying", id="profileSaveWithoutBuying").profile__submitWithoutBuying Сохранить, но отменить покупку
+                        button(type="submit", name="profileSave", id="profileSave").profile__submitButton СОХРАНИТЬ
+                        button(type="submit", name="profileSaveAndBuy", id="profileSaveAndBuy").profile__submitAndBuy СОХРАНИТЬ И ОПЛАТИТЬ
                                 
                                     
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")

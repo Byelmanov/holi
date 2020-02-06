@@ -4,11 +4,12 @@ nav
             a(href="/").profile__burgerMenu-logo
                 img(src="img/finalLogo1.2.svg", alt="Logo")
             div.profile__burgerMenu-items
-                a(href="/allCourses.html").profile__burgerMenu-item.profile__burgerMenu-item--active ALL COURSES
-                a(href="/myCourses.html").profile__burgerMenu-item MY COURSES
-                a(href="/profile.html").profile__burgerMenu-item PROFILE
+                a(href="/allCourses.html").profile__burgerMenu-item.profile__burgerMenu-item--active ВСЕ КУРСЫ
+                a(href="/myCourses.html").profile__burgerMenu-item МОИ КУРСЫ
+                a(href="/profile.html").profile__burgerMenu-item ПРОФИЛЬ
                 div.profile__burgerMenu-userImg#profileBurgerMenuUser
                 div.profile__burgerMenu-signOut#profileBurgerMenuSignOut
-                    a(href="").profile__burgerMenu-signOut-img
-                        img(src="img/signOut.svg", alt="Sign Out")
-                    a(href="").profile__burgerMenu-signOut-link SIGN OUT
+                    form(action="", method="post", name="profileExit")
+                        a(href="").profile__burgerMenu-signOut-img
+                            img(src="img/signOut.svg", alt="Sign Out")
+                        a(href="").profile__burgerMenu-signOut-link ВЫЙТИ

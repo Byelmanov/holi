@@ -297,9 +297,10 @@
             &-phoneWrap
                 display: flex
                 align-items: center
-                justify-content: center
+                justify-content: flex-start
                 margin-bottom: 30px
                 position: relative
+                padding-left: 15px
                 p
                     font-size: 17px
                     line-height: 21px
@@ -338,9 +339,10 @@
             &-skypeWrap
                 display: flex
                 align-items: center
-                justify-content: center
+                justify-content: flex-start
                 margin-bottom: 5px
                 position: relative
+                padding-left: 15px
                 p
                     font-size: 17px
                     line-height: 21px
@@ -366,6 +368,7 @@
                     font-size: 15px
                     padding: 0 20px
                     outline: none
+                    margin-left: 18px
                     &::placeholder
                         color: #E5E5E5
                 &-star
@@ -416,9 +419,11 @@
                     color: $black  
                     flex: 0 0 60%
                 .edit
-                    color: #C2BDBD
-                    font-size: 17px
-                    line-height: 21px
+                    width: 20px
+                    height: 20px
+                    background-image: url('../img/profileEditGray.svg')
+                    background-size: contain
+                    background-repeat: no-repeat
                     flex: 0 0 6%   
                     cursor: pointer          
             &-passwordWrap
@@ -451,9 +456,11 @@
                     color: $black  
                     flex: 0 0 60%
                 .edit
-                    color: #C2BDBD
-                    font-size: 17px
-                    line-height: 21px   
+                    width: 20px
+                    height: 20px
+                    background-image: url('../img/profileEditGray.svg')
+                    background-size: contain
+                    background-repeat: no-repeat   
                     flex: 0 0 6%
                     cursor: pointer
     &__submitSection

@@ -17,10 +17,10 @@
     <nav>
       <div class="profile__burgerMenu">
         <div class="profile__burgerMenu--head"> <a class="profile__burgerMenu-logo" href="/index.html"><img src="img/finalLogo1.2.svg" alt="Logo"/></a>
-          <div class="profile__burgerMenu-items"><a class="profile__burgerMenu-item" href="/allCourses.html">ALL COURSES</a><a class="profile__burgerMenu-item" href="/myCourses.html">MY COURSES</a><a class="profile__burgerMenu-item profile__burgerMenu-item--active" href="/profile.html">PROFILE</a>
+          <div class="profile__burgerMenu-items"><a class="profile__burgerMenu-item" href="/allCourses.html">ВСЕ КУРСЫ</a><a class="profile__burgerMenu-item" href="/myCourses.html">МОИ КУРСЫ</a><a class="profile__burgerMenu-item profile__burgerMenu-item--active" href="/profile.html">ПРОФИЛЬ</a>
             <div class="profile__burgerMenu-userImg" id="profileBurgerMenuUser"></div>
             <div class="profile__burgerMenu-signOut" id="profileBurgerMenuSignOut">
-              <form action="" method="post" name="profileExit"><a class="profile__burgerMenu-signOut-img" href=""><img src="img/signOut.svg" alt="Sign Out"/></a><a class="profile__burgerMenu-signOut-link" href="">SIGN OUT</a></form>
+              <form action="" method="post" name="profileExit"><a class="profile__burgerMenu-signOut-img" href=""><img src="img/signOut.svg" alt="Sign Out"/></a><a class="profile__burgerMenu-signOut-link" href="">ВЫЙТИ</a></form>
             </div>
           </div>
         </div>
@@ -28,17 +28,17 @@
     </nav>
     <section class="cartMenu container-fluid" id="cartMenu">
       <div class="container cartMenu__wrap">
-        <p class="cartMenu__item cartMenu__item--text">Your cart</p>
+        <p class="cartMenu__item cartMenu__item--text">Ваша корзина</p>
         <div class="cartMenu__item cartMenu__item--price">
           <h3>130€</h3>
-          <p>English Intensive</p>
+          <p>Интенсив Английского</p>
         </div>
         <div class="cartMenu__item cartMenu__item--trash" id="cartMenuTrash"></div>
       </div>
     </section>
     <section class="profile container-fluid">
       <div class="cardCanseled container" id="cardCanseled">
-        <p class="cardCanseled__text">You have canceled the buying process! Find the course in the <a href="/allCourses.html">ALL COURSES</a> tab.</p>
+        <p class="cardCanseled__text">Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ</a>.</p>
         <p class="cardCanseled__ok" id="cartCanseledOK">ok</p>
       </div>
       <div class="container profile__editProfile"><a class="profile__editProfile-link" href="">edit profile</a></div>
@@ -49,18 +49,18 @@
               <div class="profile__item-content profile__item-content--user">
                 <div class="profile__item--user-photoWrap">
                   <div class="profile__item--user-img"></div>
-                  <label class="profile__item--user-label" for="profileUploadPhoto" id="profileUploadLabel">upload photo</label>
+                  <label class="profile__item--user-label" for="profileUploadPhoto" id="profileUploadLabel">загрузить фото</label>
                   <input class="profile__item--user-input" type="file" name="profileUploadPhoto" id="profileUploadPhoto"/>
                 </div>
                 <div class="progile__item--user-data">
                   <label>
-                    <p class="profile__item--user-name">First name:</p>
-                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="FIRST NAME" id="profileFirstName"/>
+                    <p class="profile__item--user-name">Имя</p>
+                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="Имя" id="profileFirstName"/>
                     <div class="profile__item--user-firstName-star">*   </div>
                   </label>
                   <label>
-                    <p class="profile__item--user-name">Last name:</p>
-                    <input class="profile__item--user-name-input" type="text" name="profileLastName" placeholder="LAST NAME" id="profileLastName"/>
+                    <p class="profile__item--user-name">Фамилия</p>
+                    <input class="profile__item--user-name-input" type="text" name="profileLastName" placeholder="Фамилия " id="profileLastName"/>
                     <div class="profile__item--user-lastName-star">*</div>
                   </label>
                 </div>
@@ -68,45 +68,45 @@
             </div>
             <div class="col-12 col-xl-6 profile__item">
               <div class="profile__item-content profile__item-content--contact">
-                <h3 class="profile__item-heading">Contact Information</h3>
+                <h3 class="profile__item-heading">Контактная информация</h3>
                 <label class="profile__item--contact-phoneWrap">
-                  <p>Mobile</p>
-                  <input type="tel" name="profileTel" placeholder="MY PHONE NUMBER" id="profilePhone"/>
+                  <p>Телефон</p>
+                  <input type="tel" name="profileTel" placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone"/>
                   <div class="profile__item--contact-phoneWrap-star">*</div>
                 </label>
                 <label class="profile__item--contact-skypeWrap">
                   <p>Skype</p>
-                  <input type="tel" name="profileSkype" placeholder="MY SKYPE NAME" id="profileSkype"/>
+                  <input type="tel" name="profileSkype" placeholder="МОЙ SKYPE" id="profileSkype"/>
                   <div class="profile__item--contact-skypeWrap-star">*</div>
                 </label>
-                <p class="profile__item--contact-capture">your course will be conducted via Skype</p>
+                <p class="profile__item--contact-capture">Ваш курс будет проходить в Skype</p>
               </div>
             </div>
             <div class="col-12 col-xl-6 profile__item">
               <div class="profile__item-content profile__item-content--account">
-                <h3 class="profile__item-heading">Account</h3>
+                <h3 class="profile__item-heading">Аккаунт</h3>
                 <div class="profile__item--account-emailWrap">
                   <p class="name">Email</p>
                   <p class="value">lishchynskayaanna@gmail.com</p>
-                  <p class="edit">edit</p>
+                  <p class="edit"> </p>
                 </div>
                 <div class="profile__item--account-passwordWrap">
-                  <p class="name">Password</p>
+                  <p class="name">Пароль</p>
                   <p class="value">***********</p>
-                  <p class="edit">edit</p>
+                  <p class="edit"> </p>
                 </div>
               </div>
             </div>
             <div class="col-12 col-xl-6 profile__item">
               <div class="profile__item-content profile__item-content--payment">
-                <h3 class="profile__item-heading">Payment information</h3>
+                <h3 class="profile__item-heading">Информация об оплате</h3>
               </div>
             </div>
           </div>
           <div class="profile__submitSection">
-            <button class="profile__submitWithoutBuying" type="submit" name="profileSaveWithoutBuying" id="profileSaveWithoutBuying">Save profile without buying</button>
-            <button class="profile__submitButton" type="submit" name="profileSave" id="profileSave">save</button>
-            <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy" id="profileSaveAndBuy">save and buy</button>
+            <button class="profile__submitWithoutBuying" type="submit" name="profileSaveWithoutBuying" id="profileSaveWithoutBuying">Сохранить, но отменить покупку</button>
+            <button class="profile__submitButton" type="submit" name="profileSave" id="profileSave">СОХРАНИТЬ</button>
+            <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy" id="profileSaveAndBuy">СОХРАНИТЬ И ОПЛАТИТЬ</button>
           </div>
         </form>
       </div>
