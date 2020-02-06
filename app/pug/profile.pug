@@ -61,6 +61,15 @@ html(lang="en")
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--payment
                                 h3.profile__item-heading Информация об оплате
+                                //- profile__item-content--payment-textWrap-hidden
+                                div.profile__item-content--payment-textWrap.profile__item-content--payment-textWrap-hidden
+                                    img(src="/img/paymentCart.svg", alt="cart")
+                                    p Ваша корзина пуста. Перейдите во вкладку <a href="/allCourses.html">ВСЕ КУРСЫ</a> и выберите себе курс.
+                                hr(noshade, size="1px", width="100%", color="#D8D8D8")
+                                div.profile__item-content--payment-priceBlock
+                                    img(src="/img/footerPayments.svg", alt="VISA MasterCard", class="profile__item-content--payment-img")
+                                    p.profile__item-content--payment-price К оплате:  <span>130€</span>
+                                
                     div.profile__submitSection
                         button(type="submit", name="profileSaveWithoutBuying", id="profileSaveWithoutBuying").profile__submitWithoutBuying Сохранить, но отменить покупку
                         button(type="submit", name="profileSave", id="profileSave").profile__submitButton СОХРАНИТЬ

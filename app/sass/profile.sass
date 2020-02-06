@@ -67,6 +67,7 @@
 .allCourses
     padding-top: 60px
     padding-bottom: 60px
+    min-height: calc(100vh - 70px)
     &__item
         background: linear-gradient(to right, $purple 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($purple 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, $purple 50%, rgba(255, 255, 255, 0) 0%), linear-gradient($purple 50%, rgba(255, 255, 255, 0) 0%)
         background-position: top, right, bottom, left
@@ -119,6 +120,28 @@
                 font-size: 15px
                 font-weight: 500
                 margin-top: 20px  
+    &__lamp
+        display: flex
+        flex-flow: row wrap
+        align-items: flex-start
+        justify-content: flex-end
+        max-width: 570px
+        min-width: 200px
+        width: 70%
+        position: absolute
+        right: 20px
+        top: 200px
+        p
+            flex: 0 0 40%
+            text-align: center
+            font-size: 25px
+            line-height: 30px
+            font-weight: 300
+            color: $black
+            margin-top: 30px
+        img
+            flex: 0 0 60%
+            max-width: 300px
 .myCourses
     padding-top: 60px
     padding-bottom: 60px
@@ -171,7 +194,39 @@
                 font-size: 15px
                 font-weight: 500
                 margin-top: 20px                  
-
+    &__selectCourse
+        width: 100%
+        height: auto
+        display: flex
+        flex-flow: row wrap
+        align-items: center
+        justify-content: space-around
+        &-img
+            flex: 0 0 35%
+            min-width: 150px
+            margin-bottom: 20px
+        &-textBlock
+            flex: 0 0 50%
+        &-text
+            font-weight: 300
+            font-size: 25px
+            line-height: 30px
+            color: $black
+            margin-bottom: 30px
+            text-align: center
+        &-link
+            display: block
+            width: 255px
+            line-height: 55px
+            background: $yellow
+            text-align: center
+            color: $black
+            font-weight: 500
+            font-size: 20px
+            font-family: $default-font
+            text-decoration: none
+            border-radius: 10px
+            margin: auto
 .profile
     background: linear-gradient(211.14deg, #FDF7CB 14.4%, #EB6FBD 78.15%)
     min-height: 100vh
@@ -197,8 +252,6 @@
                 position: absolute
                 top: 4px
                 left: -18px
-
-
     .profileForm
         padding-top: 60px
     &__item
@@ -219,8 +272,50 @@
                 flex-flow: row nowrap
                 align-items: center
                 justify-content: space-between
+            &--payment
+                &-textWrap
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    margin-top: 35px
+                    img
+                        width: 40px
+                        height: 40px
+                        margin-right: 20px
+                    p 
+                        font-size: 15px
+                        line-height: 20px
+                        color: $black
+                        a
+                            color: $black
+                    & + hr
+                        visibility: hidden
+                        margin-top: 20px
+                    &-hidden
+                        visibility: hidden
+                        & + hr
+                            visibility: visible
+                &-priceBlock
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                &-price
+                    font-size: 17px
+                    line-height: 23px
+                    font-family: $default-font
+                    span
+                        font-size: 19px
+                        line-height: 23px
+                        font-weight: 600
+                        font-family: $default-font
+                        display: inline-block
+                        margin-left: 5px
+                        margin-right: 5px
+                &-img
+                    width: 180px
+                    height: auto
+                    margin-top: 10px    
         &--user
-            
             &-photoWrap
                 width: 150px
                 flex: 0 0 30%
