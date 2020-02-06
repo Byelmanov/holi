@@ -8,6 +8,15 @@ function checkIsEmpty(str) {
     }
 }
 
+function checkPassword(str) {
+    let strLength = str.length;
+    if (strLength < 8) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function checkEmail(str) {
     str = str.toString();
     if (str.indexOf('@') == -1) {
@@ -72,27 +81,34 @@ registerPasswordInput.addEventListener('focus', function () {
     let textToShow = document.getElementById('registerTextPassword');
     textToShow.style.visibility = 'visible';
     this.setAttribute('placeholder', '');
-    document.getElementById('registerWarningPassword').style.display = 'none';
-    $('.register__wrapUnderInput--password').css({
-        'justify-content': 'flex-end'
-    });
 });
 registerPasswordInput.addEventListener('blur', function () {
-    // let textToShow = document.getElementById('registerTextPassword');
-    // textToShow.style.visibility = 'hidden';
-
     this.setAttribute('placeholder', 'Password');
-    let valueFromInput = this.value;
+    // let valueFromInput = this.value;
 
-    if (checkIsEmpty(valueFromInput)) {
+    // if (checkIsEmpty(valueFromInput) && checkPassword(valueFromInput)) {
+    //     $('#registerSubmit').css({
+    //         'background-color': '#F9E547'
+    //     });
+    //     $('#registerPasswordLabel').addClass('register__passwordLabel--small');
+    // } else {
+    //     document.getElementById('registerWarningPassword').style.color = '#A02515';
+    // }
+});
+
+registerPasswordInput.addEventListener('input', function () {
+    let password = this.value;
+    if (checkIsEmpty(password) && checkPassword(password)) {
         $('#registerSubmit').css({
             'background-color': '#F9E547'
         });
         $('#registerPasswordLabel').addClass('register__passwordLabel--small');
+        document.getElementById('registerWarningPassword').style.color = '#D1D0D0';
     } else {
-        document.getElementById('registerWarningPassword').style.display = 'block';
-        $('.register__wrapUnderInput--password').css({
-            'justify-content': 'space-between'
+        document.getElementById('registerWarningPassword').style.color = '#A02515';
+        $('#registerPasswordLabel').removeClass('register__passwordLabel--small');
+        $('#registerSubmit').css({
+            'background-color': '#FDF7CB'
         });
     }
 });
@@ -109,11 +125,11 @@ registrationForm.addEventListener('submit', function (event) {
         })
         error = false;
     }
-    if (!checkIsEmpty(passwordValue)) {
+    if (!checkIsEmpty(passwordValue) || !checkPassword(passwordValue)) {
         document.getElementById('registerWarningPassword').style.display = 'block';
-        $('.register__wrapUnderInput--password').css({
-            'justify-content': 'space-between'
-        });
+        // $('.register__wrapUnderInput--password').css({
+        //     'justify-content': 'space-between'
+        // });
         error = false;
     }
 

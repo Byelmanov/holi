@@ -29,8 +29,9 @@ html(lang="en")
                         input(type="password", name="registerPassword", placeholder="Password", id="registerPassword")
                         div.register__tick--password
                         div.register__wrapUnderInput.register__wrapUnderInput--password
-                            p.register__warning.register__warning--password#registerWarningPassword Заполните это поле, пожалуйста
+                            p.register__warning.register__warning--password#registerWarningPassword Пароль должен содержать не менее 8 символов.
                             button(type="submit").register__submitButton#registerSubmit Создать
+                        div.register__agreement Регистрируясь, Вы соглашаетесь с <a href="/agreement.html" target="blank">пользовательским соглашением</a>.
 
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
         script(src="js/registration.js")

@@ -1685,9 +1685,10 @@ footer
         display: none
     &__wrapUnderInput--password
         display: flex
-        justify-content: flex-end
+        justify-content: space-between
     &__warning--password
-
+        display: block
+        color: #D1D0D0
     &__submitButton
         width: 125px
         height: 40px
@@ -1707,6 +1708,13 @@ footer
     &__passwordLabel--small
         .register__tick--password
             display: block
+    &__agreement
+        color: #C2BDBD
+        font-size: 13px
+        line-height: 16px
+        margin-top: 25px
+        a 
+            color: $purple
 
 .breadCrumbs
     width: 100%
@@ -1822,7 +1830,100 @@ footer
         font-size: 15px
         font-weight: 500
         cursor: pointer
-
+.setNewPassword
+    width: 100%
+    height: auto
+    &__window
+        width: 500px
+        min-height: 450px
+        height: auto
+        background: #fff
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 10px
+        margin: auto
+        font-family: $default-font
+        margin-bottom: 10px
+    &__heading
+        line-height: 95px
+        text-align: center
+        background: linear-gradient(80.53deg, #EB6FBD 0%, #FDF7CB 99.61%)
+        border-radius: 10px 10px 0px 0px
+        font-size: 25px
+        font-weight: bold
+        color: $black
+    form
+        padding: 0 50px 20px 70px
+    label
+        margin-top: 25px
+        display: block
+        position: relative
+    &__capture
+        font-weight: 600
+        font-size: 15px
+        line-height: 18px
+        color: $black
+        &--below
+            font-size: 13px
+            line-height: 16px
+            color: #A02515
+            text-align: left
+            margin-left: 20px
+            margin-top: 10px
+            display: none
+    input
+        width: 100%
+        height: 50px
+        outline: none
+        background: #fff
+        border-radius: 10px
+        border: 1px solid #D1D0D0
+        margin-top: 10px
+        line-height: 18px
+        color: $black
+        font-weight: 500
+        font-size: 15px
+        padding: 0 20px
+    &__submit
+        width: 100%
+        height: 55px
+        line-height: 55px
+        background: $lightYellow
+        margin-top: 40px
+        outline: none
+        border: none
+        font-weight: 600
+        font-size: 15px
+        line-height: 18px
+        letter-spacing: 0.05em
+        color: $black
+        cursor: pointer
+    &__tick
+        width: 20px
+        height: 20px
+        background-image: url('../img/tick 1.svg')
+        background-size: 13px
+        background-position: center
+        background-repeat: no-repeat
+        background-color: #37b422
+        border-radius: 50%
+        position: absolute
+        right: 10px
+        bottom: 15px
+        display: none
+    &__cross
+        width: 20px
+        height: 20px
+        font-weight: 300
+        font-size: 15px
+        line-height: 20px
+        color: #fff
+        background: #A02515
+        border-radius: 50%
+        text-align: center
+        position: absolute
+        right: 10px
+        bottom: 40px
+        display: none
 
 
 
