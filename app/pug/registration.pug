@@ -18,7 +18,7 @@ html(lang="en")
                 form(action="" method="post" name="registerForm", class="register__form", id="registartionForm")
                     label.register__emailLabel#registerEmailLabel
                         p.register__text#registerTextEmail Email
-                        input(type="email", name="registerEmail", placeholder="Email", id="registerEmail")
+                        input(type="email", name="registerEmail", placeholder="Email", id="registerEmail", required)
                         div.register__tick--email
                         div.register__wrapUnderInput.register__wrapUnderInput--email
                             p.register__capture#registerCapture Мы не будем отправлять Вам спам или передавать базу данных
@@ -26,7 +26,7 @@ html(lang="en")
                             div.register__nextButton#registerNextButton Далее
                     label.register__passwordLabel#registerPasswordLabel
                         p.register__text#registerTextPassword Password
-                        input(type="password", name="registerPassword", placeholder="Password", id="registerPassword")
+                        input(type="password", name="registerPassword", placeholder="Password", id="registerPassword", autocomplete="new-password")
                         div.register__tick--password
                         div.register__wrapUnderInput.register__wrapUnderInput--password
                             p.register__warning.register__warning--password#registerWarningPassword Пароль должен содержать не менее 8 символов.

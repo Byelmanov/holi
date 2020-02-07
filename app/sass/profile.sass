@@ -369,11 +369,16 @@
                 align-items: center
                 justify-content: space-between
             &--payment
+                display: flex
+                flex-direction: column
+                align-items: flex-start
+                justify-content: space-between
+                &-heading
+                    margin-bottom: 0
                 &-textWrap
                     display: flex
                     align-items: center
                     justify-content: space-between
-                    margin-top: 35px
                     img
                         width: 40px
                         height: 40px
@@ -384,17 +389,16 @@
                         color: $black
                         a
                             color: $black
-                    & + hr
-                        visibility: hidden
-                        margin-top: 20px
-                    &-hidden
-                        visibility: hidden
-                        & + hr
-                            visibility: visible
+                &-warningAndPriceWrap
+                    width: 100%
+                    height: auto
+                    font-family: $default-font
+                    padding-bottom: 15px
+                    border-bottom: 1px solid #D8D8D8
                 &-priceBlock
                     display: flex
                     align-items: center
-                    justify-content: space-between
+                    justify-content: flex-start
                 &-price
                     font-size: 17px
                     line-height: 23px
@@ -403,14 +407,43 @@
                         font-size: 19px
                         line-height: 23px
                         font-weight: 600
-                        font-family: $default-font
                         display: inline-block
                         margin-left: 5px
-                        margin-right: 5px
+                        position: relative
+                        top: 2px
+                &-warning
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 17px
+                    color: #A02515
+                    margin-top: 10px
+                    &-done
+                        color: #37B422
+                        font-weight: 500
+                        font-size: 14px
+                        line-height: 17px
+                        margin-top: 10px
+                        margin-left: 6px
+                        display: none
+                        &:before
+                            content: ''
+                            width: 20px
+                            height: 20px
+                            background: #37B422
+                            border-radius: 50%
+                            display: inline-block
+                            background-image: url('../img/tick 1.svg')
+                            background-size: 13px
+                            background-repeat: no-repeat
+                            background-position: center
+                            position: relative
+                            top: 4px
+                            right: 6px
+
                 &-img
                     width: 180px
                     height: auto
-                    margin-top: 10px    
+                    margin-bottom: 15px  
         &--user
             &-photoWrap
                 width: 150px
@@ -686,12 +719,13 @@
         cursor: pointer
         margin-right: 40px
         display: none
+        font-family: $default-font
         &:hover
             text-decoration: underline
     &__submitAndBuy
         width: 255px
         height: 60px
-        background: $yellow
+        background: #FDF7CB
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
         border-radius: 10px
         text-align: center
@@ -711,7 +745,7 @@
     background: $black
     height: 70px
     border-top: 1px solid #000
-    display: none
+    //display: none
     &__wrap
         display: flex
         align-items: center

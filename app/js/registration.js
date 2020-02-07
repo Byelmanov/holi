@@ -10,7 +10,7 @@ function checkIsEmpty(str) {
 
 function checkPassword(str) {
     let strLength = str.length;
-    if (strLength < 8) {
+    if (str == null || str == undefined || str == '' || strLength < 8) {
         return false;
     } else {
         return true;
@@ -19,10 +19,12 @@ function checkPassword(str) {
 
 function checkEmail(str) {
     str = str.toString();
-    if (str.indexOf('@') == -1) {
-        return false;
-    } else {
+    var regExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (regExp.test(str)) {
         return true;
+    } else {
+        return false;
     }
 }
 
