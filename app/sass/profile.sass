@@ -325,7 +325,7 @@
             margin: auto
 .profile
     background: linear-gradient(211.14deg, #FDF7CB 14.4%, #EB6FBD 78.15%)
-    min-height: 100vh
+    min-height: calc(100vh - 70px)
     &__editProfile
         display: flex
         align-items: center
@@ -794,8 +794,192 @@
         text-decoration: underline
         text-transform: uppercase    
         cursor: pointer            
-            
 
+.profileEditPassword
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    background: rgba(38, 38, 38, 0.7)
+    display: flex
+    display: none   
+    &__window
+        margin: auto
+        width: 100%
+        max-width: 500px
+        height: auto
+        background: #fff
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 10px
+        position: relative
+        font-family: $default-font
+    &__heading
+        width: 100%
+        line-height: 95px
+        text-align: center
+        background: linear-gradient(80.53deg, #EB6FBD 0%, #FDF7CB 99.61%)
+        border-radius: 10px 10px 0px 0px
+        font-weight: bold
+        font-size: 25px
+        color: $black
+    &__cross
+        background-image: url('../img/registrationCross.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        width: 17px
+        height: 17px
+        position: absolute
+        right: 20px
+        top: 20px
+        cursor: pointer
+    &__form
+        padding: 30px 50px
+        label
+            position: relative
+    &__text
+        font-weight: 600
+        font-size: 15px
+        line-height: 18px
+        color: $black
+        margin-bottom: 10px
+    &__input
+        width: 100%
+        height: 50px
+        border: 1px solid #D1D0D0
+        border-radius: 10px
+        margin-bottom: 25px
+        line-height: 40px
+        font-size: 15px
+        padding: 0 20px
+        outline: none
+    &__tick
+        width: 20px
+        height: 20px
+        background-image: url('../img/tick 1.svg')
+        background-size: 13px
+        background-position: center
+        background-repeat: no-repeat
+        background-color: #37b422
+        border-radius: 50%
+        position: absolute
+        right: 10px
+        top: 103px
+        display: none
+    &__capture
+        font-size: 13px
+        line-height: 16px
+        color: #A02515
+        text-align-last: left
+        margin-left: 20px
+        position: relative
+        top: -10px
+        display: none
+    &__cross--password
+        width: 20px
+        height: 20px
+        font-weight: 300
+        font-size: 15px
+        line-height: 20px
+        color: #fff
+        background: #A02515
+        border-radius: 50%
+        text-align: center
+        position: absolute
+        top: 103px
+        right: 10px
+        display: none
+    &__submit
+        outline: none
+        width: 100%
+        height: 55px
+        background: #FDF7CB
+        border-radius: 5px
+        border: none
+        letter-spacing: 0.05em
+        font-weight: 600
+        font-size: 15px
+        line-height: 18px
+        color: $black
+        cursor: pointer
+        margin-top: 40px
+
+.profileEditEmail
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    background: rgba(38, 38, 38, 0.7)
+    display: flex
+    display: none
+    &__window
+        margin: auto
+        width: 100%
+        max-width: 500px
+        height: auto
+        background: #fff
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 10px
+        position: relative
+        font-family: $default-font
+    &__heading
+        width: 100%
+        line-height: 95px
+        text-align: center
+        background: linear-gradient(80.53deg, #EB6FBD 0%, #FDF7CB 99.61%)
+        border-radius: 10px 10px 0px 0px
+        font-weight: bold
+        font-size: 25px
+        color: $black
+    &__cross
+        background-image: url('../img/registrationCross.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        width: 17px
+        height: 17px
+        position: absolute
+        right: 20px
+        top: 20px
+        cursor: pointer
+    &__form
+        padding: 30px 50px
+        label
+            position: relative
+    &__text
+        font-weight: 600
+        font-size: 15px
+        line-height: 18px
+        color: $black
+        margin-bottom: 10px
+    &__input
+        width: 100%
+        height: 50px
+        border: 1px solid #D1D0D0
+        border-radius: 10px
+        margin-bottom: 40px
+        line-height: 40px
+        font-size: 15px
+        padding: 0 20px
+        outline: none
+        font-weight: 600  
+    &__submit
+        outline: none
+        width: 100%
+        height: 55px
+        background: #FDF7CB
+        border-radius: 5px
+        border: none
+        letter-spacing: 0.05em
+        font-weight: 600
+        font-size: 15px
+        line-height: 18px
+        color: $black
+        cursor: pointer
 
 
 

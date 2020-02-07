@@ -88,12 +88,12 @@
                 <div class="profile__item--account-emailWrap">
                   <p class="name">Email</p>
                   <p class="value">lishchynskayaanna@gmail.com</p>
-                  <p class="edit"> </p>
+                  <p class="edit" id="profileEditEmailButton"> </p>
                 </div>
                 <div class="profile__item--account-passwordWrap">
                   <p class="name">Пароль</p>
                   <p class="value">***********</p>
-                  <p class="edit"> </p>
+                  <p class="edit" id="profileEditPasswordButton"></p>
                 </div>
               </div>
             </div>
@@ -115,6 +115,39 @@
             <button class="profile__submitButton" type="submit" name="profileSave" id="profileSave">СОХРАНИТЬ</button>
             <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy" id="profileSaveAndBuy">СОХРАНИТЬ И ОПЛАТИТЬ</button>
           </div>
+        </form>
+      </div>
+    </section>
+    <section class="profileEditPassword container-fluid" id="profileEditPasswordWindow">
+      <div class="profileEditPassword__window">
+        <h2 class="profileEditPassword__heading">Редактировать пароль</h2>
+        <div class="profileEditPassword__cross" id="profileEditPasswordCross"></div>
+        <form class="profileEditPassword__form" action="" method="post" name="profileEditPasswordForm">
+          <label>
+            <p class="profileEditPassword__text">Новый пароль</p>
+            <input class="profileEditPassword__input" type="password" name="profileEditPassword" id="profileEditPasswordInput"/>
+          </label>
+          <label>
+            <p class="profileEditPassword__text">Подтвердите новый пароль</p>
+            <input class="profileEditPassword__input" type="password" name="profileEditPasswordRepeat" id="profileEditPasswordInputRepeat"/>
+            <div class="profileEditPassword__tick" id="profileEditPasswordTick"></div>
+            <div class="profileEditPassword__cross--password" id="profileEditPasswordCrossPassword">X</div>
+            <p class="profileEditPassword__capture" id="profileEditPasswordCapture">Пароли не совпадают. Попробуйте еще раз.</p>
+          </label>
+          <button class="profileEditPassword__submit" type="submit" id="profileEditPasswordSubmit">СОХРАНИТЬ</button>
+        </form>
+      </div>
+    </section>
+    <section class="profileEditEmail container-fluid" id="profileEditEmailWindow">
+      <div class="profileEditEmail__window">
+        <h2 class="profileEditEmail__heading">Редактировать email</h2>
+        <div class="profileEditEmail__cross" id="profileEditEmailCross"></div>
+        <form class="profileEditEmail__form" action="" method="post" name="profileEditEmailForm">
+          <label>
+            <p class="profileEditEmail__text">Редактируйте Ваш email</p>
+            <input class="profileEditEmail__input" type="email" name="profileEditEmailForm" value="email.com" id="profileEditEmailInput"/>
+          </label>
+          <button class="profileEditEmail__submit" type="submit" id="profileEditEmailSubmitButton">СОХРАНИТЬ</button>
         </form>
       </div>
     </section>

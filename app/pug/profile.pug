@@ -53,11 +53,11 @@ html(lang="en")
                                 div.profile__item--account-emailWrap
                                     p.name Email
                                     p.value lishchynskayaanna@gmail.com
-                                    p.edit 
+                                    p.edit#profileEditEmailButton 
                                 div.profile__item--account-passwordWrap
                                     p.name Пароль
                                     p.value ***********
-                                    p.edit 
+                                    p.edit#profileEditPasswordButton
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--payment
                                 h3.profile__item-heading Информация об оплате
@@ -74,7 +74,31 @@ html(lang="en")
                         button(type="submit", name="profileSaveWithoutBuying", id="profileSaveWithoutBuying").profile__submitWithoutBuying Сохранить, но отменить покупку
                         button(type="submit", name="profileSave", id="profileSave").profile__submitButton СОХРАНИТЬ
                         button(type="submit", name="profileSaveAndBuy", id="profileSaveAndBuy").profile__submitAndBuy СОХРАНИТЬ И ОПЛАТИТЬ
-                                
+        section.profileEditPassword.container-fluid#profileEditPasswordWindow
+            div.profileEditPassword__window
+                h2.profileEditPassword__heading Редактировать пароль
+                div.profileEditPassword__cross#profileEditPasswordCross
+                form(action="", method="post", name="profileEditPasswordForm", class="profileEditPassword__form")
+                    label
+                        p.profileEditPassword__text Новый пароль
+                        input(type="password", name="profileEditPassword", class="profileEditPassword__input", id="profileEditPasswordInput")
+                    label
+                        p.profileEditPassword__text Подтвердите новый пароль
+                        input(type="password", name="profileEditPasswordRepeat", class="profileEditPassword__input", id="profileEditPasswordInputRepeat")
+                        div.profileEditPassword__tick#profileEditPasswordTick
+                        div.profileEditPassword__cross--password#profileEditPasswordCrossPassword X
+                        p.profileEditPassword__capture#profileEditPasswordCapture Пароли не совпадают. Попробуйте еще раз.
+                    button(type="submit", class="profileEditPassword__submit", id="profileEditPasswordSubmit") СОХРАНИТЬ
+        section.profileEditEmail.container-fluid#profileEditEmailWindow
+            div.profileEditEmail__window
+                h2.profileEditEmail__heading Редактировать email
+                div.profileEditEmail__cross#profileEditEmailCross
+                form(action="", method="post", name="profileEditEmailForm", class="profileEditEmail__form")
+                    label
+                        p.profileEditEmail__text Редактируйте Ваш email
+                        input(type="email", name="profileEditEmailForm", class="profileEditEmail__input", value="email.com", id="profileEditEmailInput")
+                    button(type="submit", class="profileEditEmail__submit", id="profileEditEmailSubmitButton") СОХРАНИТЬ
+
                                     
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
         script(src="js/profile.js")
