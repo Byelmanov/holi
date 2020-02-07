@@ -78,6 +78,11 @@
         display: flex
         align-items: center
         justify-content: space-between
+        &--bought
+            background: linear-gradient(to right, #FAEBEF 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(#FAEBEF 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, #FAEBEF 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(#FAEBEF 50%, rgba(255, 255, 255, 0) 0%)
+            background-position: top, right, bottom, left
+            background-repeat: repeat-x, repeat-y
+            background-size: 35px 5px, 5px 35px
         &-images
             height: 94%
             margin-top: 8px
@@ -119,7 +124,22 @@
                 color: $black
                 font-size: 15px
                 font-weight: 500
-                margin-top: 20px  
+                margin-top: 20px
+                cursor: pointer
+            &-buttonDisabled
+                display: block
+                width: 200px
+                height: 50px
+                margin: auto
+                background: $lightYellow
+                border-radius: 10px
+                line-height: 50px
+                text-align: center
+                text-decoration: none
+                color: $black
+                font-size: 13px
+                font-weight: 500
+                margin-top: 20px
     &__lamp
         display: flex
         flex-flow: row wrap
@@ -142,6 +162,82 @@
         img
             flex: 0 0 60%
             max-width: 300px
+.allCoursesAlert
+    width: 100%
+    height: auto
+    min-height: 100vh
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    background: rgba(38, 38, 38, 0.7)
+    z-index: 1
+    display: flex
+    display: none
+    &__window
+        width: 100%
+        max-width: 500px
+        margin: auto
+        background: #ffffff
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 10px
+        position: relative
+        font-family: $default-font
+    &__heading
+        width: 100%
+        line-height: 95px
+        text-align: center
+        color: $black
+        background: linear-gradient(80.53deg, #EB6FBD 0%, #FDF7CB 99.61%)
+        border-radius: 10px 10px 0px 0px
+    &__cross
+        background-image: url('../img/registrationCross.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        width: 17px
+        height: 17px
+        position: absolute
+        right: 20px
+        top: 20px
+        cursor: pointer
+    &__body
+        padding: 30px 50px 55px 50px
+    &__text
+        font-size: 17px
+        line-height: 21px
+        color: $black
+        margin-bottom: 25px
+    &__list
+        padding: 0 40px
+    &__listItem
+        font-size: 17px
+        line-height: 21px
+        color: $black
+        margin-bottom: 10px
+    &__link
+        font-size: 14px
+        line-height: 17px
+        color: #C2BDBD
+        text-align: right
+        display: block
+        margin-top: 25px
+        margin-bottom: 50px
+    &__submit
+        width: 100%
+        height: 55px
+        background: $yellow
+        outline: none
+        border: none
+        border-radius: 5px
+        letter-spacing: 0.05em
+        font-weight: 600
+        font-size: 15px
+        line-height: 18px
+        color: $black
+        cursor: pointer
+
+
+
 .myCourses
     padding-top: 60px
     padding-bottom: 60px

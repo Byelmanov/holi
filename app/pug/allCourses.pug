@@ -5,18 +5,33 @@ html(lang="en")
         include includes/allCoursesBurgerMenu.pug
         section.allCourses.container
             div.row.no-gutters.justify-content-start
-                div.col-12.col-xl-6.allCourses__item
+                // allCourses__item--bought
+                div(data-id="1").col-12.col-xl-6.allCourses__item#allCoursesFirst
                     div.allCourses__item-images
                     div.allCourses__item-description
                         h3.allCourses__item-description-heading Интенсив Английского
                         p.allCourses__item-description-text <span>5</span> недель
                         p.allCourses__item-description-text <span>5</span> дней в неделю
                         p.allCourses__item-description-text <span>30</span> минут в день
-                        a(href="").allCourses__item-description-button ПОЛУЧИТЬ КУРС
+                        div.allCourses__item-description-button#allCoursesGetButton ПОЛУЧИТЬ КУРС
+                        //div.allCourses__item-description-buttonDisabled ВЫ КУПИЛИ ЭТОТ КУРС
             div.allCourses__lamp
                 p Больше курсов в разработке
                 img(src="/img/lightBulb.svg", alt="Больше курсов в разработке")
-
+        section.allCoursesAlert.container-fluid#allCoursesAlertSection
+            div.allCoursesAlert__window
+                h2.allCoursesAlert__heading Внимание!
+                div.allCoursesAlert__cross#allCoursesAlertCross 
+                div.allCoursesAlert__body
+                    p.allCoursesAlert__text Этот курс подходит только для уровней:
+                    ul.allCoursesAlert__list
+                        li.allCoursesAlert__listItem A2 (Pre-Intermediate)
+                        li.allCoursesAlert__listItem B1 (Intermediate)
+                        li.allCoursesAlert__listItem B2 (Upper-Intermediate)
+                    a(href="").allCoursesAlert__link Я не знаю какой у меня уровень
+                    form(action="", method="post", name="allCoursesBuyForm")
+                        button(type="submit", class="allCoursesAlert__submit") МНЕ ПОДХОДИТ
     
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
     script(src="js/allCourses.js")
     script(src="js/profileUserBurger.js")
