@@ -47,7 +47,7 @@
         <form class="register__form" action="" method="post" name="registerForm" id="registartionForm">
           <label class="register__emailLabel" id="registerEmailLabel">
             <p class="register__text" id="registerTextEmail">Email</p>
-            <input type="email" name="registerEmail" placeholder="Email" id="registerEmail"/>
+            <input type="email" name="registerEmail" placeholder="Email" id="registerEmail" required="required"/>
             <div class="register__tick--email"></div>
             <div class="register__wrapUnderInput register__wrapUnderInput--email">
               <p class="register__capture" id="registerCapture">Мы не будем отправлять Вам спам или передавать базу данных</p>
@@ -57,7 +57,7 @@
           </label>
           <label class="register__passwordLabel" id="registerPasswordLabel">
             <p class="register__text" id="registerTextPassword">Password</p>
-            <input type="password" name="registerPassword" placeholder="Password" id="registerPassword"/>
+            <input type="password" name="registerPassword" placeholder="Password" id="registerPassword" autocomplete="new-password"/>
             <div class="register__tick--password"></div>
             <div class="register__wrapUnderInput register__wrapUnderInput--password">
               <p class="register__warning register__warning--password" id="registerWarningPassword">Пароль должен содержать не менее 8 символов.</p>

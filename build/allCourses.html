@@ -26,13 +26,16 @@
     </nav>
     <section class="allCourses container">
       <div class="row no-gutters justify-content-start">
-        <div class="col-12 col-xl-6 allCourses__item">
+        <!-- allCourses__item--bought-->
+        <div class="col-12 col-xl-6 allCourses__item" data-id="1" id="allCoursesFirst">
           <div class="allCourses__item-images"></div>
           <div class="allCourses__item-description">
             <h3 class="allCourses__item-description-heading">Интенсив Английского</h3>
             <p class="allCourses__item-description-text"><span>5</span> недель</p>
             <p class="allCourses__item-description-text"><span>5</span> дней в неделю</p>
-            <p class="allCourses__item-description-text"><span>30</span> минут в день</p><a class="allCourses__item-description-button" href="">ПОЛУЧИТЬ КУРС</a>
+            <p class="allCourses__item-description-text"><span>30</span> минут в день</p>
+            <div class="allCourses__item-description-button" id="allCoursesGetButton">ПОЛУЧИТЬ КУРС</div>
+            <!--div.allCourses__item-description-buttonDisabled ВЫ КУПИЛИ ЭТОТ КУРС-->
           </div>
         </div>
       </div>
@@ -40,7 +43,25 @@
         <p>Больше курсов в разработке</p><img src="/img/lightBulb.svg" alt="Больше курсов в разработке"/>
       </div>
     </section>
+    <section class="allCoursesAlert container-fluid" id="allCoursesAlertSection">
+      <div class="allCoursesAlert__window">
+        <h2 class="allCoursesAlert__heading">Внимание!</h2>
+        <div class="allCoursesAlert__cross" id="allCoursesAlertCross"> </div>
+        <div class="allCoursesAlert__body">
+          <p class="allCoursesAlert__text">Этот курс подходит только для уровней:</p>
+          <ul class="allCoursesAlert__list">
+            <li class="allCoursesAlert__listItem">A2 (Pre-Intermediate)</li>
+            <li class="allCoursesAlert__listItem">B1 (Intermediate)</li>
+            <li class="allCoursesAlert__listItem">B2 (Upper-Intermediate)</li>
+          </ul><a class="allCoursesAlert__link" href="">Я не знаю какой у меня уровень</a>
+          <form action="" method="post" name="allCoursesBuyForm">
+            <button class="allCoursesAlert__submit" type="submit">МНЕ ПОДХОДИТ</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/allCourses.js"></script>
   <script src="js/profileUserBurger.js"></script>
 </html>

@@ -49,7 +49,18 @@ function checkIsEmpty(str) {
 
 function checkEmail(str) {
     str = str.toString();
-    if (str.indexOf('@') == -1) {
+    var regExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (regExp.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkPassword(str) {
+    let strLength = str.length;
+    if (str == null || str == undefined || str == '' || strLength < 8) {
         return false;
     } else {
         return true;
@@ -61,7 +72,7 @@ enterForm.addEventListener('submit', function (event) {
     event.preventDefault();
     let email = document.getElementById('enterEmail').value;
     let password = document.getElementById('enterPassword').value;
-    if (checkIsEmpty(email) && checkIsEmpty(password) && checkEmail(email)) {
+    if (checkIsEmpty(email) && checkEmail(email) && checkPassword(password)) {
         enterForm.submit();
     }
 });

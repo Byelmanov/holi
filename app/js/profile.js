@@ -8,7 +8,7 @@ saveForm.addEventListener('submit', function (e) {
 
     let error = true;
 
-    if (checkIsEmpty(firstName) && checkIsEmpty(lastName) && checkIsEmpty(phoneNumber) && checkIsEmpty(skype)) {
+    if (checkIsEmpty(firstName) && checkIsEmpty(lastName) && checkIsEmpty(phoneNumber) && checkPhoneNumber(phoneNumber) && checkIsEmpty(skype)) {
         error = true;
     } else {
         error = false;
@@ -46,6 +46,17 @@ function checkEmail(str) {
         return false;
     }
 }
+function checkPhoneNumber(str) {
+    str = str.toString();
+    var regExpForPhone = /^\+[0-9]{2}\([0-9]{3}\)[0-9]{7}$/;
+
+    if (regExpForPhone.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 document.getElementById('profileEditPasswordButton').addEventListener('click', function () {
     document.getElementById('profileEditPasswordWindow').style.display = 'flex';
@@ -132,9 +143,8 @@ function checkIsCartVisible() {
                     display: 'flex'
                 });
             });
-            document.getElementById('profileSaveWithoutBuying').style.display = 'none';
-            document.getElementById('profileSaveAndBuy').style.display = 'none';
-            document.getElementById('profileSave').style.display = 'block';
+            hideButtonsIfCartVisible();
+            showCartInPaymentSection();
         });
 
         document.getElementById('cartCanseledOK').addEventListener('click', function () {
@@ -204,13 +214,51 @@ secondNameInput.addEventListener('input', function () {
 });
 phoneNumberInput.addEventListener('input', function () {
     let phoneNumber = this.value;
-    if (checkIsEmpty(phoneNumber)) {
+    if (checkIsEmpty(phoneNumber) && checkPhoneNumber(phoneNumber)) {
         phoneNumberStar.style.display = 'none';
     } else {
         phoneNumberStar.style.display = 'block';
     }
     checkAllInputsAreEmpty();
 });
+
+phoneNumberInput.addEventListener('focus', function () {
+    let number = this.value;
+    if (number == "" || number == undefined) {
+        this.value += '+';
+    }
+    triggerForPhoneInputFirst = true;
+    triggerForPhoneInputSecond = true;
+});
+
+let triggerForPhoneInputFirst = true;
+let triggerForPhoneInputSecond = true;
+
+phoneNumberInput.addEventListener('input', function () {
+    let number = this.value;
+    let length = number.length;
+    let lastSymbol = number[length - 1];
+    if (isNaN(lastSymbol) || length > 15) {
+        this.value = number.slice(0, (length - 1));
+    }
+    if (length == 3 && triggerForPhoneInputFirst) {
+        this.value += "(";
+        triggerForPhoneInputFirst = false;
+    }
+    if (length == 7 && triggerForPhoneInputSecond) {
+        this.value += ")";
+        triggerForPhoneInputSecond = false;
+    }
+    checkAllInputsAreEmpty();
+    if (number == "") {
+        this.value = '+';
+        alert('vewwve');
+        //triggerForPhoneInputFirst = true;
+        //triggerForPhoneInputSecond = true;
+    }
+
+});
+
 skypeInput.addEventListener('input', function () {
     let skype = this.value;
     if (checkIsEmpty(skype)) {
@@ -230,12 +278,17 @@ function checkAllInputsAreEmpty() {
     let warning = document.getElementById('profilePaymentWarning');
     let done = document.getElementById('profilePaymentWarningDone');
 
-    if (checkIsEmpty(firstName) && checkIsEmpty(secondName) && checkIsEmpty(phoneNumber) && checkIsEmpty(skype)) {
+    if (checkIsEmpty(firstName) && checkIsEmpty(secondName) && checkIsEmpty(phoneNumber) && checkPhoneNumber(phoneNumber) && checkIsEmpty(skype)) {
         warning.style.display = 'none';
         done.style.display = 'block';
+        document.getElementById('profileSaveAndBuy').style.background = '#F9E547';
+        document.getElementById('profileSave').style.background = '#F9E547';
+
     } else {
         warning.style.display = 'block';
         done.style.display = 'none';
+        document.getElementById('profileSaveAndBuy').style.background = '#FDF7CB';
+        document.getElementById('profileSave').style.background = '#FDF7CB';
     }
 
 

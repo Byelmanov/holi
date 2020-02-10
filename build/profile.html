@@ -26,16 +26,14 @@
         </div>
       </div>
     </nav>
-    <section class="cartMenu container-fluid" id="cartMenu">
-      <div class="container cartMenu__wrap">
-        <p class="cartMenu__item cartMenu__item--text">Ваша корзина</p>
-        <div class="cartMenu__item cartMenu__item--price">
-          <h3>130€</h3>
-          <p>Интенсив Английского</p>
-        </div>
-        <div class="cartMenu__item cartMenu__item--trash" id="cartMenuTrash"></div>
-      </div>
-    </section>
+    <!--section.cartMenu.container-fluid#cartMenu
+    div.container.cartMenu__wrap
+        p.cartMenu__item.cartMenu__item--text Ваша корзина
+        div.cartMenu__item.cartMenu__item--price
+            h3 130€
+            p Интенсив Английского
+        div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
+    -->
     <section class="profile container-fluid">
       <div class="cardCanseled container" id="cardCanseled">
         <p class="cardCanseled__text">Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ</a>.</p>
@@ -55,13 +53,13 @@
                 <div class="progile__item--user-data">
                   <label>
                     <p class="profile__item--user-name">Имя</p>
-                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="Имя" id="profileFirstName"/>
-                    <div class="profile__item--user-firstName-star">*   </div>
+                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="Имя" id="profileFirstName" autocomplete="name"/>
+                    <div class="profile__item--user-firstName-star" id="profileFirstNameStar">*   </div>
                   </label>
                   <label>
                     <p class="profile__item--user-name">Фамилия</p>
-                    <input class="profile__item--user-name-input" type="text" name="profileLastName" placeholder="Фамилия " id="profileLastName"/>
-                    <div class="profile__item--user-lastName-star">*</div>
+                    <input class="profile__item--user-name-input" type="text" name="profileLastName" placeholder="Фамилия " id="profileLastName" autocomplete="name"/>
+                    <div class="profile__item--user-lastName-star" id="profileLastNameStar">*</div>
                   </label>
                 </div>
               </div>
@@ -71,13 +69,13 @@
                 <h3 class="profile__item-heading">Контактная информация</h3>
                 <label class="profile__item--contact-phoneWrap">
                   <p>Телефон</p>
-                  <input type="tel" name="profileTel" placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone"/>
-                  <div class="profile__item--contact-phoneWrap-star">*</div>
+                  <input type="tel" name="profileTel" placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone" autocomplete="tel-country-code"/>
+                  <div class="profile__item--contact-phoneWrap-star" id="profilePhoneStar">*</div>
                 </label>
                 <label class="profile__item--contact-skypeWrap">
                   <p>Skype</p>
                   <input type="tel" name="profileSkype" placeholder="МОЙ SKYPE" id="profileSkype"/>
-                  <div class="profile__item--contact-skypeWrap-star">*</div>
+                  <div class="profile__item--contact-skypeWrap-star" id="profileSkypeStar">*</div>
                 </label>
                 <p class="profile__item--contact-capture">Ваш курс будет проходить в Skype</p>
               </div>
@@ -88,25 +86,27 @@
                 <div class="profile__item--account-emailWrap">
                   <p class="name">Email</p>
                   <p class="value">lishchynskayaanna@gmail.com</p>
-                  <p class="edit"> </p>
+                  <p class="edit" id="profileEditEmailButton"> </p>
                 </div>
                 <div class="profile__item--account-passwordWrap">
                   <p class="name">Пароль</p>
                   <p class="value">***********</p>
-                  <p class="edit"> </p>
+                  <p class="edit" id="profileEditPasswordButton"></p>
                 </div>
               </div>
             </div>
             <div class="col-12 col-xl-6 profile__item">
               <div class="profile__item-content profile__item-content--payment">
-                <h3 class="profile__item-heading">Информация об оплате</h3>
-                <div class="profile__item-content--payment-textWrap profile__item-content--payment-textWrap-hidden"><img src="/img/paymentCart.svg" alt="cart"/>
+                <h3 class="profile__item-heading profile__item-content--payment-heading">Информация об оплате</h3>
+                <div class="profile__item-content--payment-textWrap" id="profileItemPaymentCart"><img src="/img/paymentCart.svg" alt="cart"/>
                   <p>Ваша корзина пуста. Перейдите во вкладку <a href="/allCourses.html">ВСЕ КУРСЫ</a> и выберите себе курс.</p>
                 </div>
-                <hr noshade="noshade" size="1px" width="100%" color="#D8D8D8"/>
-                <div class="profile__item-content--payment-priceBlock"><img class="profile__item-content--payment-img" src="/img/footerPayments.svg" alt="VISA MasterCard"/>
+                <div class="profile__item-content--payment-warningAndPriceWrap" id="profileItemPaymentWarningAndPrice">
                   <p class="profile__item-content--payment-price">К оплате:  <span>130€</span></p>
+                  <p class="profile__item-content--payment-warning" id="profilePaymentWarning">Пожалуйста, заполните все поля перед тем, как продолжить</p>
+                  <p class="profile__item-content--payment-warning-done" id="profilePaymentWarningDone">Все готово к оплате!</p>
                 </div>
+                <div class="profile__item-content--payment-priceBlock"><img class="profile__item-content--payment-img" src="/img/footerPayments.svg" alt="VISA MasterCard"/></div>
               </div>
             </div>
           </div>
@@ -115,6 +115,39 @@
             <button class="profile__submitButton" type="submit" name="profileSave" id="profileSave">СОХРАНИТЬ</button>
             <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy" id="profileSaveAndBuy">СОХРАНИТЬ И ОПЛАТИТЬ</button>
           </div>
+        </form>
+      </div>
+    </section>
+    <section class="profileEditPassword container-fluid" id="profileEditPasswordWindow">
+      <div class="profileEditPassword__window">
+        <h2 class="profileEditPassword__heading">Редактировать пароль</h2>
+        <div class="profileEditPassword__cross" id="profileEditPasswordCross"></div>
+        <form class="profileEditPassword__form" action="" method="post" name="profileEditPasswordForm">
+          <label>
+            <p class="profileEditPassword__text">Новый пароль</p>
+            <input class="profileEditPassword__input" type="password" name="profileEditPassword" id="profileEditPasswordInput" required="required" autocomplete="new-password"/>
+          </label>
+          <label>
+            <p class="profileEditPassword__text">Подтвердите новый пароль</p>
+            <input class="profileEditPassword__input" type="password" name="profileEditPasswordRepeat" id="profileEditPasswordInputRepeat" required="required" autocomplete="new-password"/>
+            <div class="profileEditPassword__tick" id="profileEditPasswordTick"></div>
+            <div class="profileEditPassword__cross--password" id="profileEditPasswordCrossPassword">X</div>
+            <p class="profileEditPassword__capture" id="profileEditPasswordCapture">Пароли не совпадают. Попробуйте еще раз.</p>
+          </label>
+          <button class="profileEditPassword__submit" type="submit" id="profileEditPasswordSubmit">СОХРАНИТЬ</button>
+        </form>
+      </div>
+    </section>
+    <section class="profileEditEmail container-fluid" id="profileEditEmailWindow">
+      <div class="profileEditEmail__window">
+        <h2 class="profileEditEmail__heading">Редактировать email</h2>
+        <div class="profileEditEmail__cross" id="profileEditEmailCross"></div>
+        <form class="profileEditEmail__form" action="" method="post" name="profileEditEmailForm">
+          <label>
+            <p class="profileEditEmail__text">Редактируйте Ваш email</p>
+            <input class="profileEditEmail__input" type="email" name="profileEditEmailForm" value="email.com" id="profileEditEmailInput" required="required"/>
+          </label>
+          <button class="profileEditEmail__submit" type="submit" id="profileEditEmailSubmitButton">СОХРАНИТЬ</button>
         </form>
       </div>
     </section>
