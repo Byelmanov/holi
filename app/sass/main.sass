@@ -1006,7 +1006,7 @@ header
             font-size: 20px
             font-family: $default-font
             font-weight: 500
-            line-height: 24px
+            line-height: 23px
             text-align: center
             background: $purple	
             color: #fff
@@ -1359,9 +1359,6 @@ footer
                     font-size: 22px
                     line-height: 27px
                     letter-spacing: 0.05em
-                    // &:hover
-                    // 	color: $purple
-                    // 	text-decoration: underline
             &-facebook
                 margin-bottom: 30px          
     &__logo
@@ -1385,10 +1382,12 @@ footer
         padding-top: 20px
         padding-bottom: 80px
         display: flex
+        flex-flow: row wrap
         align-items: center
         justify-content: space-between
         &-text
             display: flex
+            flex-flow: row wrap
             align-items: center
             justify-content: flex-start
             font-family: $default-font
@@ -1409,6 +1408,12 @@ footer
                     bottom: 0
                     left: 0
                     right: 0
+                    display: none
+                &:hover:after
+                    display: block
+        &-logos
+            min-width: 250px
+                
 
 
 .registration
