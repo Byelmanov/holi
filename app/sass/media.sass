@@ -1,7 +1,440 @@
 @import "vars"
 
+@media all and (max-width: 1230px)
+    .application
+        &__item
+            &-link
+                width: 60%
+                min-width: 500px
+    .burgerMenu
+        &__officer
+            left: 10%
+
+@media all and (max-width: 1146px)
+    .header
+        &__about
+            flex-flow: column wrap
+            align-items: flex-start
+        &__description
+            margin-left: 65px
+            margin-top: 30px
+            flex: 0 0 100%
+            &:after
+                transform: none
+                top: -10px
+                left: 0
+    .program
+        &__items
+            display: flex
+            flex-flow: column wrap
+            justify-content: flex-start
+            align-items: center
+        &__item 
+            &--first
+                left: 0
+                align-self: flex-start
+            &--second
+                left: 0
+                align-self: flex-end
+            &--third
+                left: 0
+                align-self: flex-start
+            &--forth
+                left: 0
+                align-self: flex-end
+    .road
+        &__car
+            width: 75px
+            &--first
+                left: -130px
+            &--second
+                left: -20px
+            &--third
+                right: -180px
+            &--forth
+                left: -160px
+
+            
+
+@media all and (max-width: 1039px)
+    .application
+        &__item
+            &-link
+                width: 60%
+                min-width: 400px
+    .footer
+        &__content
+            flex-flow: column nowrap
+            align-items: center
+        &__item
+            &-logo
+                order: 1
+                align-self: start
+            &-nav
+                order: 3
+                margin-bottom: 100px
+                &-li
+                    a
+                        font-size: 23px
+                        line-height: 28px
+            &-networks
+                order: 2
+                margin-bottom: 30px
+                min-width: 320px
+                &-heading
+                    font-size: 20px
+                    line-height: 24px
+        &__developedInfo
+            position: absolute
+            right: 0
+            left: 0
+            bottom: 240px
+            
+@media all and (max-width: 950px)
+    .burgerMenu
+        &__officer
+            left: 0  
 
 
+@media all and (max-width: 923px)
+    .application
+        &__item
+            &-link
+                font-size: 20px
+                line-height: 60px
+                height: 60px
+                width: 60%
+                min-width: 300px
+
+@media all and (max-width: 880px)
+    .footer
+        &__information
+            flex-direction: column
+            &-text
+                a
+                    display: block
+                    margin: 0 auto
+                    margin-bottom: 10px
+                    margin-right: 5px
+            &-logos
+                order: -1
+                margin-bottom: 15px
+        &__logo
+            width: 150px
+        &__developedInfo
+            position: absolute
+            right: 0
+            left: 0
+            bottom: 280px
+    .road
+        height: 150px
+        padding: 20px 0
+        &__line
+            height: 3px
+            &--top
+                top: 12px
+            &--bottom
+                bottom: 12px
+        &__headingWrap
+            width: 275px
+            line-height: 30px
+            height: 30px
+            margin-top: 36px
+            padding-right: 10px
+            padding-left: 10px
+        &__heading
+            line-height: 30px
+            padding: 0
+            &--bold
+                font-size: 30px
+                line-height: 30px
+            &--normal
+                font-size: 22px
+                line-height: 25px
+        &__dottedLine
+            height: 2px
+        &__car
+            width: 50px
+            &--first
+                top: -25px
+                left: -50px
+            &--second
+                top: 43px
+                left: 20px
+            &--third
+                top: -45px
+                right: -70px
+            &--forth
+                top: 12px
+                left: -80px
+    .program
+        &__priceDescription
+            left: 75%
+
+@media all and (max-width: 845px)
+    .program
+        &__priceDescription
+            left: 40%
+
+@media all and (max-width: 830px)
+    .tutors
+        &__items
+            flex-flow: column wrap
+            align-items: center
+        &__link
+            top: 0
+    .application
+        padding: 40px 80px 0 80px
+        &__item-questionMark-description
+            right: 10%
+
+@media all and (max-width: 810px)
+    .application
+        &__item
+            justify-content: flex-start
+            &-number
+                max-width: 30px
+                max-height: 30px
+                min-width: 30px
+                min-height: 30px
+                line-height: 30px
+                font-size: 20px
+                margin-right: 15px
+            &-link
+                width: 100%
+                font-size: 20px
+                padding: 0 30px
+                height: 55px
+                line-height: 55px
+            &-text
+                font-size: 16px
+                line-height: 20px
+            &-text--purple
+                display: none
+    .burgerMenu
+        &__officer
+            display: none
+    .program
+        &__questionMark
+            &--first-description
+                right: 20%
+            &--forth-description
+                right: 20%
+@media all and (max-width: 775px)
+    .header
+        &__heading
+            margin-left: 0
+        &__description
+            margin-left: 0
+    .faq
+        &__connect-mail, &__connect-telegram
+            img
+                width: 45px
+            a
+                font-size: 40px
+                line-height: 51px
+    .register
+        &__form
+            padding-left: 80px
+            padding-right: 80px
+
+@media all and (max-width: 700px)
+    .header
+        &__heading
+            font-size: 65px
+            line-height: 75px
+            min-height: 250px
+        &__mainLogo
+            width: 200px
+        &__description
+    .about
+        &__circle
+            margin-bottom: 20px
+        &__text
+            text-align: left
+    .program
+        &__officer
+            display: none
+        &__item 
+            &--first
+                left: 0
+                align-self: center
+            &--second
+                left: 0
+                align-self: center
+            &--third
+                left: 0
+                align-self: center
+            &--forth
+                left: 0
+                align-self: center
+        &__questionMark
+            &--first
+                &-description
+                    right: 15%
+        &__textBlock
+            &--second
+                width: 100%
+                min-width: 450px
+                .program__day
+                    width: 30px
+                    height: 30px
+                    line-height: 30px
+                    font-size: 13px
+                .program__grammar
+                    width: 25%
+                    height: 10px
+                    border-left: 2px solid $yellow
+                    border-right: 2px solid $yellow
+                    border-bottom: 2px solid $yellow
+                    margin-left: 2%
+                    &-text
+                        font-size: 15px
+                        line-height: 18px
+                .program__speaking
+                    width: 40%
+                    height: 10px
+                    border-left: 2px solid $purple
+                    border-right: 2px solid $purple
+                    border-bottom: 2px solid $purple
+                    margin-left: 3%
+        &__priceHeading
+            margin-left: auto
+            margin-right: auto
+            text-align: center
+        &__priceQuestionMark
+            left: 70%
+        &__priceCross
+            left: 70%
+        &__priceDescription
+            top: -80px
+            left: 30%
+    .application
+        &__item
+            &-questionMark-description
+                right: 52%
+
+@media all and (max-width: 650px)
+    .program
+        &__priceDescription
+            left: 20%
+    .register
+        &__form
+            padding-top: 100px
+            padding-left: 30px
+            padding-right: 30px
+        &__tick
+            &--password
+                right: 0
+@media all and (max-width: 640px)
+    .faq
+        &__connect-mail, &__connect-telegram
+            img
+                width: 45px
+            a
+                font-size: 35px
+                line-height: 41px
+
+@media all and (max-width: 600px)
+    .header
+        &__heading
+            font-size: 50px
+        &__description
+            &-text
+                font-size: 15px
+                line-height: 21px
+                &--bold
+                    font-size: 20px
+        &__mainLogo
+            width: 180px
+        &__block
+            &:first-child
+                line-height: 25px
+                display: flex
+                a
+                    margin: auto
+            
+    .faq
+        &__connect-mail, &__connect-telegram
+            img
+                width: 45px
+            a
+                font-size: 33px
+                line-height: 40px     
+    .register
+        &__enter
+            top: 10px
+            left: 10px
+@media all and (max-width: 550px)
+    .container
+        padding-right: 50px
+        padding-left: 50px
+    .tutors
+        &__content
+            padding: 0
+    .program
+        &__priceQuestionMark, &__priceCross
+            left: 75%
+        &__lines
+            padding: 20px
+        &__bigben
+            width: 100px
+            left: 10px
+    .faq
+        &__heading
+            line-height: 60px
+        &__accordeon
+            &--head
+                h3
+                    font-size: 17px
+                p
+                    font-size: 30px
+        &__connect
+            margin-left: 0
+            &-mail, &-telegram
+                margin-left: 0
+                img
+                    width: 40px
+                a
+                    font-size: 28px
+                    line-height: 30px
+
+@media all and (max-width: 500px)
+    .container
+        padding-right: 30px
+        padding-left: 30px
+    .header
+        &__block
+            height: 80px
+            line-height: 75px
+    .about
+        &__lines
+            padding: 40px
+    .program
+        &__questionMark
+            &--forth
+                &-description
+                    right: 50px
+                    top: -180px
+    .road
+        &__car
+            &--third
+                left: 280px
+    .application
+        &__item
+            &-questionMark
+                &-description
+                    right: 30%
+                    top: -200px
+    .enter
+        form
+            padding-left: 30px
+            padding-right: 30px
+    .resetPassword
+        &__text
+            padding: 0 30px
+        &__form
+            padding: 0 30px
 
 @media only screen and (max-width: 450px)
     body
@@ -156,6 +589,7 @@
                 min-width: 300px
             &--second
                 width: 100%
+                min-width: 0
                 .program__day
                     width: 30px
                     height: 30px
@@ -291,7 +725,7 @@
                 left: 20px
             &--third
                 top: -24px
-                right: -28px
+                right: -20px
             &--forth
                 top: 12px
                 left: -40px
@@ -370,13 +804,16 @@
                 margin-left: 0
                 img
                     width: 40px
+                a
+                    font-size: 22px
+                    line-height: 27px 
             &-telegram
                 margin-left: 0
                 img
                     width: 40px
-        &__email
-            font-size: 22px
-            line-height: 27px
+                a
+                    font-size: 22px
+                    line-height: 27px
     .footer
         position: relative
         &__content
@@ -398,8 +835,6 @@
                 &-heading
                     font-size: 20px
                     line-height: 24px
-                &-instagram, &-facebook, &-mail, &-telegram
-                    img
         &__information
             flex-direction: column
             &-text
