@@ -60,12 +60,24 @@ registerEmailInput.addEventListener('blur', function () {
     }
 });
 
+registerEmailInput.addEventListener('input', function () {
+    let email = this.value;
+    let nextButton = document.getElementById('registerNextButton');
+    if (checkIsEmpty(email) && checkEmail(email)) {
+        nextButton.style.background = '#F9E547';
+    } else {
+        nextButton.style.background = '#FDF7CB';
+    }
+});
+
 document.getElementById('registerNextButton').addEventListener('click', function () {
     let valueFromInput = registerEmailInput.value;
+    let windowWidth = window.outerWidth;
+    let paddingTop = windowWidth <= 450 ? '20px' : '60px';
     if (checkIsEmpty(valueFromInput) && checkEmail(valueFromInput)) {
         let form = $('#registartionForm');
         form.animate({
-            'padding-top': '60px'
+            'padding-top': paddingTop
         }, 1000);
         $('#registerEmailLabel').animate({
             'width': '60%'
@@ -85,17 +97,9 @@ registerPasswordInput.addEventListener('focus', function () {
     this.setAttribute('placeholder', '');
 });
 registerPasswordInput.addEventListener('blur', function () {
+    let textToShow = document.getElementById('registerTextPassword');
+    textToShow.style.visibility = 'hidden';
     this.setAttribute('placeholder', 'Password');
-    // let valueFromInput = this.value;
-
-    // if (checkIsEmpty(valueFromInput) && checkPassword(valueFromInput)) {
-    //     $('#registerSubmit').css({
-    //         'background-color': '#F9E547'
-    //     });
-    //     $('#registerPasswordLabel').addClass('register__passwordLabel--small');
-    // } else {
-    //     document.getElementById('registerWarningPassword').style.color = '#A02515';
-    // }
 });
 
 registerPasswordInput.addEventListener('input', function () {

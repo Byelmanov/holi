@@ -48,7 +48,7 @@ function checkEmail(str) {
 }
 function checkPhoneNumber(str) {
     str = str.toString();
-    var regExpForPhone = /^\+[0-9]{2}\([0-9]{3}\)[0-9]{7}$/;
+    var regExpForPhone = /^\+[0-9]{1,3}\([0-9]{3}\)[0-9]{7}$/;
 
     if (regExpForPhone.test(str)) {
         return true;
@@ -59,11 +59,15 @@ function checkPhoneNumber(str) {
 
 
 document.getElementById('profileEditPasswordButton').addEventListener('click', function () {
-    document.getElementById('profileEditPasswordWindow').style.display = 'flex';
+    document.getElementById('profileEditPasswordWindow').style.display = 'block';
+    document.getElementById('profileDarkScreen').style.display = 'block';
+    document.addEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
 
 document.getElementById('profileEditPasswordCross').addEventListener('click', function () {
     document.getElementById('profileEditPasswordWindow').style.display = 'none';
+    document.getElementById('profileDarkScreen').style.display = 'none';
+    document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
 
 document.getElementById('profileEditPasswordInputRepeat').addEventListener('input', function () {
@@ -111,12 +115,36 @@ editEmailForm.addEventListener('submit', function (e) {
 });
 
 document.getElementById('profileEditEmailButton').addEventListener('click', function () {
-    document.getElementById('profileEditEmailWindow').style.display = 'flex';
+    document.getElementById('profileEditEmailWindow').style.display = 'block';
+    document.getElementById('profileDarkScreen').style.display = 'block';
+    document.addEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
 
 document.getElementById('profileEditEmailCross').addEventListener('click', function () {
     document.getElementById('profileEditEmailWindow').style.display = 'none';
+    document.getElementById('profileDarkScreen').style.display = 'none';
+    document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
+
+document.getElementById('profileDarkScreen').addEventListener('click', function () {
+    document.getElementById('profileEditEmailWindow').style.display = 'none';
+    document.getElementById('profileEditPasswordWindow').style.display = 'none';
+    document.getElementById('profileDarkScreen').style.display = 'none';
+    document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
+});
+
+// esc check
+
+function checkEscAndHideWindowIfWasPressed(e) {
+    e = e || window.event;
+    if (e.keyCode === 27) {
+        document.getElementById('profileEditEmailWindow').style.display = 'none';
+        document.getElementById('profileEditPasswordWindow').style.display = 'none';
+        document.getElementById('profileDarkScreen').style.display = 'none';
+
+        document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
+    }
+}
 
 document.getElementById('profileEditEmailInput').addEventListener('input', function () {
     let emailValue = this.value;
@@ -238,7 +266,7 @@ phoneNumberInput.addEventListener('input', function () {
     let number = this.value;
     let length = number.length;
     let lastSymbol = number[length - 1];
-    if (isNaN(lastSymbol) || length > 15) {
+    if (!checkLastSymbolOfPhoneNumber(lastSymbol) || length > 16) {
         this.value = number.slice(0, (length - 1));
     }
     if (length == 3 && triggerForPhoneInputFirst) {
@@ -252,12 +280,24 @@ phoneNumberInput.addEventListener('input', function () {
     checkAllInputsAreEmpty();
     if (number == "") {
         this.value = '+';
-        alert('vewwve');
-        //triggerForPhoneInputFirst = true;
-        //triggerForPhoneInputSecond = true;
     }
 
 });
+
+function checkLastSymbolOfPhoneNumber(symbol) {
+    let error = true;
+    if (isNaN(symbol)) {
+        error = false;
+    }
+    if (symbol == "(" || symbol == ")" || symbol == "+") {
+        error = true;
+    }
+    if (error) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 skypeInput.addEventListener('input', function () {
     let skype = this.value;
