@@ -59,11 +59,15 @@ function checkPhoneNumber(str) {
 
 
 document.getElementById('profileEditPasswordButton').addEventListener('click', function () {
-    document.getElementById('profileEditPasswordWindow').style.display = 'flex';
+    document.getElementById('profileEditPasswordWindow').style.display = 'block';
+    document.getElementById('profileDarkScreen').style.display = 'block';
+    document.addEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
 
 document.getElementById('profileEditPasswordCross').addEventListener('click', function () {
     document.getElementById('profileEditPasswordWindow').style.display = 'none';
+    document.getElementById('profileDarkScreen').style.display = 'none';
+    document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
 
 document.getElementById('profileEditPasswordInputRepeat').addEventListener('input', function () {
@@ -111,12 +115,38 @@ editEmailForm.addEventListener('submit', function (e) {
 });
 
 document.getElementById('profileEditEmailButton').addEventListener('click', function () {
-    document.getElementById('profileEditEmailWindow').style.display = 'flex';
+    document.getElementById('profileEditEmailWindow').style.display = 'block';
+    document.getElementById('profileDarkScreen').style.display = 'block';
+    document.addEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
 
 document.getElementById('profileEditEmailCross').addEventListener('click', function () {
     document.getElementById('profileEditEmailWindow').style.display = 'none';
+    document.getElementById('profileDarkScreen').style.display = 'none';
+    document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
+
+document.getElementById('profileDarkScreen').addEventListener('click', function () {
+    document.getElementById('profileEditEmailWindow').style.display = 'none';
+    document.getElementById('profileEditPasswordWindow').style.display = 'none';
+    document.getElementById('profileDarkScreen').style.display = 'none';
+    document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
+});
+
+// esc check
+
+function checkEscAndHideWindowIfWasPressed(e) {
+    e = e || window.event;
+    if (e.keyCode === 27) {
+        document.getElementById('profileEditEmailWindow').style.display = 'none';
+        document.getElementById('profileEditPasswordWindow').style.display = 'none';
+        document.getElementById('profileDarkScreen').style.display = 'none';
+
+        document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
+    }
+}
+
+
 
 document.getElementById('profileEditEmailInput').addEventListener('input', function () {
     let emailValue = this.value;
