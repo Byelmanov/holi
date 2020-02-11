@@ -46,18 +46,23 @@
             position: absolute
             right: 0
             bottom: -75px
-            //display: flex
+            display: flex
             align-items: center
             justify-content: center
             display: none
+            label
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+                input
+                    height: 0
+                    width: 0
+                    visibility: hidden
             &-img
                 width: 15px
                 height: 15px
                 margin-right: 9px
-                img
-                    max-width: 100%
-                    width: 15px
-                    height: 15px
             &-link
                 text-decoration: none
                 font-size: 17px
@@ -163,25 +168,21 @@
             flex: 0 0 60%
             max-width: 300px
 .allCoursesAlert
-    width: 100%
-    height: auto
-    min-height: 100vh
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    background: rgba(38, 38, 38, 0.7)
-    z-index: 1
-    display: flex
     display: none
     &__window
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        position: absolute
+        z-index: 2
         width: 100%
         max-width: 500px
+        max-height: 455px
         margin: auto
         background: #ffffff
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
         border-radius: 10px
-        position: relative
         font-family: $default-font
     &__heading
         width: 100%
@@ -458,6 +459,8 @@
                 background-repeat: no-repeat
                 background-size: 35px
                 background-position: center
+                img
+                    border-radius: 50%
             &-input
                 width: 0.1px
                 height: 0.1px
@@ -1022,8 +1025,18 @@
     background: rgba(38, 38, 38, 0.7)
     z-index: 1
     display: none
-
-
+.allCoursesDarkScreen
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: rgba(38, 38, 38, 0.7)
+    z-index: 1
+    display: none
 
 
 @media all and (max-width: 450px)

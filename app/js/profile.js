@@ -48,7 +48,7 @@ function checkEmail(str) {
 }
 function checkPhoneNumber(str) {
     str = str.toString();
-    var regExpForPhone = /^\+[0-9]{2}\([0-9]{3}\)[0-9]{7}$/;
+    var regExpForPhone = /^\+[0-9]{1,3}\([0-9]{3}\)[0-9]{7}$/;
 
     if (regExpForPhone.test(str)) {
         return true;
@@ -145,8 +145,6 @@ function checkEscAndHideWindowIfWasPressed(e) {
         document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
     }
 }
-
-
 
 document.getElementById('profileEditEmailInput').addEventListener('input', function () {
     let emailValue = this.value;
@@ -268,7 +266,7 @@ phoneNumberInput.addEventListener('input', function () {
     let number = this.value;
     let length = number.length;
     let lastSymbol = number[length - 1];
-    if (isNaN(lastSymbol) || length > 15) {
+    if (!checkLastSymbolOfPhoneNumber(lastSymbol) || length > 16) {
         this.value = number.slice(0, (length - 1));
     }
     if (length == 3 && triggerForPhoneInputFirst) {
@@ -282,12 +280,24 @@ phoneNumberInput.addEventListener('input', function () {
     checkAllInputsAreEmpty();
     if (number == "") {
         this.value = '+';
-        alert('vewwve');
-        //triggerForPhoneInputFirst = true;
-        //triggerForPhoneInputSecond = true;
     }
 
 });
+
+function checkLastSymbolOfPhoneNumber(symbol) {
+    let error = true;
+    if (isNaN(symbol)) {
+        error = false;
+    }
+    if (symbol == "(" || symbol == ")" || symbol == "+") {
+        error = true;
+    }
+    if (error) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 skypeInput.addEventListener('input', function () {
     let skype = this.value;

@@ -10,6 +10,7 @@ nav
                 div.profile__burgerMenu-userImg#profileBurgerMenuUser
                 div.profile__burgerMenu-signOut#profileBurgerMenuSignOut
                     form(action="", method="post", name="profileExit")
-                        a(href="").profile__burgerMenu-signOut-img
-                            img(src="img/signOut.svg", alt="Sign Out")
-                        a(href="").profile__burgerMenu-signOut-link ВЫЙТИ
+                        label
+                            img(src="img/signOut.svg", alt="Sign Out", class="profile__burgerMenu-signOut-img")
+                            p.profile__burgerMenu-signOut-link ВЫЙТИ
+                            input(type="submit", value="")

@@ -18,7 +18,12 @@
           <div class="profile__burgerMenu-items"><a class="profile__burgerMenu-item profile__burgerMenu-item--active" href="/allCourses.html">ВСЕ КУРСЫ</a><a class="profile__burgerMenu-item" href="/myCourses.html">МОИ КУРСЫ</a><a class="profile__burgerMenu-item" href="/profile.html">ПРОФИЛЬ</a>
             <div class="profile__burgerMenu-userImg" id="profileBurgerMenuUser"></div>
             <div class="profile__burgerMenu-signOut" id="profileBurgerMenuSignOut">
-              <form action="" method="post" name="profileExit"><a class="profile__burgerMenu-signOut-img" href=""><img src="img/signOut.svg" alt="Sign Out"/></a><a class="profile__burgerMenu-signOut-link" href="">ВЫЙТИ</a></form>
+              <form action="" method="post" name="profileExit">
+                <label><img class="profile__burgerMenu-signOut-img" src="img/signOut.svg" alt="Sign Out"/>
+                  <p class="profile__burgerMenu-signOut-link">ВЫЙТИ</p>
+                  <input type="submit" value=""/>
+                </label>
+              </form>
             </div>
           </div>
         </div>
@@ -60,6 +65,7 @@
         </div>
       </div>
     </section>
+    <section class="allCoursesDarkScreen" id="allCoursesDarkScreen"></section>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/allCourses.js"></script>
