@@ -30,22 +30,22 @@ html(lang="ru")
                                 div.progile__item--user-data
                                     label
                                         p.profile__item--user-name Имя
-                                        input(type="text", name="profileFirstName", placeholder="Имя", class="profile__item--user-name-input" id="profileFirstName", autocomplete="name")
+                                        input(type="text", name="profileFirstName", placeholder="Имя", class="profile__item--user-name-input" id="profileFirstName", autocomplete="name", value="")
                                         div.profile__item--user-firstName-star#profileFirstNameStar *   
                                     label
                                         p.profile__item--user-name Фамилия
-                                        input(type="text", name="profileLastName", placeholder="Фамилия ", class="profile__item--user-name-input" id="profileLastName", autocomplete="name")
+                                        input(type="text", name="profileLastName", placeholder="Фамилия ", class="profile__item--user-name-input" id="profileLastName", autocomplete="name", value="")
                                         div.profile__item--user-lastName-star#profileLastNameStar *
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--contact
                                 h3.profile__item-heading Контактная информация
                                 label.profile__item--contact-phoneWrap
                                     p Телефон
-                                    input(type="tel", name="profileTel", placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone", autocomplete='tel-country-code')
+                                    input(type="tel", name="profileTel", placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone", autocomplete='tel-country-code', value="")
                                     div.profile__item--contact-phoneWrap-star#profilePhoneStar *
                                 label.profile__item--contact-skypeWrap
                                     p Skype
-                                    input(type="tel", name="profileSkype", placeholder="МОЙ SKYPE" id="profileSkype")
+                                    input(type="tel", name="profileSkype", placeholder="МОЙ SKYPE" id="profileSkype", value="")
                                     div.profile__item--contact-skypeWrap-star#profileSkypeStar *
                                 p.profile__item--contact-capture Ваш курс будет проходить в Skype
                         div.col-12.col-xl-6.profile__item

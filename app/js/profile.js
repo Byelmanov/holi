@@ -212,11 +212,23 @@ function checkIsCartVisible() {
             $('.cardCanseled').hide();
         });
 
+        let name = document.getElementById('profileFirstName').value;
+        if (name) {
+            //setButtonAsActiveIfDataAreFilled();
+            checkAllInputsAreEmpty();
+        }
+
     } else {
         hideButtonsIfCartVisible();
         showCartInPaymentSection();
     }
 }
+
+function setButtonAsActiveIfDataAreFilled() {
+    let button = document.getElementById('profileSaveAndBuy');
+
+}
+
 
 function showButtonsIfCartVisible() {
     let saveWithoutBuying = document.getElementById('profileSaveWithoutBuying');
