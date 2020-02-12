@@ -375,6 +375,16 @@ function checkAllInputsAreEmpty() {
         document.getElementById('profileSaveAndBuy').style.background = '#FDF7CB';
         document.getElementById('profileSave').style.background = '#FDF7CB';
     }
-
-
 }
+
+$('form[name = "profileCartCancel"]').submit(function () {
+    $.ajax({
+        type: 'POST',
+        url: '',
+        async: 'false',
+        dataType: 'json',
+        statusCode: {
+            404: function () { }
+        }
+    });
+});

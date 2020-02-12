@@ -10,7 +10,10 @@ html(lang="ru")
                 div.cartMenu__item.cartMenu__item--price
                     h3 130€
                     p Интенсив Английского
-                div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
+                form(action="", method="post", name="profileCartCancel")
+                    label
+                        div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
+                        input(type="submit", value="", class="cartMenu__input")
         section.profile.container-fluid
             div.cardCanseled.container#cardCanseled
                 p.cardCanseled__text Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ</a>.
