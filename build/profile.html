@@ -118,9 +118,10 @@
             </div>
           </div>
           <div class="profile__submitSection">
-            <button class="profile__submitWithoutBuying" type="submit" name="profileSaveWithoutBuying" id="profileSaveWithoutBuying">Сохранить, но отменить покупку</button>
-            <button class="profile__submitButton" type="submit" name="profileSave" id="profileSave">СОХРАНИТЬ</button>
-            <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy" id="profileSaveAndBuy">СОХРАНИТЬ И ОПЛАТИТЬ</button>
+            <button class="profile__submitWithoutBuying" type="submit" name="profileSaveWithoutBuying" id="profileSaveWithoutBuying" data-action="save">Сохранить, но отменить покупку</button>
+            <button class="profile__submitButton" type="submit" name="profileSave" id="profileSave" data-action="save">СОХРАНИТЬ</button>
+            <button class="profile__submitAndBuy" type="submit" name="profileSaveAndBuy" id="profileSaveAndBuy" data-action="save_buy">СОХРАНИТЬ И ОПЛАТИТЬ</button>
+            <input type="hidden" name="profileHiddenInput" id="profileHiddenInput" value=""/>
           </div>
         </form>
       </div>
@@ -130,9 +131,14 @@
         <h2 class="profileEditPassword__heading">Редактировать пароль</h2>
         <div class="profileEditPassword__cross" id="profileEditPasswordCross"></div>
         <form class="profileEditPassword__form" action="" method="post" name="profileEditPasswordForm">
+          <label> 
+            <p class="profileEditPassword__text">Email</p>
+            <input class="profileEditPassword__input" type="email" name="profileEditPasswordEmail" id="profileEditPasswordInputEmail" value="hui@gmail.com"/>
+          </label>
           <label>
             <p class="profileEditPassword__text">Новый пароль</p>
             <input class="profileEditPassword__input" type="password" name="profileEditPassword" id="profileEditPasswordInput" required="required" autocomplete="new-password"/>
+            <p class="profileEditPassword__capture" id="profileEditPasswordCaptureFirst">Пароль должен содержать не менее 8 символов.</p>
           </label>
           <label>
             <p class="profileEditPassword__text">Подтвердите новый пароль</p>

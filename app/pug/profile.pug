@@ -78,17 +78,22 @@ html(lang="ru")
                                     img(src="/img/footerPayments.svg", alt="VISA MasterCard", class="profile__item-content--payment-img")
                                 
                     div.profile__submitSection
-                        button(type="submit", name="profileSaveWithoutBuying", id="profileSaveWithoutBuying").profile__submitWithoutBuying Сохранить, но отменить покупку
-                        button(type="submit", name="profileSave", id="profileSave").profile__submitButton СОХРАНИТЬ
-                        button(type="submit", name="profileSaveAndBuy", id="profileSaveAndBuy").profile__submitAndBuy СОХРАНИТЬ И ОПЛАТИТЬ
+                        button(type="submit", name="profileSaveWithoutBuying", id="profileSaveWithoutBuying", data-action="save").profile__submitWithoutBuying Сохранить, но отменить покупку
+                        button(type="submit", name="profileSave", id="profileSave", data-action="save").profile__submitButton СОХРАНИТЬ
+                        button(type="submit", name="profileSaveAndBuy", id="profileSaveAndBuy", data-action="save_buy").profile__submitAndBuy СОХРАНИТЬ И ОПЛАТИТЬ
+                        input(type="hidden", name="profileHiddenInput", id="profileHiddenInput", value="")
         section.profileEditPassword.container-fluid#profileEditPasswordWindow
             div.profileEditPassword__window
                 h2.profileEditPassword__heading Редактировать пароль
                 div.profileEditPassword__cross#profileEditPasswordCross
                 form(action="", method="post", name="profileEditPasswordForm", class="profileEditPassword__form")
+                    label 
+                        p.profileEditPassword__text Email
+                        input(type="email", name="profileEditPasswordEmail", class="profileEditPassword__input", id="profileEditPasswordInputEmail" value="hui@gmail.com")
                     label
                         p.profileEditPassword__text Новый пароль
                         input(type="password", name="profileEditPassword", class="profileEditPassword__input", id="profileEditPasswordInput", required, autocomplete="new-password")
+                        p.profileEditPassword__capture#profileEditPasswordCaptureFirst Пароль должен содержать не менее 8 символов.
                     label
                         p.profileEditPassword__text Подтвердите новый пароль
                         input(type="password", name="profileEditPasswordRepeat", class="profileEditPassword__input", id="profileEditPasswordInputRepeat", required, autocomplete="new-password")

@@ -1,3 +1,23 @@
+'use scrict';
+
+document.getElementById('profileSaveWithoutBuying').addEventListener('click', function () {
+    setDataAttrInHiddenInput(this);
+});
+document.getElementById('profileSave').addEventListener('click', function () {
+    setDataAttrInHiddenInput(this);
+});
+document.getElementById('profileSaveAndBuy').addEventListener('click', function () {
+    setDataAttrInHiddenInput(this);
+});
+
+function setDataAttrInHiddenInput(elem) {
+    let value = elem.getAttribute("data-action");
+    let input = document.getElementById('profileHiddenInput');
+    input.setAttribute('value', value);
+}
+
+
+
 let saveForm = document.forms['profileUserContacts'];
 saveForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -19,6 +39,7 @@ saveForm.addEventListener('submit', function (e) {
     }
 
 });
+
 
 function checkIsEmpty(str) {
     if (str == null || str == undefined || str == '') {
@@ -70,16 +91,27 @@ document.getElementById('profileEditPasswordCross').addEventListener('click', fu
     document.removeEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 });
 
+document.getElementById('profileEditPasswordInput').addEventListener('input', function () {
+    let textToShow = document.getElementById('profileEditPasswordCaptureFirst');
+    let password = this.value.toString();
+    if (password.length < 8) {
+        textToShow.style.display = 'block';
+    } else {
+        textToShow.style.display = 'none';
+    }
+});
+
 document.getElementById('profileEditPasswordInputRepeat').addEventListener('input', function () {
     let password = document.getElementById('profileEditPasswordInput').value;
     let passwordRepeat = this.value;
+    let email = document.getElementById("profileEditPasswordInputEmail").value;
 
     let tick = document.getElementById('profileEditPasswordTick');
     let cross = document.getElementById('profileEditPasswordCrossPassword');
     let textToShow = document.getElementById('profileEditPasswordCapture');
     let submitButton = document.getElementById('profileEditPasswordSubmit');
 
-    if (password === passwordRepeat) {
+    if (password === passwordRepeat && checkEmail(email) && password.toString().length >= 8) {
         cross.style.display = 'none';
         textToShow.style.display = 'none';
         tick.style.display = 'block';
@@ -98,8 +130,9 @@ editPasswordForm.addEventListener('submit', function (e) {
     e.preventDefault();
     let password = document.getElementById('profileEditPasswordInput').value;
     let passwordRepeat = document.getElementById('profileEditPasswordInputRepeat').value;
+    let email = document.getElementById("profileEditPasswordInputEmail").value;
 
-    if (password === passwordRepeat && checkPassword(password)) {
+    if (password === passwordRepeat && checkPassword(password) && checkEmail(email)) {
         this.submit();
     }
 });
