@@ -42,6 +42,7 @@ saveForm.addEventListener('submit', function (e) {
             type: "POST",
             url: action,
             data: formData,
+            processData: false,
             async: false,
             complete: function (data) {
                 checkStatusOfRequestAfterCartClose(data);
