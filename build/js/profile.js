@@ -19,6 +19,7 @@ function setDataAttrInHiddenInput(elem) {
 
 
 let saveForm = document.forms['profileUserContacts'];
+
 saveForm.addEventListener('submit', function (e) {
     e.preventDefault();
     let firstName = document.getElementById('profileFirstName').value;
@@ -37,7 +38,6 @@ saveForm.addEventListener('submit', function (e) {
     if (error) {
         let formData = new FormData(saveForm);
         let action = saveForm.getAttribute('action');
-        //saveForm.submit();
         $.ajax({
             type: "POST",
             url: action,
@@ -46,17 +46,35 @@ saveForm.addEventListener('submit', function (e) {
             async: false,
             contentType: false,
             complete: function (data) {
-                checkStatusOfRequestAfterCartClose(data);
-                document.getElementById('profileBuyForm').submit();
+                checkStatusOfRequestAfterSaving(data);
             },
             statusCode: {
-                404: function () { alert('404') }
+                404: function () {
+                    //window.location = '/error404.html'
+                },
+                500: function () {
+                    window.location = '/error500.html'
+                }
             },
         });
 
     }
-
 });
+
+function checkStatusOfRequestAfterSaving(data) {
+    let status = data.status;
+
+    if (status == 200) {
+        // SOSI
+        document.getElementById('profileBuyForm').submit();
+    } else {
+        let errors = data.responceJSON.errors;
+        putTextInAlertAndShowIt(errors.firstname[0] + "\n");
+        putTextInAlertAndShowIt(errors.lastname[0] + "\n");
+        putTextInAlertAndShowIt(errors.phone[0] + "\n");
+        putTextInAlertAndShowIt(errors.skype[0]);
+    }
+}
 
 
 function checkIsEmpty(str) {
@@ -205,6 +223,16 @@ document.getElementById('profileEditEmailInput').addEventListener('input', funct
     }
 });
 
+function hideTrash() {
+    $('#cartMenu').slideUp('2000', function () {
+        $('.cardCanseled').fadeIn('2000');
+        $('.cardCanseled').css({
+            display: 'flex'
+        });
+    });
+    hideButtonsIfCartVisible();
+    showCartInPaymentSection();
+}
 
 window.addEventListener('load', checkIsCartVisible);
 
@@ -214,16 +242,7 @@ function checkIsCartVisible() {
     if (cart) {
         showButtonsIfCartVisible();
         hideCartInPaymentSection();
-        document.getElementById('cartMenuTrash').addEventListener('click', function () {
-            $('#cartMenu').slideUp('2000', function () {
-                $('.cardCanseled').fadeIn('2000');
-                $('.cardCanseled').css({
-                    display: 'flex'
-                });
-            });
-            hideButtonsIfCartVisible();
-            showCartInPaymentSection();
-        });
+        //document.getElementById('cartMenuTrash').addEventListener('click', hideTrash);
 
         document.getElementById('cartCanseledOK').addEventListener('click', function () {
             $('.cardCanseled').hide();
@@ -448,7 +467,6 @@ function checkAllInputsAreEmpty() {
 
 $('form[name = "profileCartCancel"]').submit(function (e) {
     e.preventDefault();
-    // take action from form
     let action = this.getAttribute('action');
     $.ajax({
         type: 'POST',
@@ -456,22 +474,33 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         async: 'false',
         dataType: 'json',
         statusCode: {
-            404: function () { }
+            404: function () {
+                //window.location = '/error404.html'
+            },
+            500: function () {
+                window.location = '/error500.html'
+            }
         },
-        complete: checkStatusOfRequestAfterCartClose(data),
+        complete: function (data) {
+            checkStatusOfRequestAfterCartClose(data)
+        },
     });
 });
 
 function checkStatusOfRequestAfterCartClose(data) {
-    let status;
-    let code;
-
-    status = data.status;
-    text = data.message;
+    let status = data.status;
+    let text = data.message;
 
     if (status == 200) {
-        alert(text);
+        hideTrash();
     } else {
-        alert(text);
+        putTextInAlertAndShowIt(text);
     }
+}
+
+
+function putTextInAlertAndShowIt(text) {
+    let block = document.getElementById('cardCanceledText');
+    block.innerHTML = text;
+    block.parentElement.style.display = 'flex';
 }

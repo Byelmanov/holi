@@ -829,7 +829,11 @@
     &__text
         font-weight: 600
         font-size: 17px
-        line-height: 70px
+        min-width: 70px
+        display: flex
+        flex-flow: column wrap
+        align-items: center
+        justify-content: center
         color: #A02515
         position: relative
         font-family: $default-font
@@ -846,7 +850,7 @@
             width: 20px
             height: 21px
             position: absolute
-            top: 24px
+            45%
             left: -30px
     &__ok
         font-family: $default-font
