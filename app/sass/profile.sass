@@ -339,6 +339,7 @@
             position: relative
             top: 20px
             right: 60px
+            cursor: pointer
             &:before    
                 content: ''
                 width: 15px
@@ -497,6 +498,14 @@
                     font-size: 15px
                     &::placeholder
                         color: #E5E5E5
+                    &--disabled
+                        border: none
+                        padding-left: 0
+                        font-weight: 600
+                        &+.profile__item--user-firstName-star
+                            display: none
+                        &+.profile__item--user-lastName-star
+                            display: none
             &-firstName-star
                 font-family: $default-font
                 font-size: 17px
@@ -544,7 +553,7 @@
                         margin-right: 6px
                         position: relative
                         top: 1px
-                input
+                &-input
                     border: 1px solid $black
                     border-radius: 10px
                     width: 330px
@@ -555,6 +564,12 @@
                     outline: none
                     &::placeholder
                         color: #E5E5E5
+                    &--disabled
+                        border: none
+                        font-weight: 600
+                        padding-left: 0
+                        &+.profile__item--contact-phoneWrap-star
+                            display: none
                 &-star
                     font-family: $default-font
                     font-size: 17px
@@ -586,7 +601,7 @@
                         margin-right: 6px
                         position: relative
                         top: 1px
-                input
+                &-input
                     border: 1px solid $black
                     border-radius: 10px
                     width: 330px
@@ -598,6 +613,12 @@
                     margin-left: 18px
                     &::placeholder
                         color: #E5E5E5
+                    &--disabled
+                        font-weight: 600
+                        padding-left: 0
+                        border: none
+                        &+.profile__item--contact-skypeWrap-star
+                            display: none
                 &-star
                     font-family: $default-font
                     font-size: 17px

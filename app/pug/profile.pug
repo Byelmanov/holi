@@ -4,13 +4,13 @@ html(lang="ru")
         include includes/head.pug
     body
         include includes/profileBurgerMenu.pug
-        section.cartMenu.container-fluid#cartMenu
+        //section.cartMenu.container-fluid#cartMenu
             div.container.cartMenu__wrap
                 p.cartMenu__item.cartMenu__item--text Ваша корзина
                 div.cartMenu__item.cartMenu__item--price
                     h3 130€
                     p Интенсив Английского
-                form(action="", method="post", name="profileCartCancel")
+                form(action="some.php", method="post", name="profileCartCancel")
                     label
                         div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
                         input(type="submit", value="", class="cartMenu__input")
@@ -18,8 +18,8 @@ html(lang="ru")
             div.cardCanseled.container#cardCanseled
                 p.cardCanseled__text Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ</a>.
                 p.cardCanseled__ok#cartCanseledOK ok
-            div.container.profile__editProfile
-                a(href="").profile__editProfile-link edit profile
+            div.container.profile__editProfile#profileEditProfileSection
+                p.profile__editProfile-link#profileEditProfileButton edit profile
             div.container
                 form(action="", method="post", name="profileUserContacts", class='profileForm')
                     div.row.no-gutters.justify-content-between
@@ -27,7 +27,7 @@ html(lang="ru")
                             div.profile__item-content.profile__item-content--user
                                 div.profile__item--user-photoWrap
                                     div.profile__item--user-img
-                                        img(src="https://pbs.twimg.com/media/EEknCzqXsAEG47K.jpg", alt="your photo")
+                                        img(src="https://pbs.twimg.com/media/EEknCzqXsAEG47K.jpg")
                                     label(for="profileUploadPhoto", class="profile__item--user-label", id="profileUploadLabel") загрузить фото
                                     input(type="file", name="profileUploadPhoto", id="profileUploadPhoto", class="profile__item--user-input")
                                 div.progile__item--user-data
@@ -44,11 +44,11 @@ html(lang="ru")
                                 h3.profile__item-heading Контактная информация
                                 label.profile__item--contact-phoneWrap
                                     p Телефон
-                                    input(type="tel", name="profileTel", placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone", autocomplete='tel-country-code', value="")
+                                    input(type="tel", class="profile__item--contact-phoneWrap-input", name="profileTel", placeholder="МОЙ НОМЕР ТЕЛЕФОНА" id="profilePhone", autocomplete='tel-country-code', value="")
                                     div.profile__item--contact-phoneWrap-star#profilePhoneStar *
                                 label.profile__item--contact-skypeWrap
                                     p Skype
-                                    input(type="tel", name="profileSkype", placeholder="МОЙ SKYPE" id="profileSkype", value="")
+                                    input(type="tel", class="profile__item--contact-skypeWrap-input", name="profileSkype", placeholder="МОЙ SKYPE" id="profileSkype", value="")
                                     div.profile__item--contact-skypeWrap-star#profileSkypeStar *
                                 p.profile__item--contact-capture Ваш курс будет проходить в Skype
                         div.col-12.col-xl-6.profile__item

@@ -36,6 +36,7 @@ saveForm.addEventListener('submit', function (e) {
 
     if (error) {
         saveForm.submit();
+
     }
 
 });
@@ -194,6 +195,7 @@ window.addEventListener('load', checkIsCartVisible);
 
 function checkIsCartVisible() {
     let cart = document.getElementById('cartMenu');
+    let name = document.getElementById('profileFirstName').value;
     if (cart) {
         showButtonsIfCartVisible();
         hideCartInPaymentSection();
@@ -211,21 +213,75 @@ function checkIsCartVisible() {
         document.getElementById('cartCanseledOK').addEventListener('click', function () {
             $('.cardCanseled').hide();
         });
-
-        let name = document.getElementById('profileFirstName').value;
         if (name) {
-            //setButtonAsActiveIfDataAreFilled();
             checkAllInputsAreEmpty();
         }
 
     } else {
         hideButtonsIfCartVisible();
         showCartInPaymentSection();
+        if (name) {
+            setInputsDisabledAndAddStyleToThem();
+            document.getElementById('profileEditProfileSection').style.display = 'flex';
+            document.getElementById('profileEditProfileButton').addEventListener('click', setInputsAbledAndAddStyleToThem);
+            document.getElementById('profileSave').style.display = 'none';
+        }
+
     }
 }
 
-function setButtonAsActiveIfDataAreFilled() {
-    let button = document.getElementById('profileSaveAndBuy');
+let firstNameInput = document.getElementById('profileFirstName');
+let secondNameInput = document.getElementById('profileLastName');
+let phoneNumberInput = document.getElementById('profilePhone');
+let skypeInput = document.getElementById('profileSkype');
+
+
+
+function setInputsAbledAndAddStyleToThem() {
+    firstNameInput.setAttribute('disabled', false);
+    secondNameInput.setAttribute('disabled', false);
+    phoneNumberInput.setAttribute('disabled', false);
+    skypeInput.setAttribute('disabled', false);
+    document.getElementById('profileUploadPhoto').setAttribute('disabled', false);
+
+    let firstNameInputClass = firstNameInput.classList[1].toString();
+    firstNameInput.classList.remove(firstNameInputClass);
+
+    let secondNameInputClass = secondNameInput.classList[1].toString();
+    secondNameInput.classList.remove(secondNameInputClass);
+
+    let phoneNumberInputClass = phoneNumberInput.classList[1].toString();
+    phoneNumberInput.classList.remove(phoneNumberInputClass);
+
+    let skypeInputClass = skypeInput.classList[1].toString();
+    skypeInput.classList.remove(skypeInputClass);
+
+    document.getElementById('profileSave').style.display = 'block';
+
+    document.getElementById('profileEditProfileButton').removeEventListener('click', setInputsAbledAndAddStyleToThem);
+
+}
+
+function setInputsDisabledAndAddStyleToThem() {
+    firstNameInput.setAttribute('disabled', true);
+    secondNameInput.setAttribute('disabled', true);
+    phoneNumberInput.setAttribute('disabled', true);
+    skypeInput.setAttribute('disabled', true);
+    document.getElementById('profileUploadPhoto').setAttribute('disabled', true);
+
+    let disabled = '--disabled';
+
+    let firstNameInputClass = firstNameInput.classList[0].toString();
+    firstNameInput.classList.add(firstNameInputClass + disabled);
+
+    let secondNameInputClass = secondNameInput.classList[0].toString();
+    secondNameInput.classList.add(secondNameInputClass + disabled);
+
+    let phoneNumberInputClass = phoneNumberInput.classList[0].toString();
+    phoneNumberInput.classList.add(phoneNumberInputClass + disabled);
+
+    let skypeInputClass = skypeInput.classList[0].toString();
+    skypeInput.classList.add(skypeInputClass + disabled);
 
 }
 
@@ -257,10 +313,7 @@ function showCartInPaymentSection() {
     document.getElementById('profileItemPaymentWarningAndPrice').style.display = 'none';
 }
 
-let firstNameInput = document.getElementById('profileFirstName');
-let secondNameInput = document.getElementById('profileLastName');
-let phoneNumberInput = document.getElementById('profilePhone');
-let skypeInput = document.getElementById('profileSkype');
+
 
 let firstNameStar = document.getElementById('profileFirstNameStar');
 let secondNameStar = document.getElementById('profileLastNameStar');
@@ -377,14 +430,32 @@ function checkAllInputsAreEmpty() {
     }
 }
 
-$('form[name = "profileCartCancel"]').submit(function () {
+$('form[name = "profileCartCancel"]').submit(function (e) {
+    e.preventDefault();
+    // take action from form
+    let action = this.getAttribute('action');
     $.ajax({
         type: 'POST',
-        url: '',
+        url: action,
         async: 'false',
         dataType: 'json',
         statusCode: {
             404: function () { }
-        }
+        },
+        complete: checkStatusOfRequestAfterCartClose(data),
     });
 });
+
+function checkStatusOfRequestAfterCartClose(data) {
+    let status;
+    let code;
+
+    status = data.status;
+    text = data.message;
+
+    if (status == 200) {
+        alert(text);
+    } else {
+        alert(text);
+    }
+}
