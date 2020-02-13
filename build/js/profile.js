@@ -35,7 +35,19 @@ saveForm.addEventListener('submit', function (e) {
     }
 
     if (error) {
-        saveForm.submit();
+        let formData = new FormData(saveForm);
+        let action = saveForm.getAttribute('action');
+        //saveForm.submit();
+        $.ajax({
+            type: "POST",
+            url: action,
+            data: formData,
+            async: false,
+            complete: function (data) {
+                checkStatusOfRequestAfterCartClose(data);
+                document.getElementById('profileBuyForm').submit();
+            }
+        });
 
     }
 
