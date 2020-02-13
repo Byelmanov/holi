@@ -138,14 +138,10 @@
         <h2 class="profileEditPassword__heading">Редактировать пароль</h2>
         <div class="profileEditPassword__cross" id="profileEditPasswordCross"></div>
         <form class="profileEditPassword__form" action="" method="post" name="profileEditPasswordForm">
-          <label> 
-            <p class="profileEditPassword__text">Email</p>
-            <input class="profileEditPassword__input" type="email" name="profileEditPasswordEmail" id="profileEditPasswordInputEmail" value="hui@gmail.com"/>
-          </label>
           <label>
             <p class="profileEditPassword__text">Новый пароль</p>
             <input class="profileEditPassword__input" type="password" name="profileEditPassword" id="profileEditPasswordInput" required="required" autocomplete="new-password"/>
-            <p class="profileEditPassword__capture" id="profileEditPasswordCaptureFirst">Пароль должен содержать не менее 8 символов.</p>
+            <!--p.profileEditPassword__capture#profileEditPasswordCaptureFirst Пароль должен содержать не менее 8 символов.-->
           </label>
           <label>
             <p class="profileEditPassword__text">Подтвердите новый пароль</p>
@@ -153,6 +149,7 @@
             <div class="profileEditPassword__tick" id="profileEditPasswordTick"></div>
             <div class="profileEditPassword__cross--password" id="profileEditPasswordCrossPassword">X</div>
             <p class="profileEditPassword__capture" id="profileEditPasswordCapture">Пароли не совпадают. Попробуйте еще раз.</p>
+            <p class="profileEditPassword__capture" id="profileEditPasswordCaptureFirst">Пароль должен содержать не менее 8 символов.</p>
           </label>
           <button class="profileEditPassword__submit" type="submit" id="profileEditPasswordSubmit">СОХРАНИТЬ</button>
         </form>

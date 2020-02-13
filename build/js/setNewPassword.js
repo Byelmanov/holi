@@ -46,6 +46,16 @@ function checkPassword(str) {
         return true;
     }
 }
+function checkEmail(str) {
+    str = str.toString();
+    var regExp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    if (regExp.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 let passwordForm = document.forms['setNewPassword'];
 
@@ -53,8 +63,9 @@ passwordForm.addEventListener('submit', function (e) {
     e.preventDefault();
     let password = document.getElementById('password').value;
     let passwordRepeat = document.getElementById('passwordRepeat').value;
+    let email = document.getElementById('email').value;
 
-    if (password === passwordRepeat && checkPassword(password)) {
+    if (password === passwordRepeat && checkPassword(password) && checkEmail(email)) {
         this.submit();
     }
 
@@ -63,13 +74,14 @@ passwordForm.addEventListener('submit', function (e) {
 document.getElementById('passwordRepeat').addEventListener('input', function () {
     let password = document.getElementById('password').value;
     let passwordRepeat = this.value;
+    let email = document.getElementById('email').value;
 
     let submitButton = document.getElementById('setNewPasswordSubmit');
     let tick = document.getElementById('setNewPasswordTick');
     let cross = document.getElementById('setNewPasswordCross');
     let captureTextToShow = document.getElementById('setNewPasswordCapture');
 
-    if (password === passwordRepeat) {
+    if (password === passwordRepeat && checkEmail(email) && checkPassword(password)) {
         cross.style.display = 'none';
         captureTextToShow.style.display = 'none';
         tick.style.display = 'block';

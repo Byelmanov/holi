@@ -44,10 +44,14 @@ saveForm.addEventListener('submit', function (e) {
             data: formData,
             processData: false,
             async: false,
+            contentType: false,
             complete: function (data) {
                 checkStatusOfRequestAfterCartClose(data);
                 document.getElementById('profileBuyForm').submit();
-            }
+            },
+            statusCode: {
+                404: function () { alert('404') }
+            },
         });
 
     }
@@ -118,14 +122,13 @@ document.getElementById('profileEditPasswordInput').addEventListener('input', fu
 document.getElementById('profileEditPasswordInputRepeat').addEventListener('input', function () {
     let password = document.getElementById('profileEditPasswordInput').value;
     let passwordRepeat = this.value;
-    let email = document.getElementById("profileEditPasswordInputEmail").value;
 
     let tick = document.getElementById('profileEditPasswordTick');
     let cross = document.getElementById('profileEditPasswordCrossPassword');
     let textToShow = document.getElementById('profileEditPasswordCapture');
     let submitButton = document.getElementById('profileEditPasswordSubmit');
 
-    if (password === passwordRepeat && checkEmail(email) && password.toString().length >= 8) {
+    if (password === passwordRepeat && password.toString().length >= 8) {
         cross.style.display = 'none';
         textToShow.style.display = 'none';
         tick.style.display = 'block';
@@ -144,9 +147,8 @@ editPasswordForm.addEventListener('submit', function (e) {
     e.preventDefault();
     let password = document.getElementById('profileEditPasswordInput').value;
     let passwordRepeat = document.getElementById('profileEditPasswordInputRepeat').value;
-    let email = document.getElementById("profileEditPasswordInputEmail").value;
 
-    if (password === passwordRepeat && checkPassword(password) && checkEmail(email)) {
+    if (password === passwordRepeat && checkPassword(password)) {
         this.submit();
     }
 });
@@ -251,11 +253,12 @@ let skypeInput = document.getElementById('profileSkype');
 
 
 function setInputsAbledAndAddStyleToThem() {
-    firstNameInput.setAttribute('disabled', false);
-    secondNameInput.setAttribute('disabled', false);
-    phoneNumberInput.setAttribute('disabled', false);
-    skypeInput.setAttribute('disabled', false);
-    document.getElementById('profileUploadPhoto').setAttribute('disabled', false);
+    firstNameInput.removeAttribute('disabled');
+    secondNameInput.removeAttribute('disabled');
+    phoneNumberInput.removeAttribute('disabled');
+    skypeInput.removeAttribute('disabled');
+    document.getElementById('profileUploadPhoto').removeAttribute('disabled');
+
 
     let firstNameInputClass = firstNameInput.classList[1].toString();
     firstNameInput.classList.remove(firstNameInputClass);

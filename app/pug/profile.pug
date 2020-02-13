@@ -90,19 +90,17 @@ html(lang="ru")
                 h2.profileEditPassword__heading Редактировать пароль
                 div.profileEditPassword__cross#profileEditPasswordCross
                 form(action="", method="post", name="profileEditPasswordForm", class="profileEditPassword__form")
-                    label 
-                        p.profileEditPassword__text Email
-                        input(type="email", name="profileEditPasswordEmail", class="profileEditPassword__input", id="profileEditPasswordInputEmail" value="hui@gmail.com")
                     label
                         p.profileEditPassword__text Новый пароль
                         input(type="password", name="profileEditPassword", class="profileEditPassword__input", id="profileEditPasswordInput", required, autocomplete="new-password")
-                        p.profileEditPassword__capture#profileEditPasswordCaptureFirst Пароль должен содержать не менее 8 символов.
+                        //p.profileEditPassword__capture#profileEditPasswordCaptureFirst Пароль должен содержать не менее 8 символов.
                     label
                         p.profileEditPassword__text Подтвердите новый пароль
                         input(type="password", name="profileEditPasswordRepeat", class="profileEditPassword__input", id="profileEditPasswordInputRepeat", required, autocomplete="new-password")
                         div.profileEditPassword__tick#profileEditPasswordTick
                         div.profileEditPassword__cross--password#profileEditPasswordCrossPassword X
                         p.profileEditPassword__capture#profileEditPasswordCapture Пароли не совпадают. Попробуйте еще раз.
+                        p.profileEditPassword__capture#profileEditPasswordCaptureFirst Пароль должен содержать не менее 8 символов.
                     button(type="submit", class="profileEditPassword__submit", id="profileEditPasswordSubmit") СОХРАНИТЬ
         section.profileEditEmail.container-fluid#profileEditEmailWindow
             div.profileEditEmail__window

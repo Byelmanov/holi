@@ -1,23 +1,11 @@
 'use scrict';
 
+let buyForm = document.forms['allCoursesBuyForm'];
 
-
-$('form[name="myFormName"]').submit(function () {
+buyForm.addEventListener('submit', function () {
     let idOfCourse = $('#allCoursesFirst').attr('data-id');
-    $.post(
-        $this.attr('action'),
-        idOfCourse,
-        getLinkToDirect,
-        'text'
-    );
-    return false;
-
+    document.getElementById('allCoursesArertInput').value = idOfCourse;
 });
-
-function getLinkToDirect(data) {
-    window.location.href = data;
-}
-
 
 document.getElementById('allCoursesAlertCross').addEventListener('click', function () {
     document.getElementById('allCoursesAlertSection').style.display = 'none';
