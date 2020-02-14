@@ -50,7 +50,7 @@ saveForm.addEventListener('submit', function (e) {
             },
             statusCode: {
                 404: function () {
-                    //window.location = '/error404.html'
+                    window.location = '/error404.html'
                 },
                 500: function () {
                     window.location = '/error500.html'
@@ -65,8 +65,15 @@ function checkStatusOfRequestAfterSaving(data) {
     let status = data.status;
 
     if (status == 200) {
-        // SOSI
-        document.getElementById('profileBuyForm').submit();
+        // MAX SOSI
+        let inputToCheckButton = document.getElementById('profileHiddenInput').value;
+        if (inputToCheckButton == 'save_buy') {
+            document.getElementById('profileBuyForm').submit();
+        } else {
+            //message that data has successfuly saved
+            document.getElementById('successAlert').style.display = 'flex';
+        }
+
     } else {
         let errors = data.responceJSON.errors;
         putTextInAlertAndShowIt(errors.firstname[0] + "\n");
@@ -475,7 +482,7 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         dataType: 'json',
         statusCode: {
             404: function () {
-                //window.location = '/error404.html'
+                window.location = '/error404.html'
             },
             500: function () {
                 window.location = '/error500.html'
@@ -498,9 +505,12 @@ function checkStatusOfRequestAfterCartClose(data) {
     }
 }
 
-
 function putTextInAlertAndShowIt(text) {
     let block = document.getElementById('cardCanceledText');
     block.innerHTML = text;
     block.parentElement.style.display = 'flex';
 }
+
+document.getElementById('successAlertOK').addEventListener('click', function () {
+    document.getElementById('successAlert').style.display = 'none';
+});
