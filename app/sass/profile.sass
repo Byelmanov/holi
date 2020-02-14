@@ -890,7 +890,7 @@
     display: flex
     align-items: center
     justify-content: center
-    display: none
+    //display: none
     &__text
         font-weight: 600
         font-size: 17px
@@ -1465,6 +1465,15 @@
             line-height: 18px
         &__submitAndBuy
             font-size: 13px
+        &__editProfile
+            &-link
+                font-size: 13px
+                line-height: 16px
+                right: 0
+                &:before
+                    width: 10px
+                    height: 10px
+                    left: -10px
     .cardCanseled
         flex-flow: column wrap
         align-items: flex-start
@@ -1477,6 +1486,19 @@
             line-height: 18px
             margin-left: 30px
             margin-top: 10px
+    .successAlert
+        &__text
+            font-size: 13px
+            line-height: 16px
+            &:after
+                width: 15px
+                height: 15px
+                left: -20px
+        &__ok
+            font-size: 15px
+            line-height: 18px
+
+
 @media all and (max-width: 419px)
     .allCourses
         &__item
