@@ -2,7 +2,9 @@
 
 let buyForm = document.forms['allCoursesBuyForm'];
 
+// FIX: Form submits faster then course id inserts into input
 buyForm.addEventListener('submit', function () {
+    // FIX: Bad way - better to get id from choosen course, not first
     let idOfCourse = $('#allCoursesFirst').attr('data-id');
     document.getElementById('allCoursesArertInput').value = idOfCourse;
 });

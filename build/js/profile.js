@@ -29,6 +29,7 @@ saveForm.addEventListener('submit', function (e) {
 
     let error = true;
 
+    // FIX: Add highlighting invalid fields
     if (checkIsEmpty(firstName) && checkIsEmpty(lastName) && checkIsEmpty(phoneNumber) && checkPhoneNumber(phoneNumber) && checkIsEmpty(skype)) {
         error = true;
     } else {
@@ -42,6 +43,7 @@ saveForm.addEventListener('submit', function (e) {
             type: "POST",
             url: action,
             data: formData,
+            dataType: 'json',
             processData: false,
             async: false,
             contentType: false,
@@ -52,10 +54,13 @@ saveForm.addEventListener('submit', function (e) {
                 404: function () {
                     // window.location = '/error404.html'
                     // FIX: Show error alert block
+                    console.log(400);
+
                 },
                 500: function () {
                     // window.location = '/error500.html'
                     // FIX: Show error alert block
+                    console.log(500);
                 }
             },
         });
@@ -74,6 +79,7 @@ function checkStatusOfRequestAfterSaving(data) {
             document.getElementById('profileBuyForm').submit();
         } else {
             //message that data has successfuly saved
+            // FIX: Remove save button and make fields disabled
             document.getElementById('successAlert').style.display = 'flex';
         }
 
@@ -482,13 +488,20 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         type: 'POST',
         url: action,
         async: 'false',
+        data: new FormData(this),
         dataType: 'json',
+        processData: false,
+        contentType: false,
         statusCode: {
             404: function () {
-                window.location = '/error404.html'
+                // window.location = '/error404.html'
+                // FIX: Show error alert block
+                console.log(404);
             },
             500: function () {
-                window.location = '/error500.html'
+                // window.location = '/error500.html'
+                // FIX: Show error alert block
+                console.log(500);
             }
         },
         complete: function (data) {
