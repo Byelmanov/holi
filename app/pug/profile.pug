@@ -16,7 +16,7 @@ html(lang="ru")
                         input(type="submit", value="", class="cartMenu__input")
         section.profile.container-fluid
             div.cardCanseled.container#cardCanseled
-                p.cardCanseled__text#cardCanceledText Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ</a>.
+                p.cardCanseled__text#cardCanceledText Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ.</a>
                 p.cardCanseled__ok#cartCanseledOK ok
             div.successAlert.container#successAlert
                 p.successAlert__text#successAlertText Аккаунт был успешно создан
@@ -25,7 +25,7 @@ html(lang="ru")
                 p.profile__editProfile-link#profileEditProfileButton edit profile
             div.container
                 form(action="", method="post", name="profileUserContacts", class='profileForm')
-                    div.row.no-gutters.justify-content-between
+                    div.row.no-gutters.justify-content-between.profile__itemsWrap
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--user
                                 div.profile__item--user-photoWrap
@@ -33,14 +33,14 @@ html(lang="ru")
                                         img(src="https://pbs.twimg.com/media/EEknCzqXsAEG47K.jpg")
                                     label(for="profileUploadPhoto", class="profile__item--user-label", id="profileUploadLabel") загрузить фото
                                     input(type="file", name="profileUploadPhoto", id="profileUploadPhoto", class="profile__item--user-input")
-                                div.progile__item--user-data
+                                div.profile__item--user-data
                                     label
                                         p.profile__item--user-name Имя
-                                        input(type="text", name="profileFirstName", placeholder="Имя", class="profile__item--user-name-input" id="profileFirstName", autocomplete="name", value="")
+                                        input(type="text", name="profileFirstName", placeholder="ИМЯ", class="profile__item--user-name-input" id="profileFirstName", autocomplete="name", value="")
                                         div.profile__item--user-firstName-star#profileFirstNameStar *   
                                     label
                                         p.profile__item--user-name Фамилия
-                                        input(type="text", name="profileLastName", placeholder="Фамилия ", class="profile__item--user-name-input" id="profileLastName", autocomplete="name", value="")
+                                        input(type="text", name="profileLastName", placeholder="ФАМИЛИЯ", class="profile__item--user-name-input" id="profileLastName", autocomplete="name", value="")
                                         div.profile__item--user-lastName-star#profileLastNameStar *
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--contact
@@ -63,7 +63,7 @@ html(lang="ru")
                                     p.edit#profileEditEmailButton 
                                 div.profile__item--account-passwordWrap
                                     p.name Пароль
-                                    p.value ***********
+                                    p.value &#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;
                                     p.edit#profileEditPasswordButton
                         div.col-12.col-xl-6.profile__item
                             div.profile__item-content.profile__item-content--payment
