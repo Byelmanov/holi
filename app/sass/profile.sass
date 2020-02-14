@@ -3,7 +3,7 @@
     &__burgerMenu
         position: relative
         width: 100%
-        height: 70px
+        height: auto
         font-family: $default-font
         &--head
             background: $black
@@ -12,11 +12,13 @@
             flex-flow: row nowrap
             align-items: center
             justify-content: space-between
+            height: 70px
         &-logo
             width: 150px
             height: 55px
             img
                 max-width: 150px
+                min-width: 150px
         &-items
             display: flex
             align-items: center
@@ -30,35 +32,16 @@
             margin-right: 40px
             &--active
                 color: $purple
-        &-userImg
-            width: 20px
-            height: 20px
-            background-image: url('../img/userWhite.svg')
-            background-size: contain
-            background-repeat: no-repeat
-            cursor: pointer
-        &-signOut
-            width: 230px
-            height: 50px
-            background: $black
-            border-radius: 5px
-            border: 0.5px solid #E5E5E5
-            position: absolute
-            right: 0
-            bottom: -75px
-            display: flex
-            align-items: center
-            justify-content: center
-            display: none
-            label
-                display: flex
-                align-items: center
-                justify-content: center
-                cursor: pointer
-                input
-                    height: 0
-                    width: 0
-                    visibility: hidden
+            &-form
+                label
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    cursor: pointer
+                    input
+                        height: 0
+                        width: 0
+                        visibility: hidden
             &-img
                 width: 15px
                 height: 15px
@@ -68,6 +51,42 @@
                 font-size: 17px
                 line-height: 21px
                 color: #fff
+        &-open
+            width: 30px
+            height: 30px
+            background-image: url('../img/profileBugerOpen.svg')
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            cursor: pointer
+            display: none
+        &-close
+            font-weight: 300
+            color: #fff
+            font-size: 27px
+            line-height: 33px
+            text-align: center
+            cursor: pointer
+            display: none
+        &--body
+            position: relative
+            background: $black
+            padding-top: 30px
+            list-style: none
+            padding-bottom: 30px
+            display: none
+            &-item
+                margin-bottom: 20px
+                text-align: center
+            &-link
+                font-size: 17px
+                line-height: 21px
+                color: #fff
+                text-decoration: none
+                cursor: pointer
+                &--active
+                    color: $purple
+                    
     
 .allCourses
     padding-top: 60px
@@ -1110,6 +1129,48 @@
     z-index: 1
     display: none
 
+@media all and (max-width: 1120px)
+    .allCourses
+        &__lamp
+            position: relative
+            top: 50px
+            right: 0
+            width: 100%
+            margin: auto
+            p
+                margin-top: 120px
+                margin-right: 30px
+
+@media all and (max-width: 950px)
+    .profile
+        &__burgerMenu
+            &--head
+                padding-left: 50px
+                padding-right: 50px
+
+@media all and (max-width: 710px)
+    .allCourses
+        &__lamp
+            p
+                font-size: 17px
+                line-height: 21px
+                margin-right: 0
+            img
+                flex: 0 0 50%
+                max-width: 200px
+    .profile
+        &__burgerMenu
+            &--head
+                padding-left: 20px
+                padding-right: 20px
+
+@media all and (max-width: 640px)
+    .profile
+        &__burgerMenu
+            &-items
+                display: none
+            &-open
+                display: block
 
 @media all and (max-width: 450px)
     .profileEditEmail

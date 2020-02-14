@@ -7,10 +7,22 @@ nav
                 a(href="/allCourses.html").profile__burgerMenu-item ВСЕ КУРСЫ
                 a(href="/myCourses.html").profile__burgerMenu-item.profile__burgerMenu-item--active МОИ КУРСЫ
                 a(href="/profile.html").profile__burgerMenu-item ПРОФИЛЬ
-                div.profile__burgerMenu-userImg#profileBurgerMenuUser
-                div.profile__burgerMenu-signOut#profileBurgerMenuSignOut
-                    form(action="", method="post", name="profileExit")
-                        label
-                            img(src="img/signOut.svg", alt="Sign Out", class="profile__burgerMenu-signOut-img")
-                            p.profile__burgerMenu-signOut-link ВЫЙТИ
-                            input(type="submit", value="")
+                form(action="", method="post", name="profileExit", class="profile__burgerMenu-item-form")
+                    label
+                        img(src="img/signOut.svg", alt="Sign Out", class="profile__burgerMenu-signOut-img")
+                        input(type="submit", value="")
+            div.profile__burgerMenu-open#profileBurgerMenuOpen
+            div.profile__burgerMenu-close#profileBurgerMenuClose X
+        ul.profile__burgerMenu--body
+            li.profile__burgerMenu--body-item
+                a(href="/allCourses.html", class="profile__burgerMenu--body-link") ВСЕ КУРСЫ
+            li.profile__burgerMenu--body-item
+                a(href="/myCourses.html", class="profile__burgerMenu--body-link profile__burgerMenu--body-link--active") МОИ КУРСЫ
+            li.profile__burgerMenu--body-item
+                a(href="/profile.html", class="profile__burgerMenu--body-link") ПРОФИЛЬ
+            li.profile__burgerMenu--body-item
+                form(action="", method="post", name="profileExit", class="profile__burgerMenu-item-form")
+                    label
+                        img(src="img/signOut.svg", alt="Sign Out", class="profile__burgerMenu-signOut-img")
+                        input(type="submit", value="")
+
