@@ -97,7 +97,8 @@
         background-position: top, right, bottom, left
         background-repeat: repeat-x, repeat-y
         background-size: 35px 5px, 5px 35px
-        height: 280px
+        height: auto
+        min-height: 280px
         border-radius: 10px
         display: flex
         align-items: center
@@ -1163,6 +1164,9 @@
             &--head
                 padding-left: 20px
                 padding-right: 20px
+    .myCourses
+        &__selectCourse
+            flex-flow: column wrap
 
 @media all and (max-width: 640px)
     .profile
@@ -1188,6 +1192,21 @@
     .allCoursesAlert
         &__body
             padding: 20px 15px
+    .myCourses
+        &__selectCourse
+            &-text
+                font-size: 17px
+                line-height: 25px
+        &__item
+            &-description
+                &-button
+                    width: 95%
+    .allCourses
+        &__item
+            &-description
+                &-button
+                    width: 95%
+
 
 
 
