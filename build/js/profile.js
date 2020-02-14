@@ -50,10 +50,12 @@ saveForm.addEventListener('submit', function (e) {
             },
             statusCode: {
                 404: function () {
-                    window.location = '/error404.html'
+                    // window.location = '/error404.html'
+                    // FIX: Show error alert block
                 },
                 500: function () {
-                    window.location = '/error500.html'
+                    // window.location = '/error500.html'
+                    // FIX: Show error alert block
                 }
             },
         });
@@ -66,6 +68,7 @@ function checkStatusOfRequestAfterSaving(data) {
 
     if (status == 200) {
         // MAX SOSI
+        // FIX: Go fuck yourself
         let inputToCheckButton = document.getElementById('profileHiddenInput').value;
         if (inputToCheckButton == 'save_buy') {
             document.getElementById('profileBuyForm').submit();
