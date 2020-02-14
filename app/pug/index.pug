@@ -135,7 +135,7 @@ html(lang="ru")
                 div.application__item
                     div.application__item-numberPlusText
                         p.application__item-number 1
-                        a.application__item-link#applicationEnterLink Зарегистрируйтесь
+                        a(href="/enter.html").application__item-link#applicationEnterLink Зарегистрируйтесь
                     p.application__item-text--purple.application__item-text--purple-first 1 минута
                 hr(noshade, size="2px", color="#e5e5e5").application__hr
                 div.application__item
@@ -174,7 +174,8 @@ html(lang="ru")
                         p.tutors__text Мы хотим, чтобы Вы говорили, а не только знали правила.
                     div.tutors__item-img
                         img(src="/img/tutors.svg", alt="tutors photo", class="tutors__image")
-                a(href="").tutors__link Стать преподавателем.
+                a(href="mailto:yelmanovbohdan@gmail.com?subject=hello&body=body of email %0D%0A q1").tutors__link Стать преподавателем.
+                
 
             section.faq#faqSection
                 h2.faq__heading faq
@@ -229,7 +230,7 @@ html(lang="ru")
                     p.faq__connect Свяжитесь с нами
                     div.faq__connect-mail
                         img(src="img/email.svg", alt="email")
-                        a(href="mailto:yelmanovbohdan@gmail.com?subject=hello").faq__email contact@holieng.online
+                        a(href="mailto:yelmanovbohdan@gmail.com?subject=hello&body='body of email'").faq__email contact@holieng.online
                     div.faq__connect-telegram
                         img(src="img/telegram.svg", alt="telegram")
                         a(href="https://t.me/@holieng", target="blank").faq__email holi.eng
@@ -272,7 +273,7 @@ html(lang="ru")
                     div.footer__item-networks-mail#footerMail
                         a(href="mailto:yelmanovbohdan@gmail.com?subject=hello")
                             img(src="/img/mail.svg", alt="mail logo", id="footerMailImg")
-                        a(href="mailto:yelmanovbohdan@gmail.com?subject=hello", id="footerMailLink") contact@holieng.online
+                        a(href="mailto:yelmanovbohdan@gmail.com?subject=hello&body='body of email'", id="footerMailLink") contact@holieng.online
                     div.footer__item-networks-telegram#footerTelegram
                         a(href="", target="blank")
                             img(src="img/telegramWhite.svg", alt="telegram logo", id="footerTelegramImg")
