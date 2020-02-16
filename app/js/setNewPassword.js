@@ -40,7 +40,7 @@ function changeLogoToBlack() {
 
 function checkPassword(str) {
     let strLength = str.length;
-    if (str == null || str == undefined || str == '' || strLength < 8) {
+    if (str == null || str == undefined || str == '' || strLength < 8 || strLength > 128) {
         return false;
     } else {
         return true;
