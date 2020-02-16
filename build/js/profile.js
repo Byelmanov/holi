@@ -42,6 +42,7 @@ saveForm.addEventListener('submit', function (e) {
             type: "POST",
             url: action,
             data: formData,
+            dataType: 'json',
             processData: false,
             async: false,
             contentType: false,
@@ -50,10 +51,10 @@ saveForm.addEventListener('submit', function (e) {
             },
             statusCode: {
                 404: function () {
-                    window.location = '/error404.html'
+                    putTextInAlertAndShowIt('Что-то пошло не так');
                 },
                 500: function () {
-                    window.location = '/error500.html'
+                    putTextInAlertAndShowIt('Что-то пошло не так');
                 }
             },
         });
@@ -71,7 +72,14 @@ function checkStatusOfRequestAfterSaving(data) {
             document.getElementById('profileBuyForm').submit();
         } else {
             //message that data has successfuly saved
+            // FIX: Remove save button and make fields disabled
             document.getElementById('successAlert').style.display = 'flex';
+            setInputsDisabledAndAddStyleToThem();
+            document.getElementById('profileSaveWithoutBuying').style.display = 'none';
+            document.getElementById('profileSave').style.display = 'none';
+            document.getElementById('profileSaveAndBuy').style.display = 'none';
+            document.getElementById('profileEditProfileSection').style.display = 'flex';
+            document.getElementById('profileEditProfileButton').addEventListener('click', setInputsAbledAndAddStyleToThem);
         }
 
     } else {
@@ -479,13 +487,16 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         type: 'POST',
         url: action,
         async: 'false',
+        data: new FormData(this),
         dataType: 'json',
+        processData: false,
+        contentType: false,
         statusCode: {
             404: function () {
-                window.location = '/error404.html'
+                putTextInAlertAndShowIt('Что-то пошло не так');
             },
             500: function () {
-                window.location = '/error500.html'
+                putTextInAlertAndShowIt('Что-то пошло не так');
             }
         },
         complete: function (data) {

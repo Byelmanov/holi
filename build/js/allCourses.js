@@ -1,11 +1,5 @@
 'use scrict';
 
-let buyForm = document.forms['allCoursesBuyForm'];
-
-buyForm.addEventListener('submit', function () {
-    let idOfCourse = $('#allCoursesFirst').attr('data-id');
-    document.getElementById('allCoursesArertInput').value = idOfCourse;
-});
 
 document.getElementById('allCoursesAlertCross').addEventListener('click', function () {
     document.getElementById('allCoursesAlertSection').style.display = 'none';
@@ -28,15 +22,21 @@ function checkEscAndHideWindowIfWasPressed(e) {
     }
 }
 
-window.onload = function () {
-    let firstCourse = document.getElementById('allCoursesFirst');
-    if (!firstCourse.classList.contains('allCourses__item--bought')) {
-        document.getElementById('allCoursesGetButton').addEventListener('click', openAlertWindow);
-    }
-}
+
+let getButtons = $('.allCourses__item-description-button');
+
+getButtons.on('click', function () {
+    let parentCourse = getButtons.parent().parent();
+    let dataId = parentCourse.attr("data-id");
+    let input = document.getElementById('allCoursesArertInput');
+    input.value = dataId;
+    openAlertWindow();
+});
+
 
 function openAlertWindow() {
     document.getElementById('allCoursesAlertSection').style.display = 'flex';
     document.getElementById('allCoursesDarkScreen').style.display = 'block';
     document.addEventListener('keydown', checkEscAndHideWindowIfWasPressed);
 }
+
