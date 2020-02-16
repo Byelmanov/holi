@@ -31,7 +31,6 @@ gulp.task('browser-sync', function () {
 gulp.task('common-js', function () {
 	return gulp.src([
 		'app/js/common.js',
-		//'app/js/allCourses.js'
 	])
 		.pipe(concat('common.min.js'))
 		//.pipe(uglify())
@@ -41,7 +40,7 @@ gulp.task('common-js', function () {
 gulp.task('js', ['common-js'], function () {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		'app/libs/slick/slick.min.js',
+		//'app/libs/slick/slick.min.js',
 		'app/js/common.min.js', // Всегда в конце
 	])
 		.pipe(concat('scripts.min.js'))
