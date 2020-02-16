@@ -71,6 +71,16 @@ passwordForm.addEventListener('submit', function (e) {
 
 });
 
+document.getElementById('password').addEventListener('input', function () {
+    let password = this.value;
+    let capture = document.getElementById('setNewPasswordCaptureLength');
+    if (checkPassword(password)) {
+        capture.style.display = 'none';
+    } else {
+        capture.style.display = 'block';
+    }
+});
+
 document.getElementById('passwordRepeat').addEventListener('input', function () {
     let password = document.getElementById('password').value;
     let passwordRepeat = this.value;
