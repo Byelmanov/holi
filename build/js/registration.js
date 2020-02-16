@@ -182,3 +182,11 @@ function changeLogoToBlack() {
     let attr = '/img/finalLogo1.svg';
     imgNode.setAttribute('src', attr);
 }
+
+document.getElementById('successAlertOK').addEventListener('click', function () {
+    $('#successAlert').fadeOut('1000');
+});
+
+document.getElementById('errorAlertOK').addEventListener('click', function () {
+    $('#errorAlert').fadeOut('1000');
+});

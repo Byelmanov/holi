@@ -4,6 +4,7 @@ html(lang="ru")
         include includes/head.pug
     body
         include includes/enterBurgerMenu.pug
+        
         section.container.breadCrumbs
             ul.breadCrumbs__content
                 li.breadCrumbs__item.breadCrumbs__item-link 
@@ -11,6 +12,9 @@ html(lang="ru")
                 li.breadCrumbs__item.breadCrumbs__item-img
                 li.breadCrumbs__item.breadCrumbs__item-link 
                     p ВОЙТИ
+
+        include includes/successAndErrorAlerts.pug
+        
         section.enterWrap.container
             div.enter#enterWindow
                 h2.enter__heading Войти

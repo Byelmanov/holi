@@ -20,12 +20,8 @@ html(lang="ru")
             div.cardCanseled.container#cardCanseled
                 p.cardCanseled__text#cardCanceledText Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ.</a>
                 p.cardCanseled__ok#cartCanseledOK ok
-            div.successAlert.container#successAlert
-                p.successAlert__text#successAlertText lorem lorem lorem lorem lorem lorem
-                p.successAlert__ok#successAlertOK ok
-            div.errorAlert.container#errorAlert
-                p.errorAlert__text#errorAlertText lorem
-                p.errorAlert__ok#errorAlertOK ok
+            
+            include includes/successAndErrorAlerts.pug
 
             div.container.profile__editProfile#profileEditProfileSection
                 p.profile__editProfile-link#profileEditProfileButton edit profile

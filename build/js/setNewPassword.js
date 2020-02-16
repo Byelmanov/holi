@@ -104,3 +104,11 @@ document.getElementById('passwordRepeat').addEventListener('input', function () 
     }
 
 });
+
+document.getElementById('successAlertOK').addEventListener('click', function () {
+    $('#successAlert').fadeOut('1000');
+});
+
+document.getElementById('errorAlertOK').addEventListener('click', function () {
+    $('#errorAlert').fadeOut('1000');
+});

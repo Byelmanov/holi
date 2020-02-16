@@ -529,9 +529,9 @@ function putTextInSuccessAlertAndShowIt(text) {
 }
 
 document.getElementById('successAlertOK').addEventListener('click', function () {
-    document.getElementById('successAlert').style.display = 'none';
+    $('#successAlert').fadeOut('1000');
 });
 
 document.getElementById('errorAlertOK').addEventListener('click', function () {
-    document.getElementById('errorAlert').style.display = 'none';
-})
+    $('#errorAlert').fadeOut('1000');
+});

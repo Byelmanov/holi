@@ -76,3 +76,11 @@ enterForm.addEventListener('submit', function (event) {
         enterForm.submit();
     }
 });
+
+document.getElementById('successAlertOK').addEventListener('click', function () {
+    $('#successAlert').fadeOut('1000');
+});
+
+document.getElementById('errorAlertOK').addEventListener('click', function () {
+    $('#errorAlert').fadeOut('1000');
+});
