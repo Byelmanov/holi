@@ -51,10 +51,10 @@ saveForm.addEventListener('submit', function (e) {
             },
             statusCode: {
                 404: function () {
-                    putTextInAlertAndShowIt('Что-то пошло не так');
+                    putTextInErrorAlertAndShowIt('Что-то пошло не так');
                 },
                 500: function () {
-                    putTextInAlertAndShowIt('Что-то пошло не так');
+                    putTextInErrorAlertAndShowIt('Что-то пошло не так');
                 }
             },
         });
@@ -73,7 +73,7 @@ function checkStatusOfRequestAfterSaving(data) {
         } else {
             //message that data has successfuly saved
             // FIX: Remove save button and make fields disabled
-            document.getElementById('successAlert').style.display = 'flex';
+            putTextInSuccessAlertAndShowIt('Аккаунт был успешно создан');
             setInputsDisabledAndAddStyleToThem();
             document.getElementById('profileSaveWithoutBuying').style.display = 'none';
             document.getElementById('profileSave').style.display = 'none';
@@ -84,10 +84,10 @@ function checkStatusOfRequestAfterSaving(data) {
 
     } else {
         let errors = data.responceJSON.errors;
-        putTextInAlertAndShowIt(errors.firstname[0] + "\n");
-        putTextInAlertAndShowIt(errors.lastname[0] + "\n");
-        putTextInAlertAndShowIt(errors.phone[0] + "\n");
-        putTextInAlertAndShowIt(errors.skype[0]);
+        putTextInErrorAlertAndShowIt(errors.firstname[0] + "\n");
+        putTextInErrorAlertAndShowIt(errors.lastname[0] + "\n");
+        putTextInErrorAlertAndShowIt(errors.phone[0] + "\n");
+        putTextInErrorAlertAndShowIt(errors.skype[0]);
     }
 }
 
@@ -493,10 +493,10 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         contentType: false,
         statusCode: {
             404: function () {
-                putTextInAlertAndShowIt('Что-то пошло не так');
+                putTextInErrorAlertAndShowIt('Что-то пошло не так');
             },
             500: function () {
-                putTextInAlertAndShowIt('Что-то пошло не так');
+                putTextInErrorAlertAndShowIt('Что-то пошло не так');
             }
         },
         complete: function (data) {
@@ -512,12 +512,18 @@ function checkStatusOfRequestAfterCartClose(data) {
     if (status == 200) {
         hideTrash();
     } else {
-        putTextInAlertAndShowIt(text);
+        putTextInErrorAlertAndShowIt(text);
     }
 }
 
-function putTextInAlertAndShowIt(text) {
-    let block = document.getElementById('cardCanceledText');
+function putTextInErrorAlertAndShowIt(text) {
+    let block = document.getElementById('errorAlertText');
+    block.innerHTML = text;
+    block.parentElement.style.display = 'flex';
+}
+
+function putTextInSuccessAlertAndShowIt(text) {
+    let block = document.getElementById('successAlertText');
     block.innerHTML = text;
     block.parentElement.style.display = 'flex';
 }
@@ -525,3 +531,7 @@ function putTextInAlertAndShowIt(text) {
 document.getElementById('successAlertOK').addEventListener('click', function () {
     document.getElementById('successAlert').style.display = 'none';
 });
+
+document.getElementById('errorAlertOK').addEventListener('click', function () {
+    document.getElementById('errorAlert').style.display = 'none';
+})

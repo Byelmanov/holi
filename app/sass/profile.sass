@@ -851,10 +851,7 @@
         font-weight: 600
         font-size: 17px
         min-width: 70px
-        display: flex
-        flex-flow: column wrap
-        // align-items: center
-        // justify-content: center
+        line-height: 70px
         color: #A02515
         position: relative
         font-family: $default-font
@@ -872,7 +869,7 @@
             height: 21px
             position: absolute
             left: -30px
-            top: 0
+            top: 24px
     &__ok
         font-family: $default-font
         font-weight: 600
@@ -924,6 +921,45 @@
         text-decoration: underline
         text-transform: uppercase    
         cursor: pointer    
+.errorAlert
+    width: 100%
+    height: 70px
+    background: transparent
+    display: flex
+    align-items: center
+    justify-content: center
+    display: none
+    &__text
+        font-weight: 600
+        font-size: 17px
+        min-width: 70px
+        display: flex
+        flex-flow: column wrap
+        align-items: center
+        justify-content: center
+        color: #A02515
+        position: relative
+        font-family: $default-font
+        margin-right: 20px
+        &:after
+            content: ''
+            background-image: url('../img/warning.svg')   
+            background-repeat: no-repeat
+            background-size: contain
+            width: 20px
+            height: 21px
+            position: absolute
+            left: -30px
+            top: 0
+    &__ok
+        font-family: $default-font
+        font-weight: 600
+        font-size: 17px
+        line-height: 70px
+        color: $black
+        text-decoration: underline
+        text-transform: uppercase    
+        cursor: pointer
 
 .profileEditPassword
     display: none
@@ -1159,6 +1195,12 @@
                 padding-left: 50px
                 padding-right: 50px
 
+@media all and (max-width: 918px)
+    .cardCanseled
+        &__text
+            line-height: 25px
+            &:after
+                top: 2px
 
 @media all and (max-width: 700px)
     .profile    
@@ -1481,15 +1523,6 @@
             font-size: 13px
             line-height: 16px
             margin-left: 30px
-        &__ok
-            font-size: 15px
-            line-height: 18px
-            margin-left: 30px
-            margin-top: 10px
-    .successAlert
-        &__text
-            font-size: 13px
-            line-height: 16px
             &:after
                 width: 15px
                 height: 15px
@@ -1497,6 +1530,40 @@
         &__ok
             font-size: 15px
             line-height: 18px
+            margin-left: 30px
+            margin-top: 10px
+    .successAlert
+        flex-flow: column wrap
+        align-items: flex-start
+        &__text
+            font-size: 13px
+            line-height: 16px
+            margin-left: 30px
+            &:after
+                width: 15px
+                height: 15px
+                left: -20px
+        &__ok
+            font-size: 15px
+            line-height: 18px
+            margin-left: 30px
+            margin-top: 10px
+    .errorAlert
+        flex-flow: column wrap
+        align-items: flex-start
+        &__text
+            font-size: 13px
+            line-height: 16px
+            margin-left: 30px
+            &:after
+                width: 15px
+                height: 15px
+                left: -20px
+        &__ok
+            font-size: 15px
+            line-height: 18px
+            margin-left: 30px
+            margin-top: 10px
 
 
 @media all and (max-width: 419px)
