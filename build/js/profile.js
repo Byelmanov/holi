@@ -96,10 +96,10 @@ function sendAjaxToGetBuyForm() {
         contentType: false,
         complete: function (data) {
             let status = data.status;
-            let message = data.message;
+            let message = data.responceJSON.message;
             if (status = 200) {
                 let blockToInsert = document.getElementById('buyFormWrap');
-                blockToInsert.innerHTML = data.form;
+                blockToInsert.innerHTML = data.responceJSON.form;
                 let form = document.querySelector('#buyFormWrap form');
                 form.submit();
             } else if (statusCode = 404) {
@@ -531,7 +531,7 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
 
 function checkStatusOfRequestAfterCartClose(data) {
     let status = data.status;
-    let text = data.message;
+    let text = data.responceJSON.message;
 
     if (status == 200) {
         hideTrash();
