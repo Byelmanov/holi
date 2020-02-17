@@ -57,13 +57,14 @@ saveForm.addEventListener('submit', function (e) {
 
 function checkStatusOfRequestAfterSaving(data) {
     let status = data.status;
+    let message = data.responseJSON.message;
 
     if (status == 200) {
         let inputToCheckButton = document.getElementById('profileHiddenInput').value;
         if (inputToCheckButton == 'save_buy') {
             sendAjaxToGetBuyForm();
         } else {
-            putTextInSuccessAlertAndShowIt('Аккаунт был успешно создан');
+            putTextInSuccessAlertAndShowIt(message);
             setInputsDisabledAndAddStyleToThem();
             document.getElementById('profileSaveWithoutBuying').style.display = 'none';
             document.getElementById('profileSave').style.display = 'none';
@@ -538,6 +539,7 @@ function checkStatusOfRequestAfterCartClose(data) {
 
     if (status == 200) {
         hideTrash();
+
     } else if (statusCode = 404) {
         putTextInErrorAlertAndShowIt('Что-то пошло не так');
     } else if (statusCode = 500) {

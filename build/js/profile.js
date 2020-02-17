@@ -47,6 +47,7 @@ saveForm.addEventListener('submit', function (e) {
             async: false,
             contentType: false,
             complete: function (data) {
+                console.log(data);
                 checkStatusOfRequestAfterSaving(data);
             },
         });
@@ -56,13 +57,14 @@ saveForm.addEventListener('submit', function (e) {
 
 function checkStatusOfRequestAfterSaving(data) {
     let status = data.status;
+    let message = data.responseJSON.message;
 
     if (status == 200) {
         let inputToCheckButton = document.getElementById('profileHiddenInput').value;
         if (inputToCheckButton == 'save_buy') {
             sendAjaxToGetBuyForm();
         } else {
-            putTextInSuccessAlertAndShowIt('Аккаунт был успешно создан');
+            putTextInSuccessAlertAndShowIt(message);
             setInputsDisabledAndAddStyleToThem();
             document.getElementById('profileSaveWithoutBuying').style.display = 'none';
             document.getElementById('profileSave').style.display = 'none';
@@ -76,7 +78,7 @@ function checkStatusOfRequestAfterSaving(data) {
     } else if (statusCode = 500) {
         putTextInErrorAlertAndShowIt('Что-то пошло не так');
     } else {
-        let errors = data.responceJSON.errors;
+        let errors = data.responseJSON.errors;
         let errorMessage;
         for (error in errors) {
             errorMessage += errors[error] + "\n";
@@ -95,11 +97,12 @@ function sendAjaxToGetBuyForm() {
         async: false,
         contentType: false,
         complete: function (data) {
+            console.log(data);
             let status = data.status;
-            let message = data.responceJSON.message;
+            let message = data.responseJSON.message;
             if (status = 200) {
                 let blockToInsert = document.getElementById('buyFormWrap');
-                blockToInsert.innerHTML = data.responceJSON.form;
+                blockToInsert.innerHTML = data.responseJSON.form;
                 let form = document.querySelector('#buyFormWrap form');
                 form.submit();
             } else if (statusCode = 404) {
@@ -108,7 +111,7 @@ function sendAjaxToGetBuyForm() {
                 putTextInErrorAlertAndShowIt('Что-то пошло не так');
             } else {
                 if (data.errors) {
-                    let errors = data.responceJSON.errors;
+                    let errors = data.responseJSON.errors;
                     let errorMessage;
                     for (error in errors) {
                         errorMessage += errors[error] + "\n";
@@ -524,6 +527,7 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         processData: false,
         contentType: false,
         complete: function (data) {
+            console.log(data);
             checkStatusOfRequestAfterCartClose(data)
         },
     });
@@ -531,10 +535,11 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
 
 function checkStatusOfRequestAfterCartClose(data) {
     let status = data.status;
-    let text = data.responceJSON.message;
+    let text = data.responseJSON.message;
 
     if (status == 200) {
         hideTrash();
+
     } else if (statusCode = 404) {
         putTextInErrorAlertAndShowIt('Что-то пошло не так');
     } else if (statusCode = 500) {
