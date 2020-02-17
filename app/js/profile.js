@@ -49,14 +49,6 @@ saveForm.addEventListener('submit', function (e) {
             complete: function (data) {
                 checkStatusOfRequestAfterSaving(data);
             },
-            statusCode: {
-                404: function () {
-                    putTextInErrorAlertAndShowIt('Что-то пошло не так');
-                },
-                500: function () {
-                    putTextInErrorAlertAndShowIt('Что-то пошло не так');
-                }
-            },
         });
 
     }
@@ -66,13 +58,10 @@ function checkStatusOfRequestAfterSaving(data) {
     let status = data.status;
 
     if (status == 200) {
-        // MAX SOSI
         let inputToCheckButton = document.getElementById('profileHiddenInput').value;
         if (inputToCheckButton == 'save_buy') {
-            document.getElementById('profileBuyForm').submit();
+            sendAjaxToGetBuyForm();
         } else {
-            //message that data has successfuly saved
-            // FIX: Remove save button and make fields disabled
             putTextInSuccessAlertAndShowIt('Аккаунт был успешно создан');
             setInputsDisabledAndAddStyleToThem();
             document.getElementById('profileSaveWithoutBuying').style.display = 'none';
@@ -82,14 +71,58 @@ function checkStatusOfRequestAfterSaving(data) {
             document.getElementById('profileEditProfileButton').addEventListener('click', setInputsAbledAndAddStyleToThem);
         }
 
+    } else if (statusCode = 404) {
+        putTextInErrorAlertAndShowIt('Что-то пошло не так');
+    } else if (statusCode = 500) {
+        putTextInErrorAlertAndShowIt('Что-то пошло не так');
     } else {
         let errors = data.responceJSON.errors;
-        putTextInErrorAlertAndShowIt(errors.firstname[0] + "\n");
-        putTextInErrorAlertAndShowIt(errors.lastname[0] + "\n");
-        putTextInErrorAlertAndShowIt(errors.phone[0] + "\n");
-        putTextInErrorAlertAndShowIt(errors.skype[0]);
+        let errorMessage;
+        for (error in errors) {
+            errorMessage += errors[error] + "\n";
+        }
+        putTextInErrorAlertAndShowIt(errorMessage);
     }
 }
+
+function sendAjaxToGetBuyForm() {
+    let action = document.getElementById('profileSaveAndBuy').getAttribute('data-payment-url');
+    $.ajax({
+        type: "POST",
+        url: action,
+        dataType: 'json',
+        processData: false,
+        async: false,
+        contentType: false,
+        complete: function (data) {
+            let status = data.status;
+            let message = data.message;
+            if (status = 200) {
+                let blockToInsert = document.getElementById('buyFormWrap');
+                blockToInsert.innerHTML = data.form;
+                let form = document.querySelector('#buyFormWrap form');
+                form.submit();
+            } else if (statusCode = 404) {
+                putTextInErrorAlertAndShowIt('Что-то пошло не так');
+            } else if (statusCode = 500) {
+                putTextInErrorAlertAndShowIt('Что-то пошло не так');
+            } else {
+                if (data.errors) {
+                    let errors = data.responceJSON.errors;
+                    let errorMessage;
+                    for (error in errors) {
+                        errorMessage += errors[error] + "\n";
+                    }
+                    putTextInErrorAlertAndShowIt(errorMessage);
+                } else {
+                    putTextInErrorAlertAndShowIt(message);
+                }
+            }
+        },
+    });
+}
+
+
 
 
 function checkIsEmpty(str) {
@@ -490,14 +523,6 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         dataType: 'json',
         processData: false,
         contentType: false,
-        statusCode: {
-            404: function () {
-                putTextInErrorAlertAndShowIt('Что-то пошло не так');
-            },
-            500: function () {
-                putTextInErrorAlertAndShowIt('Что-то пошло не так');
-            }
-        },
         complete: function (data) {
             checkStatusOfRequestAfterCartClose(data)
         },
@@ -510,6 +535,10 @@ function checkStatusOfRequestAfterCartClose(data) {
 
     if (status == 200) {
         hideTrash();
+    } else if (statusCode = 404) {
+        putTextInErrorAlertAndShowIt('Что-то пошло не так');
+    } else if (statusCode = 500) {
+        putTextInErrorAlertAndShowIt('Что-то пошло не так');
     } else {
         putTextInErrorAlertAndShowIt(text);
     }

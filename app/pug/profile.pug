@@ -21,10 +21,10 @@ html(lang="ru")
                 p.cardCanseled__text#cardCanceledText Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ.</a>
                 p.cardCanseled__ok#cartCanseledOK ok
             
-            div.profileSuccessAlert.container#successAlert
+            div.successAlert.container#successAlert
                 p.successAlert__text#successAlertText 
                 p.successAlert__ok#successAlertOK ok
-            div.profileErrorAlert.container#errorAlert
+            div.errorAlert.container#errorAlert
                 p.errorAlert__text#errorAlertText 
                 p.errorAlert__ok#errorAlertOK ok
 
@@ -122,8 +122,7 @@ html(lang="ru")
                         input(type="email", name="profileEditEmailForm", class="profileEditEmail__input", value="email.com", id="profileEditEmailInput", required)
                     button(type="submit", class="profileEditEmail__submit", id="profileEditEmailSubmitButton") СОХРАНИТЬ
         section.profileDarkScreen#profileDarkScreen
-        form(action="", method="post", name="profileBuy", class="profile__buyForm", id="profileBuyForm")
-            input(type="text")
+        div.profile__buyFormWrap#buyFormWrap
                                     
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
         script(src="js/profile.js")
