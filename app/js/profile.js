@@ -327,6 +327,7 @@ function setInputsAbledAndAddStyleToThem() {
     phoneNumberInput.removeAttribute('disabled');
     skypeInput.removeAttribute('disabled');
     document.getElementById('profileUploadPhoto').removeAttribute('disabled');
+    document.getElementById('profileUploadLabel').style.visibility = 'visible';
 
 
     let firstNameInputClass = firstNameInput.classList[1].toString();
@@ -353,6 +354,7 @@ function setInputsDisabledAndAddStyleToThem() {
     phoneNumberInput.setAttribute('disabled', true);
     skypeInput.setAttribute('disabled', true);
     document.getElementById('profileUploadPhoto').setAttribute('disabled', true);
+    document.getElementById('profileUploadLabel').style.visibility = 'hidden';
 
     let disabled = '--disabled';
 
