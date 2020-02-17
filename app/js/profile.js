@@ -47,6 +47,7 @@ saveForm.addEventListener('submit', function (e) {
             async: false,
             contentType: false,
             complete: function (data) {
+                console.log(data);
                 checkStatusOfRequestAfterSaving(data);
             },
         });
@@ -95,6 +96,7 @@ function sendAjaxToGetBuyForm() {
         async: false,
         contentType: false,
         complete: function (data) {
+            console.log(data);
             let status = data.status;
             let message = data.responceJSON.message;
             if (status = 200) {
@@ -524,6 +526,7 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         processData: false,
         contentType: false,
         complete: function (data) {
+            console.log(data);
             checkStatusOfRequestAfterCartClose(data)
         },
     });
