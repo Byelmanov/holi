@@ -183,10 +183,16 @@ function changeLogoToBlack() {
     imgNode.setAttribute('src', attr);
 }
 
-document.getElementById('successAlertOK').addEventListener('click', function () {
-    $('#successAlert').fadeOut('1000');
-});
+let successAlert = document.getElementById('successAlertOK');
+if (successAlert) {
+    successAlert.addEventListener('click', function () {
+        $('#successAlert').fadeOut('1000');
+    });
+}
 
-document.getElementById('errorAlertOK').addEventListener('click', function () {
-    $('#errorAlert').fadeOut('1000');
-});
+let errorAlert = document.getElementById('errorAlertOK');
+if (errorAlert) {
+    errorAlert.addEventListener('click', function () {
+        $('#errorAlert').fadeOut('1000');
+    });
+}

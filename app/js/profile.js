@@ -257,7 +257,6 @@ function checkIsCartVisible() {
     if (cart) {
         showButtonsIfCartVisible();
         hideCartInPaymentSection();
-        //document.getElementById('cartMenuTrash').addEventListener('click', hideTrash);
 
         document.getElementById('cartCanseledOK').addEventListener('click', function () {
             $('.cardCanseled').hide();
