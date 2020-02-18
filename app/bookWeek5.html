@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -39,28 +39,36 @@
         </ul>
       </div>
     </nav>
-    <section class="myCourses container">
-      <div class="row no-gutters justify-content-start">
-        <div class="col-12 col-xl-6 myCourses__item">
-          <div class="myCourses__item-images"></div>
-          <div class="myCourses__item-description">
-            <h3 class="myCourses__item-description-heading">Интенсив Английского</h3>
-            <p class="myCourses__item-description-text"><span>5</span> недель</p>
-            <p class="myCourses__item-description-text"><span>5</span> дней в неделю</p>
-            <p class="myCourses__item-description-text"><span>30</span> минут в день</p><a class="myCourses__item-description-button" href="bookIntensive.html">НАЧАТЬ</a>
+    <section class="bookIntensive container-fluid">
+      <div class="container breadCrumbs">
+        <ul class="breadCrumbs__content">
+          <li class="breadCrumbs__item breadCrumbs__item-link"> <a href="/myCourses.html">MY COURSES</a></li>
+          <li class="breadCrumbs__item breadCrumbs__item-img"></li>
+          <li class="breadCrumbs__item breadCrumbs__item-link"> <a href="/bookIntensive.html">INTENSIVE ENGLISH COURSE</a></li>
+          <li class="breadCrumbs__item breadCrumbs__item-img"></li>
+          <li class="breadCrumbs__item breadCrumbs__item-link">
+            <p>WEEK 5</p>
+          </li>
+        </ul>
+      </div>
+      <div class="container bookIntensive__content">
+        <div class="row no-gutters justify-content-between">
+          <div class="col-12 col-lg-6">
+            <h1 class="bookIntensive__heading">Week 5</h1>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="row no-gutters justify-content-between bookIntensive__items">
+              <div class="col-12 col-lg-6 bookIntensive__item"><a class="bookIntensive__item-week">Lesson 1</a></div>
+              <div class="col-12 col-lg-6 bookIntensive__item"><a class="bookIntensive__item-week">Lesson 2</a></div>
+              <div class="col-12 col-lg-6 bookIntensive__item"><a class="bookIntensive__item-week">Lesson 3</a></div>
+              <div class="col-12 col-lg-6 bookIntensive__item"><a class="bookIntensive__item-week">Lesson 4</a></div>
+              <div class="col-12 col-lg-6 bookIntensive__item"><a class="bookIntensive__item-week">Lesson 5</a></div>
+            </div>
           </div>
         </div>
       </div>
-      <!--div.myCourses__selectCourse
-      img(src="/img/noMyCourses.svg", alt="Выбрать курс", class="myCourses__selectCourse-img")
-      div.myCourses__selectCourse-textBlock
-          h3.myCourses__selectCourse-text Вы еще не приобрели ни одного курса...
-          a(href="/allCourses.html", class="myCourses__selectCourse-link") ВЫБРАТЬ КУРС
-      
-      -->
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">   </script>
+    <script src="js/profileUserBurger.js"></script>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/myCourses.js"></script>
-  <script src="js/profileUserBurger.js"></script>
 </html>

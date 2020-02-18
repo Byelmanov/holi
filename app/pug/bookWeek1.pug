@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="en")
+    include includes/head.pug
+    body
+        include includes/myCoursesBurgerMenu.pug
+
+        section.bookIntensive.container-fluid
+            div.container.breadCrumbs
+                ul.breadCrumbs__content
+                    li.breadCrumbs__item.breadCrumbs__item-link 
+                        a(href="/myCourses.html") MY COURSES
+                    li.breadCrumbs__item.breadCrumbs__item-img
+                    li.breadCrumbs__item.breadCrumbs__item-link 
+                        a(href="/bookIntensive.html") INTENSIVE ENGLISH COURSE
+                    li.breadCrumbs__item.breadCrumbs__item-img
+                    li.breadCrumbs__item.breadCrumbs__item-link
+                        p WEEK 1
+
+            div.container.bookIntensive__content
+                    div.row.no-gutters.justify-content-between
+                        div.col-12.col-lg-6
+                            h1.bookIntensive__heading Week 1
+                        div.col-12.col-lg-6
+                            div.row.no-gutters.justify-content-between.bookIntensive__items
+                                div.col-12.col-lg-6.bookIntensive__item
+                                    a.bookIntensive__item-week Lesson 1
+                                div.col-12.col-lg-6.bookIntensive__item
+                                    a.bookIntensive__item-week Lesson 2
+                                div.col-12.col-lg-6.bookIntensive__item
+                                    a.bookIntensive__item-week Lesson 3
+                                div.col-12.col-lg-6.bookIntensive__item
+                                    a.bookIntensive__item-week Lesson 4
+                                div.col-12.col-lg-6.bookIntensive__item
+                                    a.bookIntensive__item-week Lesson 5
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")    
+        script(src="js/profileUserBurger.js")

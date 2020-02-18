@@ -1,0 +1,53 @@
+@import "vars"
+
+.bookIntensive
+    padding: 30px 0
+    min-height: calc(100vh - 70px)
+    background-image: url('../img/backgr11.png')
+    background-size: cover
+    background-repeat: no-repeat
+    &__heading
+        font-weight: 800
+        font-family: $default-font
+        font-size: 100px
+        line-height: 122px
+        color: $black
+    &__item
+        background: linear-gradient(276.44deg, #F9E547 -29.42%, rgba(255, 255, 255, 0) 94.87%), linear-gradient(253.68deg, #FDF7CB 5.83%, rgba(255, 255, 255, 0) 100%), #EB6FBD
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 20px
+        max-width: 255px
+        margin-bottom: 20px
+        margin-top: 20px
+        height: 90px
+        &:nth-child(2n+1)
+            margin-right: 10px
+        &-week
+            text-align: center
+            font-size: 20px
+            font-weight: 500
+            line-height: 90px
+            color: $black
+            text-decoration: none
+            display: block
+
+@media all and (max-width: 1200px)
+    .bookIntensive__items
+        justify-content: space-around!important
+
+@media all and (max-width: 991px)
+    .bookIntensive__items
+        flex-flow: column wrap!important
+
+@media all and (max-width: 576px)
+    .bookIntensive
+        &__heading
+            font-size: 65px
+            line-height: 70px
+            margin-bottom: 20px
+        &__items
+            align-items: center
+
+@media all and (max-width: 355px)
+    .bookIntensive__heading
+            font-size: 50px
