@@ -6,10 +6,12 @@
     background-image: url('../img/backgr11.png')
     background-size: cover
     background-repeat: no-repeat
+    &__content
+        //padding: 0
     &__heading
         font-weight: 800
         font-family: $default-font
-        font-size: 100px
+        font-size: 75px
         line-height: 122px
         color: $black
     &__item
@@ -34,6 +36,7 @@
 @media all and (max-width: 1200px)
     .bookIntensive__items
         justify-content: space-around!important
+        align-items: center!important
 
 @media all and (max-width: 991px)
     .bookIntensive__items
@@ -48,6 +51,19 @@
         &__items
             align-items: center
 
+@media all and (max-width: 480px)
+    .bookIntensive
+        &__heading
+            font-size: 55px
+@media all and (max-width: 400px)
+    .bookIntensive
+        &__heading
+            font-size: 50px
+@media all and (max-width: 370px)
+    .bookIntensive
+        &__heading
+            font-size: 45px
+
 @media all and (max-width: 355px)
     .bookIntensive__heading
-            font-size: 50px
+            font-size: 40px

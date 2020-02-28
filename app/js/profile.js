@@ -314,6 +314,18 @@ function checkIsCartVisible() {
     }
 }
 
+window.addEventListener('load', checkUserPhoto);
+
+function checkUserPhoto() {
+    let img = document.getElementById('profileUserPhoto');
+    let srcOfImg = img.getAttribute('src');
+
+    if (srcOfImg != "") {
+        let blockWithBg = document.querySelector('.profile__item--user-img');
+        blockWithBg.style.backgroundImage = 'none';
+    }
+}
+
 let firstNameInput = document.getElementById('profileFirstName');
 let secondNameInput = document.getElementById('profileLastName');
 let phoneNumberInput = document.getElementById('profilePhone');
