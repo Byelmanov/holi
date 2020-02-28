@@ -395,12 +395,15 @@
                 flex-direction: column
                 align-items: flex-start
                 justify-content: space-between
+                position: relative
                 &-heading
                     margin-bottom: 0
                 &-textWrap
                     display: flex
                     align-items: center
                     justify-content: space-between
+                    border-bottom: 1px solid #D8D8D8
+                    padding-bottom: 20px
                     img
                         width: 40px
                         height: 40px
@@ -411,6 +414,7 @@
                         color: $black
                         a
                             color: $black
+
                 &-warningAndPriceWrap
                     width: 100%
                     height: auto
@@ -512,6 +516,7 @@
                 margin-bottom: 10px
                 text-align: left
                 &-input
+                    font-family: $default-font
                     width: 285px
                     height: 40px
                     line-height: 40px
@@ -523,10 +528,16 @@
                     font-size: 15px
                     &::placeholder
                         color: #E5E5E5
+                    &:disabled
+                        color: #000
+                        -webkit-text-fill-color: $black
+                        opacity: 1
                     &--disabled
                         border: none
                         padding-left: 0
                         font-weight: 600
+                        text-transform: uppercase
+                        color: $black
                         &+.profile__item--user-firstName-star
                             display: none
                         &+.profile__item--user-lastName-star
@@ -589,6 +600,10 @@
                     outline: none
                     &::placeholder
                         color: #E5E5E5
+                    &:disabled
+                        color: #000
+                        -webkit-text-fill-color: $black
+                        opacity: 1
                     &--disabled
                         border: none
                         font-weight: 600
@@ -638,6 +653,10 @@
                     margin-left: 18px
                     &::placeholder
                         color: #E5E5E5
+                    &:disabled
+                        color: #000
+                        -webkit-text-fill-color: $black
+                        opacity: 1
                     &--disabled
                         font-weight: 600
                         padding-left: 0
@@ -657,7 +676,7 @@
                 font-size: 13px
                 line-height: 16px
                 text-align: center
-                margin-left: 75px
+                margin-left: 1%
         &--account
             font-family: $default-font
             &-emailWrap
@@ -756,6 +775,7 @@
         font-family: $default-font
         text-transform: uppercase
         cursor: pointer
+        margin-bottom: 50px
         &:hover
             text-decoration: underline
     &__submitWithoutBuying
@@ -769,6 +789,7 @@
         margin-right: 40px
         display: none
         font-family: $default-font
+        margin-bottom: 50px
         &:hover
             text-decoration: underline
     &__submitAndBuy
@@ -788,6 +809,7 @@
         text-transform: uppercase
         cursor: pointer
         display: none
+        margin-bottom: 50px
         &:hover
             text-decoration: underline
     &__buyForm
@@ -796,7 +818,6 @@
     background: $black
     height: 70px
     border-top: 1px solid #000
-    //display: none
     &__wrap
         display: flex
         align-items: center
@@ -1270,10 +1291,12 @@
         &__submitSection
             flex-flow: column-reverse
             align-items: flex-end
+        &__submitAndBuy
+            margin-bottom: 0
         &__submitWithoutBuying
             margin-right: 0
             margin-top: 30px
-            margin-bottom: 10px
+            margin-bottom: 50px
 @media all and (max-width: 670px)
     .cartMenu
         &__wrap
@@ -1447,6 +1470,8 @@
                     line-height: 16px
                     &-input
                         font-size: 13px
+                        height: 35px
+                        line-height: 35px
             &--contact
                 &-phoneWrap
                     p
@@ -1457,9 +1482,12 @@
                             height: 10px
                     &-input
                         font-size: 13px
+                        height: 35px
+                        line-height: 35px
                     &-star
                         right: -7px
                 &-skypeWrap
+                    margin-bottom: 3px
                     p
                         font-size: 13px
                         line-height: 16px
@@ -1468,11 +1496,14 @@
                             height: 10px
                     &-input
                         font-size: 13px
+                        height: 35px
+                        line-height: 35px
                     &-star
                         right: -7px
                 &-capture
                     font-size: 9px
                     line-height: 11px
+                    margin-left: 6%
             &--account
                 &-emailWrap
                     flex-flow: row wrap
@@ -1513,14 +1544,28 @@
         &__submitAndBuy
             font-size: 13px
         &__editProfile
+            display: flex
             &-link
                 font-size: 13px
                 line-height: 16px
                 right: 0
+                font-weight: normal
+                position: relative
                 &:before
-                    width: 10px
-                    height: 10px
-                    left: -10px
+                    width: 15px
+                    height: 15px
+                    left: -17px
+                    top: 0
+                &:after
+                    content: ""
+                    width: 100%
+                    height: 1px
+                    position: absolute
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    background: $black
+
     .cardCanseled
         flex-flow: column wrap
         align-items: flex-start
