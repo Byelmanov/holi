@@ -64,6 +64,7 @@ function checkStatusOfRequestAfterSaving(data) {
         if (inputToCheckButton == 'save_buy') {
             sendAjaxToGetBuyForm();
         } else {
+            sendAjaxToGetPhotoPath();
             putTextInSuccessAlertAndShowIt(message);
             setInputsDisabledAndAddStyleToThem();
 
@@ -88,6 +89,29 @@ function checkStatusOfRequestAfterSaving(data) {
     }
 }
 
+function sendAjaxToGetPhotoPath() {
+    let action = document.forms['profileUserContacts'].getAttribute('data-userinfo');
+    form = new FormData;
+    $.ajax({
+        type: "POST",
+        url: action,
+        data: form,
+        dataType: 'json',
+        processData: 'false',
+        contentType: 'false',
+        complete: function (data) {
+            let status = data.status;
+            if (status == 200) {
+                let photoPath = data.responseJSON.photo;
+                let photoNode = document.getElementById('profileUserPhoto');
+                photoNode.setAttribute('src', photoPath);
+            } else {
+                putTextInErrorAlertAndShowIt('Что-то пошло не так');
+            }
+        }
+    });
+}
+
 function sendAjaxToGetBuyForm() {
     let action = document.getElementById('profileSaveAndBuy').getAttribute('data-payment-url');
     $.ajax({
@@ -98,17 +122,16 @@ function sendAjaxToGetBuyForm() {
         async: false,
         contentType: false,
         complete: function (data) {
-            console.log(data);
             let status = data.status;
             let message = data.responseJSON.message;
-            if (status = 200) {
+            if (status == 200) {
                 let blockToInsert = document.getElementById('buyFormWrap');
                 blockToInsert.innerHTML = data.responseJSON.form;
                 let form = document.querySelector('#buyFormWrap form');
                 form.submit();
-            } else if (statusCode = 404) {
+            } else if (statusCode == 404) {
                 putTextInErrorAlertAndShowIt('Что-то пошло не так');
-            } else if (statusCode = 500) {
+            } else if (statusCode == 500) {
                 putTextInErrorAlertAndShowIt('Что-то пошло не так');
             } else {
                 if (data.errors) {
@@ -556,9 +579,9 @@ function checkStatusOfRequestAfterCartClose(data) {
     if (status == 200) {
         hideTrash();
 
-    } else if (statusCode = 404) {
+    } else if (statusCode == 404) {
         putTextInErrorAlertAndShowIt('Что-то пошло не так');
-    } else if (statusCode = 500) {
+    } else if (statusCode == 500) {
         putTextInErrorAlertAndShowIt('Что-то пошло не так');
     } else {
         putTextInErrorAlertAndShowIt(text);
