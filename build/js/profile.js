@@ -66,6 +66,7 @@ function checkStatusOfRequestAfterSaving(data) {
         } else {
             putTextInSuccessAlertAndShowIt(message);
             setInputsDisabledAndAddStyleToThem();
+
             document.getElementById('profileSaveWithoutBuying').style.display = 'none';
             document.getElementById('profileSave').style.display = 'none';
             document.getElementById('profileSaveAndBuy').style.display = 'none';
@@ -355,6 +356,7 @@ function setInputsAbledAndAddStyleToThem() {
     skypeInput.classList.remove(skypeInputClass);
 
     document.getElementById('profileSave').style.display = 'block';
+    document.getElementById("profileEditProfileSection").style.display = 'none';
 
     document.getElementById('profileEditProfileButton').removeEventListener('click', setInputsAbledAndAddStyleToThem);
 

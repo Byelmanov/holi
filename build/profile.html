@@ -41,21 +41,18 @@
         </ul>
       </div>
     </nav>
-    <section class="cartMenu container-fluid" id="cartMenu">
-      <div class="container cartMenu__wrap">
-        <p class="cartMenu__item cartMenu__item--text">Ваша корзина</p>
-        <div class="cartMenu__item cartMenu__item--price">
-          <h3>130€</h3>
-          <p>Интенсив Английского</p>
-        </div>
-        <form action="some.php" method="post" name="profileCartCancel">
-          <label>
-            <div class="cartMenu__item cartMenu__item--trash" id="cartMenuTrash"></div>
-            <input class="cartMenu__input" type="submit" value=""/>
-          </label>
-        </form>
-      </div>
-    </section>
+    <!--section.cartMenu.container-fluid#cartMenu
+    div.container.cartMenu__wrap
+        p.cartMenu__item.cartMenu__item--text Ваша корзина
+        div.cartMenu__item.cartMenu__item--price
+            h3 130€
+            p Интенсив Английского
+        form(action="some.php", method="post", name="profileCartCancel")
+            label
+                div.cartMenu__item.cartMenu__item--trash#cartMenuTrash
+                input(type="submit", value="", class="cartMenu__input")
+    
+    -->
     <section class="profile container-fluid">
       <div class="cardCanseled container" id="cardCanseled">
         <p class="cardCanseled__text" id="cardCanceledText">Вы прервали процесс покупки! Выберите себе курс во вкладке <a href="/allCourses.html">ВСЕ КУРСЫ.</a></p>
@@ -85,7 +82,7 @@
                 <div class="profile__item--user-data">
                   <label>
                     <p class="profile__item--user-name">Имя</p>
-                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="ИМЯ" id="profileFirstName" autocomplete="name" value=""/>
+                    <input class="profile__item--user-name-input" type="text" name="profileFirstName" placeholder="ИМЯ" id="profileFirstName" autocomplete="name" value="bohdan"/>
                     <div class="profile__item--user-firstName-star" id="profileFirstNameStar">*   </div>
                   </label>
                   <label>

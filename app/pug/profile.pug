@@ -4,7 +4,7 @@ html(lang="ru")
         include includes/head.pug
     body
         include includes/profileBurgerMenu.pug
-        section.cartMenu.container-fluid#cartMenu
+        //section.cartMenu.container-fluid#cartMenu
             div.container.cartMenu__wrap
                 p.cartMenu__item.cartMenu__item--text Ваша корзина
                 div.cartMenu__item.cartMenu__item--price
@@ -42,7 +42,7 @@ html(lang="ru")
                                 div.profile__item--user-data
                                     label
                                         p.profile__item--user-name Имя
-                                        input(type="text", name="profileFirstName", placeholder="ИМЯ", class="profile__item--user-name-input" id="profileFirstName", autocomplete="name", value="")
+                                        input(type="text", name="profileFirstName", placeholder="ИМЯ", class="profile__item--user-name-input" id="profileFirstName", autocomplete="name", value="bohdan")
                                         div.profile__item--user-firstName-star#profileFirstNameStar *   
                                     label
                                         p.profile__item--user-name Фамилия
