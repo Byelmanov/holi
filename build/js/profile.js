@@ -90,15 +90,16 @@ function checkStatusOfRequestAfterSaving(data) {
 }
 
 function sendAjaxToGetPhotoPath() {
-    let action = document.forms['profileUserContacts'].getAttribute('data-userinfo');
-    form = new FormData;
+    let form = document.forms['profileUserContacts'];
+    let action = form.getAttribute('data-userinfo');
+    let data = new FormData(form);
     $.ajax({
         type: "POST",
         url: action,
-        data: form,
+        data: data,
         dataType: 'json',
-        processData: 'false',
-        contentType: 'false',
+        processData: false,
+        contentType: false,
         complete: function (data) {
             let status = data.status;
             if (status == 200) {
