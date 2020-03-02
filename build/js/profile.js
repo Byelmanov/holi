@@ -70,6 +70,7 @@ function checkStatusOfRequestAfterSaving(data) {
             let trash = document.getElementById('cartMenu');
             if (trash) {
                 hideTrash();
+                sendAjaxToClearCart();
             }
 
             document.getElementById('profileSaveWithoutBuying').style.display = 'none';
@@ -561,7 +562,13 @@ function checkAllInputsAreEmpty() {
 
 $('form[name = "profileCartCancel"]').submit(function (e) {
     e.preventDefault();
-    let action = this.getAttribute('action');
+    sendAjaxToClearCart();
+});
+
+function sendAjaxToClearCart() {
+    let form = document.forms['profileCartCancel'];
+    let action = form.getAttribute('action');
+
     $.ajax({
         type: 'POST',
         url: action,
@@ -571,11 +578,11 @@ $('form[name = "profileCartCancel"]').submit(function (e) {
         processData: false,
         contentType: false,
         complete: function (data) {
-            console.log(data);
             checkStatusOfRequestAfterCartClose(data)
         },
     });
-});
+
+}
 
 function checkStatusOfRequestAfterCartClose(data) {
     let status = data.status;
