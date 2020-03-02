@@ -47,7 +47,6 @@ saveForm.addEventListener('submit', function (e) {
             async: false,
             contentType: false,
             complete: function (data) {
-                console.log(data);
                 checkStatusOfRequestAfterSaving(data);
             },
         });
@@ -60,13 +59,18 @@ function checkStatusOfRequestAfterSaving(data) {
     let message = data.responseJSON.message;
 
     if (status == 200) {
+        sendAjaxToGetPhotoPath();
         let inputToCheckButton = document.getElementById('profileHiddenInput').value;
         if (inputToCheckButton == 'save_buy') {
             sendAjaxToGetBuyForm();
         } else {
-            sendAjaxToGetPhotoPath();
             putTextInSuccessAlertAndShowIt(message);
             setInputsDisabledAndAddStyleToThem();
+
+            let trash = document.getElementById('cartMenu');
+            if (trash) {
+                hideTrash();
+            }
 
             document.getElementById('profileSaveWithoutBuying').style.display = 'none';
             document.getElementById('profileSave').style.display = 'none';
