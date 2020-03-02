@@ -573,7 +573,7 @@ function sendAjaxToClearCart() {
         type: 'POST',
         url: action,
         async: 'false',
-        data: new FormData(this),
+        data: new FormData(form),
         dataType: 'json',
         processData: false,
         contentType: false,
