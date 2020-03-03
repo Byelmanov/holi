@@ -186,7 +186,7 @@ function checkEmail(str) {
 }
 function checkPhoneNumber(str) {
     str = str.toString();
-    var regExpForPhone = /^\+[0-9]{1,3}\([0-9]{3}\)[0-9]{7}$/;
+    var regExpForPhone = /^\+[0-9]{1,3}\(?[0-9]{3}\)?[0-9]{7}$/;
 
     if (regExpForPhone.test(str)) {
         return true;
